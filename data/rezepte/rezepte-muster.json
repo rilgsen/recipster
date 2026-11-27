@@ -1,0 +1,747 @@
+{
+ "hinweis": "Muster für die Rezeptbasis von Recipster. Mengen gelten für 2 Portionen. Nährwerte sind grobe Schätzwerte pro Portion und müssen vor Veröffentlichung nachgerechnet werden.",
+ "rezepte": [
+  {
+   "id": "lachs-brokkoli-zitronenbutter",
+   "titel": "Lachs mit Brokkoli und Zitronenbutter",
+   "schwerpunkt": [
+    "Keto",
+    "Fisch"
+   ],
+   "ernaehrung": [
+    "pescetarisch",
+    "glutenfrei"
+   ],
+   "tags": [
+    "Low Carb",
+    "Protein",
+    "Wenig Aufwand"
+   ],
+   "mahlzeit": "Abendessen",
+   "minuten": 25,
+   "portionen": 2,
+   "naehrwerte": {
+    "kcal": 480,
+    "eiweiss_g": 38,
+    "kohlenhydrate_g": 8,
+    "fett_g": 32
+   },
+   "zutaten": [
+    {
+     "menge": 300,
+     "einheit": "g",
+     "name": "Lachsfilet",
+     "abteilung": "Fisch",
+     "zutat_id": "lachsfilet"
+    },
+    {
+     "menge": 400,
+     "einheit": "g",
+     "name": "Brokkoli",
+     "abteilung": "Gemüse",
+     "zutat_id": "brokkoli"
+    },
+    {
+     "menge": 30,
+     "einheit": "g",
+     "name": "Butter",
+     "abteilung": "Kühlregal",
+     "zutat_id": "butter"
+    },
+    {
+     "menge": 1,
+     "einheit": "Stück",
+     "name": "Zitrone",
+     "abteilung": "Obst",
+     "zutat_id": "zitrone"
+    },
+    {
+     "menge": 2,
+     "einheit": "Zehen",
+     "name": "Knoblauch",
+     "abteilung": "Gemüse",
+     "zutat_id": "knoblauch"
+    },
+    {
+     "menge": 1,
+     "einheit": "EL",
+     "name": "Olivenöl",
+     "abteilung": "Vorrat",
+     "zutat_id": "olivenoel"
+    },
+    {
+     "menge": 1,
+     "einheit": "TL",
+     "name": "Salz",
+     "abteilung": "Vorrat",
+     "zutat_id": "salz"
+    }
+   ],
+   "schritte": [
+    {
+     "text": "Brokkoli in Röschen teilen und 4 Minuten in Salzwasser garen, danach kalt abschrecken.",
+     "timer_sekunden": 240,
+     "tipp": "Kalt abschrecken hält den Brokkoli schön grün."
+    },
+    {
+     "text": "Lachs trocken tupfen, salzen und in Olivenöl auf der Hautseite 4 Minuten braten.",
+     "timer_sekunden": 240
+    },
+    {
+     "text": "Lachs wenden, Hitze reduzieren und weitere 3 Minuten ziehen lassen.",
+     "timer_sekunden": 180
+    },
+    {
+     "text": "Butter mit gehacktem Knoblauch in der Pfanne schmelzen, Zitronensaft einrühren und den Brokkoli darin schwenken."
+    },
+    {
+     "text": "Lachs auf dem Brokkoli anrichten und mit der Zitronenbutter beträufeln."
+    }
+   ]
+  },
+  {
+   "id": "zucchini-nudeln-garnelen",
+   "titel": "Zucchini-Nudeln mit Garnelen",
+   "schwerpunkt": [
+    "Keto",
+    "Fisch"
+   ],
+   "ernaehrung": [
+    "pescetarisch",
+    "glutenfrei",
+    "laktosefrei"
+   ],
+   "tags": [
+    "Low Carb",
+    "Wenig Kalorien",
+    "Wenig Aufwand"
+   ],
+   "mahlzeit": "Abendessen",
+   "minuten": 20,
+   "portionen": 2,
+   "naehrwerte": {
+    "kcal": 310,
+    "eiweiss_g": 30,
+    "kohlenhydrate_g": 9,
+    "fett_g": 16
+   },
+   "zutaten": [
+    {
+     "menge": 250,
+     "einheit": "g",
+     "name": "Garnelen (geschält)",
+     "abteilung": "Fisch",
+     "zutat_id": "garnelen-geschaelt"
+    },
+    {
+     "menge": 3,
+     "einheit": "Stück",
+     "name": "Zucchini",
+     "abteilung": "Gemüse",
+     "zutat_id": "zucchini"
+    },
+    {
+     "menge": 200,
+     "einheit": "g",
+     "name": "Kirschtomaten",
+     "abteilung": "Gemüse",
+     "zutat_id": "kirschtomaten"
+    },
+    {
+     "menge": 2,
+     "einheit": "Zehen",
+     "name": "Knoblauch",
+     "abteilung": "Gemüse",
+     "zutat_id": "knoblauch"
+    },
+    {
+     "menge": 2,
+     "einheit": "EL",
+     "name": "Olivenöl",
+     "abteilung": "Vorrat",
+     "zutat_id": "olivenoel"
+    },
+    {
+     "menge": 0.5,
+     "einheit": "TL",
+     "name": "Chiliflocken",
+     "abteilung": "Vorrat",
+     "zutat_id": "chiliflocken"
+    },
+    {
+     "menge": 0.5,
+     "einheit": "Stück",
+     "name": "Zitrone",
+     "abteilung": "Obst",
+     "zutat_id": "zitrone"
+    }
+   ],
+   "schritte": [
+    {
+     "text": "Zucchini mit einem Spiralschneider oder Sparschäler in lange Streifen schneiden."
+    },
+    {
+     "text": "Garnelen in Olivenöl mit Knoblauch und Chiliflocken 2 Minuten pro Seite braten und herausnehmen.",
+     "timer_sekunden": 240
+    },
+    {
+     "text": "Halbierte Kirschtomaten in derselben Pfanne 3 Minuten weich braten.",
+     "timer_sekunden": 180
+    },
+    {
+     "text": "Zucchini-Nudeln dazugeben und nur 2 Minuten schwenken.",
+     "timer_sekunden": 120,
+     "tipp": "Nicht länger, sonst ziehen sie Wasser."
+    },
+    {
+     "text": "Garnelen zurück in die Pfanne geben, mit Zitronensaft und Salz abschmecken."
+    }
+   ]
+  },
+  {
+   "id": "thunfisch-bowl",
+   "titel": "Thunfisch-Bowl mit Reis und Edamame",
+   "schwerpunkt": [
+    "Fitness",
+    "Fisch"
+   ],
+   "ernaehrung": [
+    "pescetarisch",
+    "laktosefrei"
+   ],
+   "tags": [
+    "Protein",
+    "Wenig Aufwand"
+   ],
+   "mahlzeit": "Mittagessen",
+   "minuten": 15,
+   "portionen": 2,
+   "naehrwerte": {
+    "kcal": 520,
+    "eiweiss_g": 36,
+    "kohlenhydrate_g": 58,
+    "fett_g": 14
+   },
+   "zutaten": [
+    {
+     "menge": 150,
+     "einheit": "g",
+     "name": "Basmatireis",
+     "abteilung": "Vorrat",
+     "zutat_id": "basmatireis"
+    },
+    {
+     "menge": 2,
+     "einheit": "Dosen",
+     "name": "Thunfisch im eigenen Saft",
+     "abteilung": "Konserven",
+     "zutat_id": "thunfisch-im-eigenen-saft"
+    },
+    {
+     "menge": 150,
+     "einheit": "g",
+     "name": "Edamame (TK, geschält)",
+     "abteilung": "Tiefkühl",
+     "zutat_id": "edamame-tk-geschaelt"
+    },
+    {
+     "menge": 1,
+     "einheit": "Stück",
+     "name": "Salatgurke",
+     "abteilung": "Gemüse",
+     "zutat_id": "salatgurke"
+    },
+    {
+     "menge": 1,
+     "einheit": "Stück",
+     "name": "Avocado",
+     "abteilung": "Obst",
+     "zutat_id": "avocado"
+    },
+    {
+     "menge": 2,
+     "einheit": "EL",
+     "name": "Sojasauce",
+     "abteilung": "Vorrat",
+     "zutat_id": "sojasauce"
+    },
+    {
+     "menge": 1,
+     "einheit": "TL",
+     "name": "Sesamöl",
+     "abteilung": "Vorrat",
+     "zutat_id": "sesamoel"
+    },
+    {
+     "menge": 1,
+     "einheit": "EL",
+     "name": "Sesam",
+     "abteilung": "Vorrat",
+     "zutat_id": "sesam"
+    }
+   ],
+   "schritte": [
+    {
+     "text": "Reis nach Packungsangabe etwa 10 Minuten garen.",
+     "timer_sekunden": 600
+    },
+    {
+     "text": "Edamame in den letzten 3 Minuten mit in den Topf geben.",
+     "timer_sekunden": 180
+    },
+    {
+     "text": "Gurke würfeln, Avocado in Scheiben schneiden, Thunfisch abtropfen lassen."
+    },
+    {
+     "text": "Sojasauce und Sesamöl verrühren."
+    },
+    {
+     "text": "Reis in Schalen füllen, alles darauf anrichten, Sauce darübergeben und mit Sesam bestreuen."
+    }
+   ]
+  },
+  {
+   "id": "haehnchen-wrap-joghurtsosse",
+   "titel": "Hähnchen-Wrap mit Joghurtsoße",
+   "schwerpunkt": [
+    "Fitness",
+    "Familie"
+   ],
+   "ernaehrung": [],
+   "tags": [
+    "Protein",
+    "Kinderfreundlich",
+    "Wenig Aufwand"
+   ],
+   "mahlzeit": "Mittagessen",
+   "minuten": 20,
+   "portionen": 2,
+   "naehrwerte": {
+    "kcal": 540,
+    "eiweiss_g": 44,
+    "kohlenhydrate_g": 48,
+    "fett_g": 16
+   },
+   "zutaten": [
+    {
+     "menge": 300,
+     "einheit": "g",
+     "name": "Hähnchenbrustfilet",
+     "abteilung": "Fleisch",
+     "zutat_id": "haehnchenbrustfilet"
+    },
+    {
+     "menge": 2,
+     "einheit": "Stück",
+     "name": "Vollkorn-Wraps",
+     "abteilung": "Brot",
+     "zutat_id": "vollkorn-wraps"
+    },
+    {
+     "menge": 150,
+     "einheit": "g",
+     "name": "Naturjoghurt",
+     "abteilung": "Kühlregal",
+     "zutat_id": "naturjoghurt"
+    },
+    {
+     "menge": 1,
+     "einheit": "Stück",
+     "name": "Romanasalat (Herz)",
+     "abteilung": "Gemüse",
+     "zutat_id": "romanasalat-herz"
+    },
+    {
+     "menge": 2,
+     "einheit": "Stück",
+     "name": "Tomaten",
+     "abteilung": "Gemüse",
+     "zutat_id": "tomaten"
+    },
+    {
+     "menge": 1,
+     "einheit": "TL",
+     "name": "Paprikapulver (edelsüß)",
+     "abteilung": "Vorrat",
+     "zutat_id": "paprikapulver-edelsuess"
+    },
+    {
+     "menge": 1,
+     "einheit": "EL",
+     "name": "Olivenöl",
+     "abteilung": "Vorrat",
+     "zutat_id": "olivenoel"
+    },
+    {
+     "menge": 0.5,
+     "einheit": "Stück",
+     "name": "Zitrone",
+     "abteilung": "Obst",
+     "zutat_id": "zitrone"
+    }
+   ],
+   "schritte": [
+    {
+     "text": "Hähnchen in Streifen schneiden, mit Paprikapulver und Salz würzen."
+    },
+    {
+     "text": "In Olivenöl 6 bis 7 Minuten rundum goldbraun braten.",
+     "timer_sekunden": 420
+    },
+    {
+     "text": "Joghurt mit Zitronensaft, Salz und Pfeffer verrühren."
+    },
+    {
+     "text": "Salat in Streifen, Tomaten in Würfel schneiden."
+    },
+    {
+     "text": "Wraps kurz in der Pfanne erwärmen, füllen und fest einrollen.",
+     "tipp": "Warm lassen sich die Wraps rollen, ohne zu reißen."
+    }
+   ]
+  },
+  {
+   "id": "ofen-feta-tomaten-kichererbsen",
+   "titel": "Ofen-Feta mit Tomaten und Kichererbsen",
+   "schwerpunkt": [
+    "Familie"
+   ],
+   "ernaehrung": [
+    "vegetarisch",
+    "glutenfrei"
+   ],
+   "tags": [
+    "Wenig Aufwand",
+    "Viel Gemüse"
+   ],
+   "mahlzeit": "Abendessen",
+   "minuten": 25,
+   "portionen": 2,
+   "naehrwerte": {
+    "kcal": 560,
+    "eiweiss_g": 26,
+    "kohlenhydrate_g": 34,
+    "fett_g": 34
+   },
+   "zutaten": [
+    {
+     "menge": 200,
+     "einheit": "g",
+     "name": "Feta",
+     "abteilung": "Kühlregal",
+     "zutat_id": "feta"
+    },
+    {
+     "menge": 400,
+     "einheit": "g",
+     "name": "Kirschtomaten",
+     "abteilung": "Gemüse",
+     "zutat_id": "kirschtomaten"
+    },
+    {
+     "menge": 1,
+     "einheit": "Dose",
+     "name": "Kichererbsen",
+     "abteilung": "Konserven",
+     "zutat_id": "kichererbsen"
+    },
+    {
+     "menge": 1,
+     "einheit": "Stück",
+     "name": "Rote Zwiebel",
+     "abteilung": "Gemüse",
+     "zutat_id": "rote-zwiebel"
+    },
+    {
+     "menge": 2,
+     "einheit": "EL",
+     "name": "Olivenöl",
+     "abteilung": "Vorrat",
+     "zutat_id": "olivenoel"
+    },
+    {
+     "menge": 1,
+     "einheit": "TL",
+     "name": "Oregano (getrocknet)",
+     "abteilung": "Vorrat",
+     "zutat_id": "oregano-getrocknet"
+    }
+   ],
+   "schritte": [
+    {
+     "text": "Backofen auf 200 Grad Ober- und Unterhitze vorheizen."
+    },
+    {
+     "text": "Tomaten, abgetropfte Kichererbsen und Zwiebelspalten in eine Auflaufform geben, mit Öl und Oregano mischen."
+    },
+    {
+     "text": "Feta in die Mitte setzen und alles 20 Minuten backen.",
+     "timer_sekunden": 1200
+    },
+    {
+     "text": "Feta mit einer Gabel zerdrücken und mit dem Gemüse vermengen.",
+     "tipp": "Dazu passt Fladenbrot, für Keto einfach weglassen."
+    }
+   ]
+  },
+  {
+   "id": "nudeln-tomatensosse-verstecktes-gemuese",
+   "titel": "Nudeln mit Tomatensoße und verstecktem Gemüse",
+   "schwerpunkt": [
+    "Familie"
+   ],
+   "ernaehrung": [
+    "vegetarisch",
+    "vegan",
+    "laktosefrei"
+   ],
+   "tags": [
+    "Kinderfreundlich",
+    "Günstig",
+    "Viel Gemüse"
+   ],
+   "mahlzeit": "Abendessen",
+   "minuten": 20,
+   "portionen": 2,
+   "naehrwerte": {
+    "kcal": 470,
+    "eiweiss_g": 16,
+    "kohlenhydrate_g": 82,
+    "fett_g": 8
+   },
+   "zutaten": [
+    {
+     "menge": 200,
+     "einheit": "g",
+     "name": "Nudeln",
+     "abteilung": "Vorrat",
+     "zutat_id": "nudeln"
+    },
+    {
+     "menge": 400,
+     "einheit": "g",
+     "name": "Passierte Tomaten",
+     "abteilung": "Konserven",
+     "zutat_id": "passierte-tomaten"
+    },
+    {
+     "menge": 1,
+     "einheit": "Stück",
+     "name": "Karotte",
+     "abteilung": "Gemüse",
+     "zutat_id": "karotte"
+    },
+    {
+     "menge": 0.5,
+     "einheit": "Stück",
+     "name": "Zucchini",
+     "abteilung": "Gemüse",
+     "zutat_id": "zucchini"
+    },
+    {
+     "menge": 1,
+     "einheit": "Stück",
+     "name": "Zwiebel",
+     "abteilung": "Gemüse",
+     "zutat_id": "zwiebel"
+    },
+    {
+     "menge": 1,
+     "einheit": "EL",
+     "name": "Olivenöl",
+     "abteilung": "Vorrat",
+     "zutat_id": "olivenoel"
+    },
+    {
+     "menge": 1,
+     "einheit": "TL",
+     "name": "Oregano (getrocknet)",
+     "abteilung": "Vorrat",
+     "zutat_id": "oregano-getrocknet"
+    }
+   ],
+   "schritte": [
+    {
+     "text": "Nudeln nach Packungsangabe in Salzwasser kochen.",
+     "timer_sekunden": 600
+    },
+    {
+     "text": "Zwiebel würfeln, Karotte und Zucchini fein reiben."
+    },
+    {
+     "text": "Alles in Olivenöl 4 Minuten weich dünsten.",
+     "timer_sekunden": 240
+    },
+    {
+     "text": "Passierte Tomaten und Oregano dazugeben und 8 Minuten leise köcheln lassen.",
+     "timer_sekunden": 480
+    },
+    {
+     "text": "Soße salzen, nach Wunsch pürieren und mit den Nudeln mischen.",
+     "tipp": "Püriert merkt kein Kind, dass Gemüse drin ist."
+    }
+   ]
+  },
+  {
+   "id": "omelett-spinat-feta",
+   "titel": "Omelett mit Spinat und Feta",
+   "schwerpunkt": [
+    "Keto",
+    "Fitness"
+   ],
+   "ernaehrung": [
+    "vegetarisch",
+    "glutenfrei"
+   ],
+   "tags": [
+    "Low Carb",
+    "Protein",
+    "Wenig Aufwand"
+   ],
+   "mahlzeit": "Frühstück",
+   "minuten": 10,
+   "portionen": 2,
+   "naehrwerte": {
+    "kcal": 380,
+    "eiweiss_g": 26,
+    "kohlenhydrate_g": 4,
+    "fett_g": 29
+   },
+   "zutaten": [
+    {
+     "menge": 5,
+     "einheit": "Stück",
+     "name": "Eier",
+     "abteilung": "Kühlregal",
+     "zutat_id": "eier"
+    },
+    {
+     "menge": 100,
+     "einheit": "g",
+     "name": "Babyspinat",
+     "abteilung": "Gemüse",
+     "zutat_id": "babyspinat"
+    },
+    {
+     "menge": 80,
+     "einheit": "g",
+     "name": "Feta",
+     "abteilung": "Kühlregal",
+     "zutat_id": "feta"
+    },
+    {
+     "menge": 15,
+     "einheit": "g",
+     "name": "Butter",
+     "abteilung": "Kühlregal",
+     "zutat_id": "butter"
+    }
+   ],
+   "schritte": [
+    {
+     "text": "Eier mit einer Prise Salz und Pfeffer verquirlen."
+    },
+    {
+     "text": "Spinat in der Hälfte der Butter 1 Minute zusammenfallen lassen und herausnehmen.",
+     "timer_sekunden": 60
+    },
+    {
+     "text": "Restliche Butter schmelzen, Eier hineingeben und bei mittlerer Hitze 3 Minuten stocken lassen.",
+     "timer_sekunden": 180
+    },
+    {
+     "text": "Spinat und zerbröselten Feta auf eine Hälfte geben, zuklappen und noch 1 Minute ziehen lassen.",
+     "timer_sekunden": 60
+    }
+   ]
+  },
+  {
+   "id": "fischstaebchen-kartoffelstampf-erbsen",
+   "titel": "Fischstäbchen mit Kartoffelstampf und Erbsen",
+   "schwerpunkt": [
+    "Familie",
+    "Fisch"
+   ],
+   "ernaehrung": [
+    "pescetarisch"
+   ],
+   "tags": [
+    "Kinderfreundlich",
+    "Günstig"
+   ],
+   "mahlzeit": "Abendessen",
+   "minuten": 30,
+   "portionen": 2,
+   "naehrwerte": {
+    "kcal": 590,
+    "eiweiss_g": 26,
+    "kohlenhydrate_g": 70,
+    "fett_g": 21
+   },
+   "zutaten": [
+    {
+     "menge": 8,
+     "einheit": "Stück",
+     "name": "Fischstäbchen (TK)",
+     "abteilung": "Tiefkühl",
+     "zutat_id": "fischstaebchen-tk"
+    },
+    {
+     "menge": 500,
+     "einheit": "g",
+     "name": "Kartoffeln (mehlig)",
+     "abteilung": "Gemüse",
+     "zutat_id": "kartoffeln-mehlig"
+    },
+    {
+     "menge": 200,
+     "einheit": "g",
+     "name": "Erbsen (TK)",
+     "abteilung": "Tiefkühl",
+     "zutat_id": "erbsen-tk"
+    },
+    {
+     "menge": 100,
+     "einheit": "ml",
+     "name": "Milch",
+     "abteilung": "Kühlregal",
+     "zutat_id": "milch"
+    },
+    {
+     "menge": 20,
+     "einheit": "g",
+     "name": "Butter",
+     "abteilung": "Kühlregal",
+     "zutat_id": "butter"
+    },
+    {
+     "menge": 0.5,
+     "einheit": "Stück",
+     "name": "Zitrone",
+     "abteilung": "Obst",
+     "zutat_id": "zitrone"
+    }
+   ],
+   "schritte": [
+    {
+     "text": "Kartoffeln schälen, würfeln und 15 Minuten in Salzwasser weich kochen.",
+     "timer_sekunden": 900
+    },
+    {
+     "text": "Fischstäbchen nach Packungsangabe im Ofen oder in der Pfanne knusprig garen."
+    },
+    {
+     "text": "Erbsen 3 Minuten in wenig Wasser erhitzen.",
+     "timer_sekunden": 180
+    },
+    {
+     "text": "Kartoffeln abgießen, mit warmer Milch und Butter stampfen und mit Salz und Muskat abschmecken.",
+     "tipp": "Warme Milch macht den Stampf cremig statt klebrig."
+    },
+    {
+     "text": "Alles anrichten und mit Zitronenspalten servieren."
+    }
+   ]
+  }
+ ]
+}

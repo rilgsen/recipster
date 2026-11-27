@@ -1,0 +1,1402 @@
+{
+ "hinweis": "Entwurf des Zutatenkatalogs, automatisch aus 33 Rezepten erzeugt. basis_einheit, gramm_pro_einheit, immer_im_haus und haltbarkeit_tage sind noch nicht gepflegt.",
+ "zutaten": [
+  {
+   "id": "apfel",
+   "name": "Apfel",
+   "abteilung": "Obst",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "apfelmus",
+   "name": "Apfelmus",
+   "abteilung": "Konserven",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "avocado",
+   "name": "Avocado",
+   "abteilung": "Obst",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "babyspinat",
+   "name": "Babyspinat",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "backpulver",
+   "name": "Backpulver",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "TL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "bananen",
+   "name": "Bananen",
+   "abteilung": "Obst",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "basmatireis",
+   "name": "Basmatireis",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 5
+  },
+  {
+   "id": "beerenmischung-tk",
+   "name": "Beerenmischung (TK)",
+   "abteilung": "Tiefkühl",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "bergkaese-gerieben",
+   "name": "Bergkäse (gerieben)",
+   "abteilung": "Kühlregal",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "blumenkohl",
+   "name": "Blumenkohl",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "brokkoli",
+   "name": "Brokkoli",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 3
+  },
+  {
+   "id": "butter",
+   "name": "Butter",
+   "abteilung": "Kühlregal",
+   "einheiten": [
+    "EL",
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 8
+  },
+  {
+   "id": "champignons",
+   "name": "Champignons",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "chiliflocken",
+   "name": "Chiliflocken",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "TL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "dill",
+   "name": "Dill",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Bund"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "edamame-tk-geschaelt",
+   "name": "Edamame (TK, geschält)",
+   "abteilung": "Tiefkühl",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "ei",
+   "name": "Ei",
+   "abteilung": "Kühlregal",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "eier",
+   "name": "Eier",
+   "abteilung": "Kühlregal",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 7
+  },
+  {
+   "id": "erbsen-tk",
+   "name": "Erbsen (TK)",
+   "abteilung": "Tiefkühl",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "feldsalat",
+   "name": "Feldsalat",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "feta",
+   "name": "Feta",
+   "abteilung": "Kühlregal",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 3
+  },
+  {
+   "id": "fischstaebchen-tk",
+   "name": "Fischstäbchen (TK)",
+   "abteilung": "Tiefkühl",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "forellenfilets",
+   "name": "Forellenfilets",
+   "abteilung": "Fisch",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "fruehlingszwiebeln",
+   "name": "Frühlingszwiebeln",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "garnelen-geschaelt",
+   "name": "Garnelen (geschält)",
+   "abteilung": "Fisch",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "gemuesebruehe",
+   "name": "Gemüsebrühe",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "ml"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 3
+  },
+  {
+   "id": "gouda-gerieben",
+   "name": "Gouda (gerieben)",
+   "abteilung": "Kühlregal",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "gruene-bohnen-tk",
+   "name": "Grüne Bohnen (TK)",
+   "abteilung": "Tiefkühl",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "haferflocken-zart",
+   "name": "Haferflocken (zart)",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "hokkaido-kuerbis",
+   "name": "Hokkaido-Kürbis",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "honig",
+   "name": "Honig",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "EL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 3
+  },
+  {
+   "id": "haehnchenbrustfilet",
+   "name": "Hähnchenbrustfilet",
+   "abteilung": "Fleisch",
+   "einheiten": [
+    "Stück",
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 4
+  },
+  {
+   "id": "haehnchenunterschenkel",
+   "name": "Hähnchenunterschenkel",
+   "abteilung": "Fleisch",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "ingwer-daumengross",
+   "name": "Ingwer (daumengroß)",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 3
+  },
+  {
+   "id": "kabeljaufilet",
+   "name": "Kabeljaufilet",
+   "abteilung": "Fisch",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "karotte",
+   "name": "Karotte",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "karotten",
+   "name": "Karotten",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 5
+  },
+  {
+   "id": "kartoffeln-festkochend",
+   "name": "Kartoffeln (festkochend)",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 4
+  },
+  {
+   "id": "kartoffeln-mehlig",
+   "name": "Kartoffeln (mehlig)",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "kichererbsen",
+   "name": "Kichererbsen",
+   "abteilung": "Konserven",
+   "einheiten": [
+    "Dose"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "kirschtomaten",
+   "name": "Kirschtomaten",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 3
+  },
+  {
+   "id": "knoblauch",
+   "name": "Knoblauch",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Zehe",
+    "Zehen"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 6
+  },
+  {
+   "id": "kochsahne",
+   "name": "Kochsahne",
+   "abteilung": "Kühlregal",
+   "einheiten": [
+    "ml"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "kokosmilch",
+   "name": "Kokosmilch",
+   "abteilung": "Konserven",
+   "einheiten": [
+    "ml"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "kreuzkuemmel",
+   "name": "Kreuzkümmel",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "TL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "kuerbiskerne",
+   "name": "Kürbiskerne",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "EL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "lachsfilet",
+   "name": "Lachsfilet",
+   "abteilung": "Fisch",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "limette",
+   "name": "Limette",
+   "abteilung": "Obst",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "magerquark",
+   "name": "Magerquark",
+   "abteilung": "Kühlregal",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "mais",
+   "name": "Mais",
+   "abteilung": "Konserven",
+   "einheiten": [
+    "Dose"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "mandelblaettchen",
+   "name": "Mandelblättchen",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "mandeln-gehackt",
+   "name": "Mandeln (gehackt)",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "matjesfilets",
+   "name": "Matjesfilets",
+   "abteilung": "Fisch",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "mehl",
+   "name": "Mehl",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "EL",
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "milch",
+   "name": "Milch",
+   "abteilung": "Kühlregal",
+   "einheiten": [
+    "EL",
+    "ml"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 4
+  },
+  {
+   "id": "mozzarella",
+   "name": "Mozzarella",
+   "abteilung": "Kühlregal",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "muskatnuss",
+   "name": "Muskatnuss",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "Prise"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "naturjoghurt",
+   "name": "Naturjoghurt",
+   "abteilung": "Kühlregal",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 3
+  },
+  {
+   "id": "nudeln",
+   "name": "Nudeln",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "nudeln-kurz",
+   "name": "Nudeln (kurz)",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "olivenoel",
+   "name": "Olivenöl",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "EL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 17
+  },
+  {
+   "id": "oregano-getrocknet",
+   "name": "Oregano (getrocknet)",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "TL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 4
+  },
+  {
+   "id": "pak-choi",
+   "name": "Pak Choi",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "paniermehl",
+   "name": "Paniermehl",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "paprika-rot-und-gelb",
+   "name": "Paprika (rot und gelb)",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "paprikapulver-edelsuess",
+   "name": "Paprikapulver (edelsüß)",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "TL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 5
+  },
+  {
+   "id": "parmesan-gerieben",
+   "name": "Parmesan (gerieben)",
+   "abteilung": "Kühlregal",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "passierte-tomaten",
+   "name": "Passierte Tomaten",
+   "abteilung": "Konserven",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "pesto-gruen",
+   "name": "Pesto (grün)",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "EL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "putenbrust",
+   "name": "Putenbrust",
+   "abteilung": "Fleisch",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "rapsoel",
+   "name": "Rapsöl",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "EL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 5
+  },
+  {
+   "id": "rinderhackfleisch",
+   "name": "Rinderhackfleisch",
+   "abteilung": "Fleisch",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "rinderhueftsteak",
+   "name": "Rinderhüftsteak",
+   "abteilung": "Fleisch",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "romanasalat-herz",
+   "name": "Romanasalat (Herz)",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "rote-currypaste",
+   "name": "Rote Currypaste",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "EL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "rote-linsen",
+   "name": "Rote Linsen",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "rote-paprika",
+   "name": "Rote Paprika",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 5
+  },
+  {
+   "id": "rote-zwiebel",
+   "name": "Rote Zwiebel",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 3
+  },
+  {
+   "id": "rucola",
+   "name": "Rucola",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "raeucherlachs",
+   "name": "Räucherlachs",
+   "abteilung": "Fisch",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "salatgurke",
+   "name": "Salatgurke",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 4
+  },
+  {
+   "id": "salz",
+   "name": "Salz",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "Prise",
+    "TL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "schnittlauch",
+   "name": "Schnittlauch",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Bund"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "schwarze-oliven-entsteint",
+   "name": "Schwarze Oliven (entsteint)",
+   "abteilung": "Konserven",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "seelachsfilet",
+   "name": "Seelachsfilet",
+   "abteilung": "Fisch",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "senf",
+   "name": "Senf",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "TL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "senf-mittelscharf",
+   "name": "Senf (mittelscharf)",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "EL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "sesam",
+   "name": "Sesam",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "EL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "sesamoel",
+   "name": "Sesamöl",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "TL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "sojasauce",
+   "name": "Sojasauce",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "EL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 5
+  },
+  {
+   "id": "speisequark-20",
+   "name": "Speisequark (20 %)",
+   "abteilung": "Kühlregal",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "speisestaerke",
+   "name": "Speisestärke",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "TL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "spaetzle-kuehlregal",
+   "name": "Spätzle (Kühlregal)",
+   "abteilung": "Kühlregal",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "stueckige-tomaten-dose",
+   "name": "Stückige Tomaten (Dose)",
+   "abteilung": "Konserven",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "thunfisch-im-eigenen-saft",
+   "name": "Thunfisch im eigenen Saft",
+   "abteilung": "Konserven",
+   "einheiten": [
+    "Dosen"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "thymian-getrocknet",
+   "name": "Thymian (getrocknet)",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "TL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "tomaten",
+   "name": "Tomaten",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "tomatenmark",
+   "name": "Tomatenmark",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "EL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "vollkorn-wraps",
+   "name": "Vollkorn-Wraps",
+   "abteilung": "Brot",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "vollkornnudeln",
+   "name": "Vollkornnudeln",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "weissweinessig",
+   "name": "Weißweinessig",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "EL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "zimt",
+   "name": "Zimt",
+   "abteilung": "Vorrat",
+   "einheiten": [
+    "TL"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 2
+  },
+  {
+   "id": "zitrone",
+   "name": "Zitrone",
+   "abteilung": "Obst",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 8
+  },
+  {
+   "id": "zucchini",
+   "name": "Zucchini",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 5
+  },
+  {
+   "id": "zuckerschoten",
+   "name": "Zuckerschoten",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "g"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  },
+  {
+   "id": "zwiebel",
+   "name": "Zwiebel",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 8
+  },
+  {
+   "id": "zwiebeln",
+   "name": "Zwiebeln",
+   "abteilung": "Gemüse",
+   "einheiten": [
+    "Stück"
+   ],
+   "basis_einheit": null,
+   "gramm_pro_einheit": {},
+   "immer_im_haus": false,
+   "haltbarkeit_tage": null,
+   "in_rezepten": 1
+  }
+ ]
+}
