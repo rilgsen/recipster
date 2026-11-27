@@ -1,0 +1,59 @@
+name: Prüfung
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pruefung-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  code:
+    name: Lint, Typen, Tests, Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Typprüfung
+        run: npm run typecheck
+      - name: Unit-Tests
+        run: npm test -- --ci
+      - name: Build (iOS-Bundle)
+        run: npm run build:check
+
+  abhaengigkeiten:
+    name: Abhängigkeiten
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Schlägt ab Stufe "high" fehl. Stand 27.11.2026 gibt es drei Meldungen der
+      # Stufe "moderate" (minimatch über expo), für die es noch keine Korrektur gibt.
+      - run: npm audit --audit-level=high
+
+  geheimnisse:
+    name: Geheimnisse
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
