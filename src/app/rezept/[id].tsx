@@ -1,6 +1,6 @@
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { useState } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Linking, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { Abschnitt, Chip, Karte, Knopf, Zaehler } from '@/components/bausteine';
 import { Blatt } from '@/components/blatt';
@@ -57,7 +57,12 @@ export default function RezeptSeite() {
         {rezept.titel}
       </Text>
       <Text style={styles.angaben}>
-        {[de.rezept.minuten(rezept.minuten), rezept.mahlzeit, ...rezept.schwerpunkt].join(' · ')}
+        {[
+          ...(rezept.minuten > 0 ? [de.rezept.minuten(rezept.minuten)] : []),
+          rezept.mahlzeit,
+          ...rezept.schwerpunkt,
+          ...(rezept.quelle ? [de.eigenes.eigenesZeichen] : []),
+        ].join(' · ')}
       </Text>
       <View style={styles.chips}>
         {[...rezept.ernaehrung.filter(istErnaehrungsform), ...rezept.tags].map((tag) => (
@@ -133,6 +138,12 @@ export default function RezeptSeite() {
               </View>
             );
           })}
+          {(rezept.freie_zutaten ?? []).map((text) => (
+            <Text key={text} style={styles.zutatName}>
+              {text}
+            </Text>
+          ))}
+          {rezept.freie_zutaten?.length ? <Text style={styles.hinweis}>{de.eigenes.freiHinweis}</Text> : null}
         </Karte>
       </Abschnitt>
 
@@ -163,6 +174,26 @@ export default function RezeptSeite() {
             <Wert name={de.rezept.fett} wert={de.rezept.gramm(werte.fett_g)} />
           </Karte>
         </Abschnitt>
+      ) : null}
+
+      {rezept.quellenlink ? (
+        <Abschnitt titel={de.rezept.quelle}>
+          <Text style={styles.hinweis}>{rezept.quellenlink}</Text>
+          <Knopf
+            titel={de.eigenes.quelleOeffnen}
+            art="neben"
+            onPress={() => {
+              Linking.openURL(rezept.quellenlink as string).catch(() => undefined);
+            }}
+          />
+        </Abschnitt>
+      ) : null}
+      {rezept.quelle ? (
+        <Knopf
+          titel={de.eigenes.bearbeiten}
+          art="neben"
+          onPress={() => router.push({ pathname: '/eigenes', params: { id: rezept.id } })}
+        />
       ) : null}
 
       <Knopf

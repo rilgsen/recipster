@@ -22,9 +22,14 @@ export type Rezept = {
   naehrwerte?: Naehrwerte;
   zutaten: Rezeptzutat[];
   schritte: Schritt[];
-  /** Nur bei importierten Rezepten. */
-  quelle?: 'import';
+  /** Nur bei eigenen Rezepten: importiert oder von Hand angelegt. */
+  quelle?: 'import' | 'eigen';
   quellenlink?: string;
+  /**
+   * Nur bei eigenen Rezepten: Zutatenzeilen ohne Zuordnung zum Katalog (Regel I3).
+   * Sie werden nicht umgerechnet und nicht mit dem Vorrat abgeglichen.
+   */
+  freie_zutaten?: string[];
 };
 
 /** Mitgelieferte Daten. Sie werden zur Laufzeit nie verändert. */

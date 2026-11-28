@@ -51,6 +51,7 @@ export default function RootLayout() {
         <Stack.Screen name="vorrat" options={{ title: de.vorrat.titel, presentation: 'modal' }} />
         <Stack.Screen name="auswahl" options={{ title: de.woche.wahlTitel, presentation: 'modal' }} />
         <Stack.Screen name="rezept/[id]" options={{ title: '', headerBackButtonDisplayMode: 'minimal' }} />
+        <Stack.Screen name="eigenes" options={{ title: de.eigenes.titelNeu, presentation: 'modal' }} />
         <Stack.Screen name="start" options={{ headerShown: false, title: '' }} />
         <Stack.Screen name="kochen/[id]" options={{ title: '', headerBackButtonDisplayMode: 'minimal' }} />
         <Stack.Screen
