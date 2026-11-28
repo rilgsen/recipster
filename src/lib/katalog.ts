@@ -3,6 +3,8 @@
 export type Basiseinheit = 'g' | 'ml' | 'Stück';
 export type Rezepteinheit = Basiseinheit | 'EL' | 'TL' | 'Prise';
 
+export type Stueckrundung = 'ganz' | 'halb';
+
 export const REZEPTEINHEITEN: readonly Rezepteinheit[] = ['g', 'ml', 'Stück', 'EL', 'TL', 'Prise'];
 
 export type Zutat = {
@@ -15,6 +17,11 @@ export type Zutat = {
   stueck_name?: string;
   /** Basiseinheiten je anderer Einheit, zum Beispiel { EL: 15 } bei ml. */
   umrechnung: Partial<Record<'EL' | 'TL' | 'Stück', number>>;
+  /**
+   * Schritt, auf den Stück im Rezept aufgerundet werden: ganze Stück (Ei) oder halbe (Zwiebel).
+   * Fehlt die Angabe, gelten ganze Stück.
+   */
+  rundung?: Stueckrundung;
   immer_im_haus: boolean;
   /** null heißt unbegrenzt haltbar. */
   haltbarkeit_tage: number | null;

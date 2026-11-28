@@ -56,11 +56,13 @@ export default function Heute() {
           {bald.map(({ zutat, resttage }) => (
             <Text key={zutat.id} style={styles.tippInhalt}>
               {zutat.name}:{' '}
-              {resttage === 1
-                ? de.vorrat.baldMorgen
-                : resttage === 0
-                  ? de.vorrat.baldHeute
-                  : de.vorrat.baldUeber(-resttage)}
+              {resttage > 1
+                ? de.vorrat.baldTage(resttage)
+                : resttage === 1
+                  ? de.vorrat.baldMorgen
+                  : resttage === 0
+                    ? de.vorrat.baldHeute
+                    : de.vorrat.baldUeber(-resttage)}
             </Text>
           ))}
           <Text style={styles.klein}>{de.vorrat.baldHinweis}</Text>

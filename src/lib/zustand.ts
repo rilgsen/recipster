@@ -12,8 +12,11 @@ export type Zustand = {
   rezeptstatus: Record<string, Rezeptstatus>;
   plan: Planeintrag[];
   vorrat: Record<string, Vorratseintrag>;
-  /** Haken an berechneten Posten, nach Zutatenkennung. */
-  einkaufAbgehakt: Record<string, true>;
+  /**
+   * Haken an berechneten Posten, nach Zutatenkennung. Gemerkt wird die Menge in der Basiseinheit,
+   * die beim Abhaken auf der Liste stand, null bei einem Posten ohne Menge.
+   */
+  einkaufAbgehakt: Record<string, number | null>;
   /** Einträge von Hand. Sie überstehen jede Neuberechnung. */
   einkaufHand: Handeintrag[];
   /** Wie oft etwas gekauft wurde, für „Häufig gekauft“. Schlüssel ist der Name in Kleinbuchstaben. */
@@ -73,7 +76,7 @@ export type Aktion =
   | { typ: 'planEntfernen'; id: string }
   | { typ: 'planVerschieben'; id: string; datum: Tag; mahlzeit?: Mahlzeit }
   | { typ: 'planPortionen'; id: string; portionen: number }
-  | { typ: 'einkaufHaken'; zutatId: string; aktiv: boolean }
+  | { typ: 'einkaufHaken'; zutatId: string; aktiv: boolean; menge: number | null }
   | { typ: 'einkaufHandHinzu'; id: string; text: string }
   | { typ: 'einkaufHandHaken'; id: string; aktiv: boolean }
   | { typ: 'einkaufHandEntfernen'; id: string }
@@ -136,7 +139,7 @@ export function reduziere(zustand: Zustand, aktion: Aktion): Zustand {
     case 'einkaufHaken': {
       const abgehakt = { ...zustand.einkaufAbgehakt };
       if (aktion.aktiv) {
-        abgehakt[aktion.zutatId] = true;
+        abgehakt[aktion.zutatId] = aktion.menge;
       } else {
         delete abgehakt[aktion.zutatId];
       }
@@ -248,7 +251,14 @@ export function ausGespeichertem(roh: unknown): Zustand {
       : [],
     vorrat: daten.vorrat && typeof daten.vorrat === 'object' ? { ...daten.vorrat } : {},
     einkaufAbgehakt:
-      daten.einkaufAbgehakt && typeof daten.einkaufAbgehakt === 'object' ? { ...daten.einkaufAbgehakt } : {},
+      daten.einkaufAbgehakt && typeof daten.einkaufAbgehakt === 'object'
+        ? Object.fromEntries(
+            Object.entries(daten.einkaufAbgehakt as Record<string, unknown>).filter(
+              (paar): paar is [string, number | null] =>
+                paar[1] === null || (typeof paar[1] === 'number' && Number.isFinite(paar[1]) && paar[1] >= 0)
+            )
+          )
+        : {},
     einkaufHand: Array.isArray(daten.einkaufHand)
       ? daten.einkaufHand
           .filter((e) => e && typeof e.id === 'string' && typeof e.text === 'string' && e.text.trim())

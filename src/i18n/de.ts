@@ -117,6 +117,7 @@ export const de = {
     entfernen: (name: string) => `${name} entfernen`,
     haeufig: 'Häufig gekauft',
     fuer: (rezepte: string) => `für ${rezepte}`,
+    nochDazu: (menge: string) => `kommt neu dazu, ${menge} sind schon abgehakt`,
     nachGeschmack: 'nach Bedarf',
     aufListe: 'Zutaten auf die Einkaufsliste',
     aufListeFertig: (zahl: number) =>
@@ -138,6 +139,7 @@ export const de = {
     bald: 'Bald aufbrauchen',
     baldHeute: 'Haltbarkeit läuft heute ab',
     baldMorgen: 'noch 1 Tag',
+    baldTage: (tage: number) => `noch ${tage} Tage`,
     baldUeber: (tage: number) => (tage === 1 ? 'seit 1 Tag über der Haltbarkeit' : `seit ${tage} Tagen über der Haltbarkeit`),
     baldHinweis: 'Richtwerte ab Kaufdatum. Bitte selbst prüfen, ob etwas noch gut ist.',
   },

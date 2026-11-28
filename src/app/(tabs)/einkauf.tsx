@@ -8,7 +8,7 @@ import { Abstand, Basis, Radius, Schrift } from '@/constants/theme';
 import { useHeute } from '@/hooks/use-heute';
 import { de } from '@/i18n/de';
 import { plusTage } from '@/lib/datum';
-import { berechneEinkaufsliste, haeufigGekauft, nachAbteilung } from '@/lib/einkauf';
+import { berechneEinkaufsliste, haeufigGekauft, mitHaken, nachAbteilung } from '@/lib/einkauf';
 import { formatiereMenge, zutatName } from '@/lib/mengen';
 import { neueId } from '@/lib/zustand';
 import { useDaten, useStore } from '@/store/store';
@@ -23,7 +23,7 @@ export default function Einkauf() {
   const [tage, setTage] = useState(7);
   const [eingabe, setEingabe] = useState('');
 
-  const posten = useMemo(
+  const berechnet = useMemo(
     () =>
       berechneEinkaufsliste({
         plan: zustand.plan,
@@ -35,8 +35,10 @@ export default function Einkauf() {
       }),
     [zustand.plan, zustand.vorrat, rezeptNach, katalog, heute, tage]
   );
+  const posten = mitHaken(berechnet, zustand.einkaufAbgehakt);
   const gruppen = nachAbteilung(posten);
-  const abgehaktePosten = posten.filter((p) => zustand.einkaufAbgehakt[p.zutat.id]);
+  // Auch ein Posten, der nach einer Planänderung wieder offen ist, wurde schon einmal gekauft.
+  const abgehaktePosten = posten.filter((p) => p.abgehakt || p.schonAbgehakt !== undefined);
   const abgehakt = abgehaktePosten.length + zustand.einkaufHand.filter((e) => e.abgehakt).length;
   const hatGeplantes = zustand.plan.some((e) => e.rezeptId && !e.gekocht && e.datum >= heute);
 
@@ -85,14 +87,20 @@ export default function Einkauf() {
                 <Hakenzeile
                   key={p.zutat.id}
                   titel={menge === null ? p.zutat.name : zutatName(p.zutat, menge, p.einheit)}
-                  zusatz={de.einkauf.fuer(p.rezepte.join(', '))}
+                  zusatz={
+                    p.schonAbgehakt === undefined
+                      ? de.einkauf.fuer(p.rezepte.join(', '))
+                      : de.einkauf.nochDazu(formatiereMenge(p.zutat, p.schonAbgehakt, p.einheit))
+                  }
                   rechts={menge === null ? de.einkauf.nachGeschmack : formatiereMenge(p.zutat, menge, p.einheit)}
-                  aktiv={Boolean(zustand.einkaufAbgehakt[p.zutat.id])}
+                  aktiv={p.abgehakt}
                   onPress={() =>
                     aktion({
                       typ: 'einkaufHaken',
                       zutatId: p.zutat.id,
-                      aktiv: !zustand.einkaufAbgehakt[p.zutat.id],
+                      aktiv: !p.abgehakt,
+                      // Gemerkt wird der ganze Bedarf, auch wenn nur noch die Differenz offen war.
+                      menge: menge === null ? null : menge + (p.schonAbgehakt ?? 0),
                     })
                   }
                 />

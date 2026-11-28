@@ -41,6 +41,8 @@ export type Einkaufsanfrage = {
  * Berechnet die Einkaufsliste aus dem Plan (Spec Abschnitt 3):
  * gleiche Zutaten werden in der Basiseinheit zusammengezählt, Vorhandenes fehlt,
  * sortiert wird nach Abteilung und Name. Gekochte Gerichte zählen nicht mehr.
+ * Summiert werden die Mengen, die die Rezepte anzeigen (je Kochvorgang gerundet),
+ * erst die Summe wird auf ganze Stück aufgerundet, weil man ganze Stück kauft.
  */
 export function berechneEinkaufsliste(anfrage: Einkaufsanfrage): Posten[] {
   const { plan, rezeptNach, katalog, vorrat, von, bis } = anfrage;
@@ -97,8 +99,36 @@ export function berechneEinkaufsliste(anfrage: Einkaufsanfrage): Posten[] {
     );
 }
 
-export function nachAbteilung(posten: readonly Posten[]): { abteilung: string; posten: Posten[] }[] {
-  const gruppen: { abteilung: string; posten: Posten[] }[] = [];
+/** Abgehakte Menge je Zutat in der Basiseinheit. null steht für einen Posten ohne Menge. */
+export type Haken = Readonly<Record<string, number | null>>;
+
+export type Listenposten = Posten & {
+  abgehakt: boolean;
+  /** Menge, die schon abgehakt war, wenn der Bedarf danach gestiegen ist. */
+  schonAbgehakt?: number;
+};
+
+/**
+ * Verbindet die berechnete Liste mit den Haken (Regel E4). Ein Haken merkt sich die Menge,
+ * die beim Abhaken auf der Liste stand. Steigt der Bedarf danach, ist der Posten wieder offen
+ * und zeigt nur noch die Differenz. Sinkt der Bedarf, bleibt der Haken.
+ */
+export function mitHaken(posten: readonly Posten[], haken: Haken): Listenposten[] {
+  return posten.map((p) => {
+    if (!(p.zutat.id in haken)) {
+      return { ...p, abgehakt: false };
+    }
+    const gemerkt = haken[p.zutat.id];
+    if (p.menge === null || gemerkt === null || p.menge <= gemerkt + 1e-9) {
+      // Kommt zu einem Haken ohne Menge später eine Menge dazu, ist der Posten wieder offen.
+      return p.menge !== null && gemerkt === null ? { ...p, abgehakt: false } : { ...p, abgehakt: true };
+    }
+    return { ...p, menge: p.menge - gemerkt, abgehakt: false, schonAbgehakt: gemerkt };
+  });
+}
+
+export function nachAbteilung<T extends Posten>(posten: readonly T[]): { abteilung: string; posten: T[] }[] {
+  const gruppen: { abteilung: string; posten: T[] }[] = [];
   for (const p of posten) {
     const letzte = gruppen[gruppen.length - 1];
     if (letzte && letzte.abteilung === p.zutat.abteilung) {
@@ -110,10 +140,13 @@ export function nachAbteilung(posten: readonly Posten[]): { abteilung: string; p
   return gruppen;
 }
 
+/** So viele Einträge zeigt „Häufig gekauft“ höchstens (Kriterium S4-3). */
+export const HAEUFIG_ANZAHL = 8;
+
 export type Kaufzaehler = Record<string, { name: string; zahl: number }>;
 
 /** Die meistgekauften Einträge, ohne die, die schon auf der Liste stehen. */
-export function haeufigGekauft(zaehler: Kaufzaehler, schonAufListe: ReadonlySet<string>, anzahl = 8): string[] {
+export function haeufigGekauft(zaehler: Kaufzaehler, schonAufListe: ReadonlySet<string>, anzahl = HAEUFIG_ANZAHL): string[] {
   return Object.values(zaehler)
     .filter((eintrag) => !schonAufListe.has(eintrag.name.toLowerCase()))
     .sort((a, b) => b.zahl - a.zahl || a.name.localeCompare(b.name, 'de'))

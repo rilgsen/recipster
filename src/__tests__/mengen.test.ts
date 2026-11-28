@@ -2,6 +2,7 @@ import {
   begrenzePersonen,
   formatiereMenge,
   formatiereZahl,
+  mengeImRezept,
   portionsfaktor,
   rundeFuerAnzeige,
   skaliereMenge,
@@ -40,6 +41,28 @@ describe('Mengen umrechnen (S2-3)', () => {
     expect(skaliereMenge(3, 'Stück', 0.5)).toBe(2);
     expect(skaliereMenge(1, 'Stück', 0.5)).toBe(1);
     expect(skaliereMenge(2, 'Stück', 2)).toBe(4);
+  });
+
+  it('rundet teilbare Stück auf halbe auf (M3)', () => {
+    expect(skaliereMenge(1, 'Stück', 0.25, 'halb')).toBe(0.5);
+    expect(skaliereMenge(1, 'Stück', 0.5, 'halb')).toBe(0.5);
+    expect(skaliereMenge(1, 'Stück', 0.75, 'halb')).toBe(1);
+    expect(skaliereMenge(1, 'Stück', 1.5, 'halb')).toBe(1.5);
+    expect(skaliereMenge(1, 'Stück', 0.25, 'ganz')).toBe(1);
+  });
+
+  it('nimmt die Rundung aus dem Katalog: Ei ganz, Zwiebel halb', () => {
+    const zwiebel = MITGELIEFERTE_ZUTATEN.find((z) => z.id === 'zwiebel')!;
+    const eiZutat = MITGELIEFERTE_ZUTATEN.find((z) => z.id === 'ei')!;
+    expect(mengeImRezept(zwiebel, { zutat_id: 'zwiebel', menge: 1, einheit: 'Stück' }, 0.25)).toBe(0.5);
+    expect(mengeImRezept(eiZutat, { zutat_id: 'ei', menge: 1, einheit: 'Stück' }, 0.25)).toBe(1);
+    expect(formatiereMenge(zwiebel, 0.5, 'Stück')).toBe('½');
+    expect(formatiereMenge(zwiebel, 1.5, 'Stück')).toBe('1 ½');
+  });
+
+  it('gibt jeder Stück-Zutat im Katalog eine Rundung', () => {
+    const ohne = MITGELIEFERTE_ZUTATEN.filter((z) => z.basis_einheit === 'Stück' && !z.rundung);
+    expect(ohne.map((z) => z.id)).toEqual([]);
   });
 
   it('fällt nicht auf Rundungsfehler herein', () => {

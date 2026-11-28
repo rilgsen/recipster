@@ -1,7 +1,8 @@
-import { berechneEinkaufsliste, haeufigGekauft, nachAbteilung } from '@/lib/einkauf';
+import { berechneEinkaufsliste, haeufigGekauft, mitHaken, nachAbteilung } from '@/lib/einkauf';
 import type { Zutat } from '@/lib/katalog';
 import { alsKarte, MITGELIEFERTE_REZEPTE, MITGELIEFERTE_ZUTATEN, type Rezept } from '@/lib/rezepte';
-import { aufgebrauchtVorschlag, baldAufbrauchen, istVorhanden } from '@/lib/vorrat';
+import { aufgebrauchtVorschlag, baldAufbrauchen, istVorhanden, vorwarnTage } from '@/lib/vorrat';
+import { plusTage } from '@/lib/datum';
 import { reduziere, STARTZUSTAND, type Planeintrag, type Zustand } from '@/lib/zustand';
 
 const katalog = alsKarte(MITGELIEFERTE_ZUTATEN);
@@ -120,13 +121,50 @@ describe('Vorrat und Einkaufsliste (S4-3)', () => {
 describe('Haken und Einträge von Hand (S4-2)', () => {
   it('behält Haken und eigene Einträge, wenn sich der Plan ändert', () => {
     let z = reduziere(STARTZUSTAND, { typ: 'planHinzu', eintrag: geplant('1', 'a') });
-    z = reduziere(z, { typ: 'einkaufHaken', zutatId: 'ei', aktiv: true });
+    z = reduziere(z, { typ: 'einkaufHaken', zutatId: 'ei', aktiv: true, menge: 3 });
     z = reduziere(z, { typ: 'einkaufHandHinzu', id: 'h1', text: 'Spülmittel' });
     z = reduziere(z, { typ: 'einkaufHandHaken', id: 'h1', aktiv: true });
     z = reduziere(z, { typ: 'planHinzu', eintrag: geplant('2', 'b') });
     z = reduziere(z, { typ: 'planEntfernen', id: '1' });
-    expect(z.einkaufAbgehakt).toEqual({ ei: true });
+    expect(z.einkaufAbgehakt).toEqual({ ei: 3 });
     expect(z.einkaufHand).toEqual([{ id: 'h1', text: 'Spülmittel', abgehakt: true }]);
+  });
+
+  it('öffnet einen abgehakten Posten wieder mit der Differenz, wenn der Bedarf steigt (E4)', () => {
+    const vorher = liste([geplant('1', 'a')]);
+    const haken = { ei: menge(vorher, 'ei') as number, lachsfilet: 300 };
+    expect(mitHaken(vorher, haken).find((p) => p.zutat.id === 'ei')).toMatchObject({ abgehakt: true, menge: 3 });
+
+    const nachher = mitHaken(liste([geplant('1', 'a'), geplant('2', 'b')]), haken);
+    expect(nachher.find((p) => p.zutat.id === 'ei')).toMatchObject({ abgehakt: false, menge: 1, schonAbgehakt: 3 });
+    expect(nachher.find((p) => p.zutat.id === 'lachsfilet')).toMatchObject({ abgehakt: true, menge: 300 });
+    expect(nachher.find((p) => p.zutat.id === 'brokkoli')).toMatchObject({ abgehakt: false, menge: 400 });
+  });
+
+  it('lässt den Haken stehen, wenn der Bedarf sinkt, und kennt Posten ohne Menge', () => {
+    const posten = liste([geplant('1', 'a', { portionen: 1 })], { salz: { vorhanden: false } });
+    const mit = mitHaken(posten, { lachsfilet: 300, salz: null });
+    expect(mit.find((p) => p.zutat.id === 'lachsfilet')).toMatchObject({ abgehakt: true, menge: 150 });
+    expect(mit.find((p) => p.zutat.id === 'salz')).toMatchObject({ abgehakt: true, menge: null });
+  });
+
+  it('zählt je Kochvorgang gerundete Mengen zusammen: dreimal ein Viertel Ei sind drei Eier (M3, E2)', () => {
+    const viertel = rezept('v', [{ zutat_id: 'ei', menge: 1, einheit: 'Stück' }], 4);
+    const zwiebeln = rezept('z', [{ zutat_id: 'zwiebel', menge: 1, einheit: 'Stück' }], 4);
+    const posten = berechneEinkaufsliste({
+      plan: ['1', '2', '3'].flatMap((n) => [
+        geplant(`v${n}`, 'v', { portionen: 1 }),
+        geplant(`z${n}`, 'z', { portionen: 1 }),
+      ]),
+      rezeptNach: alsKarte([viertel, zwiebeln]),
+      katalog,
+      vorrat: { zwiebel: { vorhanden: false } },
+      von: HEUTE,
+      bis: HEUTE,
+    });
+    expect(menge(posten, 'ei')).toBe(3);
+    // Dreimal eine halbe Zwiebel sind anderthalb, gekauft werden zwei ganze.
+    expect(menge(posten, 'zwiebel')).toBe(2);
   });
 
   it('nimmt keinen leeren und keinen doppelten offenen Eintrag an', () => {
@@ -137,7 +175,7 @@ describe('Haken und Einträge von Hand (S4-2)', () => {
   });
 
   it('bucht beim Abschließen Gekauftes in den Vorrat und zählt für „Häufig gekauft“', () => {
-    let z = reduziere(STARTZUSTAND, { typ: 'einkaufHaken', zutatId: 'ei', aktiv: true });
+    let z = reduziere(STARTZUSTAND, { typ: 'einkaufHaken', zutatId: 'ei', aktiv: true, menge: 3 });
     z = reduziere(z, { typ: 'einkaufHandHinzu', id: 'h1', text: 'Spülmittel' });
     z = reduziere(z, { typ: 'einkaufHandHinzu', id: 'h2', text: 'Brot' });
     z = reduziere(z, { typ: 'einkaufHandHaken', id: 'h1', aktiv: true });
@@ -168,7 +206,21 @@ describe('Nach dem Kochen und Haltbarkeit (S4-4)', () => {
     expect(istVorhanden(lachs, z.vorrat)).toBe(false);
   });
 
-  it('meldet „bald aufbrauchen“ ab dem Tag vor Ablauf der Haltbarkeit', () => {
+  it('warnt zwei Tage vorher und trennt „bald“ von „abgelaufen“ (V3)', () => {
+    const ei = katalog.get('ei') as Zutat;
+    const tage = ei.haltbarkeit_tage as number;
+    expect(tage).toBeGreaterThan(3);
+    const vorrat = { ei: { vorhanden: true, gekauftAm: HEUTE } };
+    const am = (abstand: number) => baldAufbrauchen(vorrat, katalog, plusTage(HEUTE, abstand));
+    expect(am(tage - 3)).toEqual([]);
+    expect(am(tage - 2)).toMatchObject([{ resttage: 2, status: 'bald' }]);
+    expect(am(tage)).toMatchObject([{ resttage: 0, status: 'bald' }]);
+    expect(am(tage + 1)).toMatchObject([{ resttage: -1, status: 'abgelaufen' }]);
+    expect(vorwarnTage(3)).toBe(1);
+    expect(vorwarnTage(4)).toBe(2);
+  });
+
+  it('meldet bei kurzer Haltbarkeit ab dem Tag vor Ablauf', () => {
     const tage = lachs.haltbarkeit_tage as number;
     const vorrat = { lachsfilet: { vorhanden: true, gekauftAm: '2026-11-20' } };
     const frueh = baldAufbrauchen(vorrat, katalog, '2026-11-20');
