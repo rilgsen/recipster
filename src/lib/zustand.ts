@@ -442,7 +442,8 @@ export function pruefeEigenesRezept(roh: unknown): Rezept | null {
             typeof z.menge === 'number' &&
             Number.isFinite(z.menge) &&
             z.menge > 0 &&
-            REZEPTEINHEITEN.includes(z.einheit)
+            REZEPTEINHEITEN.includes(z.einheit) &&
+            z.einheit !== 'nach Geschmack'
         )
         .map((z) => ({ zutat_id: z.zutat_id, menge: z.menge, einheit: z.einheit }))
     : [];

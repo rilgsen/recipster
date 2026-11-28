@@ -203,7 +203,9 @@ export default function Kochen() {
               const menge = mengeImRezept(zutat, zeile, faktor);
               return (
                 <Text key={`${zeile.zutat_id}-${i}`} style={styles.text}>
-                  {formatiereMenge(zutat, menge, zeile.einheit)} {zutatName(zutat, menge, zeile.einheit)}
+                  {zeile.einheit === 'nach Geschmack'
+                    ? `${zutat.name}, ${formatiereMenge(zutat, menge, zeile.einheit)}`
+                    : `${formatiereMenge(zutat, menge, zeile.einheit)} ${zutatName(zutat, menge, zeile.einheit)}`}
                   {zeile.zusatz ? ` (${zeile.zusatz})` : ''}
                 </Text>
               );

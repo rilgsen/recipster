@@ -49,7 +49,11 @@ describe('Rezepte passen zum Katalog', () => {
       const zutat = katalog.get(zeile.zutat_id);
       expect(zutat).toBeDefined();
       expect(REZEPTEINHEITEN).toContain(zeile.einheit);
-      expect(zeile.menge).toBeGreaterThan(0);
+      if (zeile.einheit === 'nach Geschmack') {
+        expect(zeile.menge).toBe(0);
+      } else {
+        expect(zeile.menge).toBeGreaterThan(0);
+      }
       expect(() => inBasiseinheit(zutat!, zeile.menge, zeile.einheit)).not.toThrow();
     }
   });
@@ -66,7 +70,7 @@ describe('Umrechnung in die Basiseinheit', () => {
   });
 
   it('rechnet Esslöffel und Stück in Gramm um', () => {
-    expect(inBasiseinheit(butter, 2, 'EL')).toEqual({ menge: 2 * butter.umrechnung.EL!, einheit: 'g' });
+    expect(inBasiseinheit(butter, 2, 'EL')).toEqual({ menge: 28, einheit: 'g' });
     expect(inBasiseinheit(haehnchen, 2, 'Stück')).toEqual({ menge: 360, einheit: 'g' });
   });
 

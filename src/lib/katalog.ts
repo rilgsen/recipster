@@ -1,11 +1,20 @@
 /** Typen und Umrechnung für den Zutatenkatalog (Spec Abschnitt 2 und 3). */
 
 export type Basiseinheit = 'g' | 'ml' | 'Stück';
-export type Rezepteinheit = Basiseinheit | 'EL' | 'TL' | 'Prise';
+/**
+ * „nach Geschmack“ steht für Zutaten ohne Mengenangabe wie Salz und Pfeffer zum Abschmecken.
+ * Die Menge ist dann 0 und wird nie angezeigt oder gerechnet.
+ */
+export type Rezepteinheit = Basiseinheit | 'EL' | 'TL' | 'Prise' | 'nach Geschmack';
+
+/** Einheiten ohne umrechenbare Menge. */
+export function ohneMenge(einheit: Rezepteinheit): boolean {
+  return einheit === 'Prise' || einheit === 'nach Geschmack';
+}
 
 export type Stueckrundung = 'ganz' | 'halb';
 
-export const REZEPTEINHEITEN: readonly Rezepteinheit[] = ['g', 'ml', 'Stück', 'EL', 'TL', 'Prise'];
+export const REZEPTEINHEITEN: readonly Rezepteinheit[] = ['g', 'ml', 'Stück', 'EL', 'TL', 'Prise', 'nach Geschmack'];
 
 export type Zutat = {
   id: string;
@@ -15,6 +24,8 @@ export type Zutat = {
   basis_einheit: Basiseinheit;
   /** Bezeichnung eines Stücks in der Anzeige, zum Beispiel Zehe, Dose oder Bund. */
   stueck_name?: string;
+  /** Größe, die mit einem Stück gemeint ist, zum Beispiel „400 g Füllmenge“ bei einer Dose. */
+  stueck_inhalt?: string;
   /** Basiseinheiten je anderer Einheit, zum Beispiel { EL: 15 } bei ml. */
   umrechnung: Partial<Record<'EL' | 'TL' | 'Stück', number>>;
   /**
@@ -43,7 +54,7 @@ export type Basismenge = { menge: number; einheit: Basiseinheit };
  * Wirft einen Fehler, wenn dem Katalog die Umrechnung fehlt.
  */
 export function inBasiseinheit(zutat: Zutat, menge: number, einheit: Rezepteinheit): Basismenge | null {
-  if (einheit === 'Prise') {
+  if (ohneMenge(einheit)) {
     return null;
   }
   if (einheit === zutat.basis_einheit) {

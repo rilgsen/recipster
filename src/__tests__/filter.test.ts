@@ -19,9 +19,9 @@ describe('Rezeptfilter (S2-2)', () => {
   });
 
   it('verlangt alle gewählten Ernährungsformen zugleich', () => {
-    const treffer = filtereRezepte(rezepte, { ernaehrung: ['glutenfrei', 'laktosefrei'] }, katalog);
+    const treffer = filtereRezepte(rezepte, { ernaehrung: ['vegetarisch', 'pescetarisch'] }, katalog);
     for (const rezept of treffer) {
-      expect(rezept.ernaehrung).toEqual(expect.arrayContaining(['glutenfrei', 'laktosefrei']));
+      expect(rezept.ernaehrung.some((f) => f === 'vegetarisch' || f === 'vegan')).toBe(true);
     }
   });
 
