@@ -1,2483 +1,2120 @@
 {
- "hinweis": "Paket 1 der Rezeptbasis von Recipster. Mengen gelten für 2 Portionen. Nährwerte sind grobe Schätzwerte pro Portion und müssen vor Veröffentlichung nachgerechnet werden.",
- "rezepte": [
-  {
-   "id": "haehnchenschenkel-ofengemuese",
-   "titel": "Knusprige Hähnchenschenkel mit Ofengemüse",
-   "schwerpunkt": [
-    "Keto",
-    "Familie"
-   ],
-   "ernaehrung": [
-    "glutenfrei",
-    "laktosefrei"
-   ],
-   "tags": [
-    "Low Carb",
-    "Protein",
-    "Wenig Aufwand"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 45,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 560,
-    "eiweiss_g": 42,
-    "kohlenhydrate_g": 12,
-    "fett_g": 38
-   },
-   "zutaten": [
+  "hinweis": "Paket 1 der Rezeptbasis von Recipster. Mengen gelten für 2 Portionen. Nährwerte sind grobe Schätzwerte pro Portion und müssen vor Veröffentlichung nachgerechnet werden. Zutaten verweisen über zutat_id auf data/zutatenkatalog.json, Name und Abteilung stehen nur dort.",
+  "rezepte": [
     {
-     "menge": 4,
-     "einheit": "Stück",
-     "name": "Hähnchenunterschenkel",
-     "abteilung": "Fleisch",
-     "zutat_id": "haehnchenunterschenkel"
+      "id": "haehnchenschenkel-ofengemuese",
+      "titel": "Knusprige Hähnchenschenkel mit Ofengemüse",
+      "schwerpunkt": [
+        "Keto",
+        "Familie"
+      ],
+      "ernaehrung": [
+        "glutenfrei",
+        "laktosefrei"
+      ],
+      "tags": [
+        "Low Carb",
+        "Protein",
+        "Wenig Aufwand"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 45,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 560,
+        "eiweiss_g": 42,
+        "kohlenhydrate_g": 12,
+        "fett_g": 38
+      },
+      "zutaten": [
+        {
+          "zutat_id": "haehnchenunterschenkel",
+          "menge": 4,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "zucchini",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "paprika",
+          "menge": 1,
+          "einheit": "Stück",
+          "zusatz": "rot"
+        },
+        {
+          "zutat_id": "champignons",
+          "menge": 200,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "olivenoel",
+          "menge": 2,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "paprikapulver-edelsuess",
+          "menge": 1,
+          "einheit": "TL"
+        },
+        {
+          "zutat_id": "thymian-getrocknet",
+          "menge": 1,
+          "einheit": "TL"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Backofen auf 200 Grad Umluft vorheizen."
+        },
+        {
+          "text": "Hähnchen mit 1 EL Öl, Paprikapulver und Salz einreiben und auf ein Blech legen."
+        },
+        {
+          "text": "20 Minuten backen.",
+          "timer_sekunden": 1200
+        },
+        {
+          "text": "Gemüse grob würfeln, mit restlichem Öl, Thymian und Salz mischen und zum Hähnchen aufs Blech geben."
+        },
+        {
+          "text": "Weitere 20 Minuten backen, bis die Haut knusprig ist.",
+          "timer_sekunden": 1200,
+          "tipp": "Die Haut vorher trocken tupfen, dann wird sie besonders knusprig."
+        }
+      ]
     },
     {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Zucchini",
-     "abteilung": "Gemüse",
-     "zutat_id": "zucchini"
+      "id": "blumenkohlreis-pfanne-hackfleisch",
+      "titel": "Blumenkohlreis-Pfanne mit Hackfleisch",
+      "schwerpunkt": [
+        "Keto"
+      ],
+      "ernaehrung": [
+        "glutenfrei",
+        "laktosefrei"
+      ],
+      "tags": [
+        "Low Carb",
+        "Protein",
+        "Günstig"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 25,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 520,
+        "eiweiss_g": 34,
+        "kohlenhydrate_g": 12,
+        "fett_g": 36
+      },
+      "zutaten": [
+        {
+          "zutat_id": "rinderhackfleisch",
+          "menge": 300,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "blumenkohl",
+          "menge": 500,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "paprika",
+          "menge": 1,
+          "einheit": "Stück",
+          "zusatz": "rot"
+        },
+        {
+          "zutat_id": "zwiebel",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "tomatenmark",
+          "menge": 2,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "olivenoel",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "kreuzkuemmel",
+          "menge": 1,
+          "einheit": "TL"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Blumenkohl grob reiben oder im Mixer kurz zu Reiskorngröße zerkleinern."
+        },
+        {
+          "text": "Zwiebel und Paprika würfeln."
+        },
+        {
+          "text": "Hackfleisch in Olivenöl 5 Minuten krümelig braten.",
+          "timer_sekunden": 300
+        },
+        {
+          "text": "Zwiebel, Paprika, Tomatenmark und Kreuzkümmel dazugeben und 3 Minuten mitbraten.",
+          "timer_sekunden": 180
+        },
+        {
+          "text": "Blumenkohlreis unterheben und 5 Minuten braten, bis er gar ist, aber noch Biss hat.",
+          "timer_sekunden": 300,
+          "tipp": "Ohne Deckel braten, sonst wird der Blumenkohl matschig."
+        }
+      ]
     },
     {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Rote Paprika",
-     "abteilung": "Gemüse",
-     "zutat_id": "rote-paprika"
+      "id": "caprese-haehnchen",
+      "titel": "Caprese-Hähnchen aus dem Ofen",
+      "schwerpunkt": [
+        "Keto",
+        "Fitness"
+      ],
+      "ernaehrung": [
+        "glutenfrei"
+      ],
+      "tags": [
+        "Low Carb",
+        "Protein",
+        "Wenig Aufwand"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 30,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 470,
+        "eiweiss_g": 52,
+        "kohlenhydrate_g": 6,
+        "fett_g": 26
+      },
+      "zutaten": [
+        {
+          "zutat_id": "haehnchenbrustfilet",
+          "menge": 2,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "mozzarella",
+          "menge": 125,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "tomate",
+          "menge": 2,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "pesto-gruen",
+          "menge": 2,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "olivenoel",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "rucola",
+          "menge": 100,
+          "einheit": "g"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Backofen auf 200 Grad Ober- und Unterhitze vorheizen."
+        },
+        {
+          "text": "Hähnchenbrust salzen und in Olivenöl von jeder Seite 2 Minuten scharf anbraten.",
+          "timer_sekunden": 240
+        },
+        {
+          "text": "In eine Auflaufform legen, mit Pesto bestreichen und mit Tomaten- und Mozzarellascheiben belegen."
+        },
+        {
+          "text": "18 Minuten backen, bis der Käse goldgelb ist.",
+          "timer_sekunden": 1080
+        },
+        {
+          "text": "Auf Rucola anrichten.",
+          "tipp": "Den Bratensaft aus der Form über den Rucola geben, das ersetzt das Dressing."
+        }
+      ]
     },
     {
-     "menge": 200,
-     "einheit": "g",
-     "name": "Champignons",
-     "abteilung": "Gemüse",
-     "zutat_id": "champignons"
+      "id": "shakshuka-feta",
+      "titel": "Shakshuka mit Feta",
+      "schwerpunkt": [
+        "Keto"
+      ],
+      "ernaehrung": [
+        "vegetarisch",
+        "glutenfrei"
+      ],
+      "tags": [
+        "Low Carb",
+        "Günstig",
+        "Wenig Aufwand"
+      ],
+      "mahlzeit": "Frühstück",
+      "minuten": 25,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 390,
+        "eiweiss_g": 22,
+        "kohlenhydrate_g": 14,
+        "fett_g": 27
+      },
+      "zutaten": [
+        {
+          "zutat_id": "ei",
+          "menge": 4,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "stueckige-tomaten-dose",
+          "menge": 400,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "paprika",
+          "menge": 1,
+          "einheit": "Stück",
+          "zusatz": "rot"
+        },
+        {
+          "zutat_id": "zwiebel",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "knoblauch",
+          "menge": 2,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "feta",
+          "menge": 80,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "olivenoel",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "kreuzkuemmel",
+          "menge": 1,
+          "einheit": "TL"
+        },
+        {
+          "zutat_id": "paprikapulver-edelsuess",
+          "menge": 1,
+          "einheit": "TL"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Zwiebel, Paprika und Knoblauch fein würfeln und in Olivenöl 5 Minuten weich dünsten.",
+          "timer_sekunden": 300
+        },
+        {
+          "text": "Gewürze kurz mitrösten, dann die Tomaten dazugeben und 8 Minuten einkochen lassen.",
+          "timer_sekunden": 480
+        },
+        {
+          "text": "Vier Mulden in die Soße drücken und je ein Ei hineinschlagen."
+        },
+        {
+          "text": "Deckel auflegen und 5 Minuten stocken lassen.",
+          "timer_sekunden": 300,
+          "tipp": "Das Eigelb bleibt cremig, wenn du die Pfanne nach 5 Minuten sofort vom Herd nimmst."
+        },
+        {
+          "text": "Mit zerbröseltem Feta bestreuen."
+        }
+      ]
     },
     {
-     "menge": 2,
-     "einheit": "EL",
-     "name": "Olivenöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "olivenoel"
+      "id": "avocado-eier-salat-raeucherlachs",
+      "titel": "Avocado-Eier-Salat mit Räucherlachs",
+      "schwerpunkt": [
+        "Keto",
+        "Fisch"
+      ],
+      "ernaehrung": [
+        "pescetarisch",
+        "glutenfrei",
+        "laktosefrei"
+      ],
+      "tags": [
+        "Low Carb",
+        "Omega-3",
+        "Wenig Aufwand"
+      ],
+      "mahlzeit": "Mittagessen",
+      "minuten": 15,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 460,
+        "eiweiss_g": 27,
+        "kohlenhydrate_g": 6,
+        "fett_g": 36
+      },
+      "zutaten": [
+        {
+          "zutat_id": "ei",
+          "menge": 4,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "raeucherlachs",
+          "menge": 150,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "avocado",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "feldsalat",
+          "menge": 100,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "salatgurke",
+          "menge": 0.5,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "olivenoel",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "zitrone",
+          "menge": 0.5,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "senf",
+          "menge": 1,
+          "einheit": "TL"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Eier 8 Minuten kochen, abschrecken und pellen.",
+          "timer_sekunden": 480
+        },
+        {
+          "text": "Olivenöl, Zitronensaft und Senf zu einem Dressing verrühren."
+        },
+        {
+          "text": "Avocado und Gurke würfeln, Eier vierteln."
+        },
+        {
+          "text": "Feldsalat mit dem Dressing mischen, alles darauf anrichten und den Lachs in Streifen darüberlegen."
+        }
+      ]
     },
     {
-     "menge": 1,
-     "einheit": "TL",
-     "name": "Paprikapulver (edelsüß)",
-     "abteilung": "Vorrat",
-     "zutat_id": "paprikapulver-edelsuess"
+      "id": "zucchini-lasagne",
+      "titel": "Zucchini-Lasagne ohne Nudeln",
+      "schwerpunkt": [
+        "Keto",
+        "Familie"
+      ],
+      "ernaehrung": [
+        "glutenfrei"
+      ],
+      "tags": [
+        "Low Carb",
+        "Protein",
+        "Viel Gemüse"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 50,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 540,
+        "eiweiss_g": 38,
+        "kohlenhydrate_g": 13,
+        "fett_g": 36
+      },
+      "zutaten": [
+        {
+          "zutat_id": "zucchini",
+          "menge": 3,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "rinderhackfleisch",
+          "menge": 300,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "passierte-tomaten",
+          "menge": 400,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "mozzarella",
+          "menge": 125,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "parmesan-gerieben",
+          "menge": 40,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "zwiebel",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "olivenoel",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "oregano-getrocknet",
+          "menge": 1,
+          "einheit": "TL"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Backofen auf 200 Grad Ober- und Unterhitze vorheizen."
+        },
+        {
+          "text": "Zucchini längs in dünne Scheiben schneiden, salzen und 10 Minuten Wasser ziehen lassen, dann trocken tupfen.",
+          "timer_sekunden": 600,
+          "tipp": "Dieser Schritt verhindert, dass die Lasagne wässrig wird."
+        },
+        {
+          "text": "Zwiebel würfeln und mit dem Hackfleisch in Olivenöl 5 Minuten braten.",
+          "timer_sekunden": 300
+        },
+        {
+          "text": "Passierte Tomaten und Oregano dazugeben und 5 Minuten köcheln lassen.",
+          "timer_sekunden": 300
+        },
+        {
+          "text": "Abwechselnd Zucchini und Soße in eine Auflaufform schichten, mit Mozzarella und Parmesan abschließen."
+        },
+        {
+          "text": "25 Minuten backen.",
+          "timer_sekunden": 1500
+        }
+      ]
     },
     {
-     "menge": 1,
-     "einheit": "TL",
-     "name": "Thymian (getrocknet)",
-     "abteilung": "Vorrat",
-     "zutat_id": "thymian-getrocknet"
+      "id": "protein-haferbrei-beeren",
+      "titel": "Protein-Haferbrei mit Beeren",
+      "schwerpunkt": [
+        "Fitness"
+      ],
+      "ernaehrung": [
+        "vegetarisch"
+      ],
+      "tags": [
+        "Protein",
+        "Ballaststoffreich",
+        "Wenig Aufwand"
+      ],
+      "mahlzeit": "Frühstück",
+      "minuten": 10,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 430,
+        "eiweiss_g": 30,
+        "kohlenhydrate_g": 48,
+        "fett_g": 11
+      },
+      "zutaten": [
+        {
+          "zutat_id": "haferflocken-zart",
+          "menge": 100,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "milch",
+          "menge": 300,
+          "einheit": "ml"
+        },
+        {
+          "zutat_id": "magerquark",
+          "menge": 250,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "beerenmischung-tk",
+          "menge": 200,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "honig",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "mandeln-gehackt",
+          "menge": 20,
+          "einheit": "g"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Haferflocken mit der Milch aufkochen und 3 Minuten unter Rühren quellen lassen.",
+          "timer_sekunden": 180
+        },
+        {
+          "text": "Vom Herd nehmen und den Quark unterrühren.",
+          "tipp": "Den Quark erst am Ende einrühren, dann bleibt er cremig und flockt nicht aus."
+        },
+        {
+          "text": "Beeren kurz in einem kleinen Topf erwärmen."
+        },
+        {
+          "text": "Brei in Schalen füllen, Beeren, Honig und Mandeln daraufgeben."
+        }
+      ]
+    },
+    {
+      "id": "haehnchen-reis-brokkoli-meal-prep",
+      "titel": "Hähnchen mit Reis und Brokkoli zum Vorkochen",
+      "schwerpunkt": [
+        "Fitness"
+      ],
+      "ernaehrung": [
+        "glutenfrei",
+        "laktosefrei"
+      ],
+      "tags": [
+        "Protein",
+        "Wenig Aufwand",
+        "Günstig"
+      ],
+      "mahlzeit": "Mittagessen",
+      "minuten": 25,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 560,
+        "eiweiss_g": 48,
+        "kohlenhydrate_g": 58,
+        "fett_g": 12
+      },
+      "zutaten": [
+        {
+          "zutat_id": "haehnchenbrustfilet",
+          "menge": 350,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "basmatireis",
+          "menge": 150,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "brokkoli",
+          "menge": 400,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "sojasauce",
+          "menge": 2,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "honig",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "olivenoel",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "knoblauch",
+          "menge": 1,
+          "einheit": "Stück"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Reis nach Packungsangabe etwa 10 Minuten garen.",
+          "timer_sekunden": 600
+        },
+        {
+          "text": "Brokkoli in Röschen teilen und 4 Minuten dämpfen oder kochen.",
+          "timer_sekunden": 240
+        },
+        {
+          "text": "Hähnchen würfeln und in Olivenöl 6 Minuten goldbraun braten.",
+          "timer_sekunden": 360
+        },
+        {
+          "text": "Sojasauce, Honig und gehackten Knoblauch dazugeben und 1 Minute glasieren.",
+          "timer_sekunden": 60
+        },
+        {
+          "text": "Alles auf zwei Dosen verteilen.",
+          "tipp": "Hält sich im Kühlschrank drei Tage und lässt sich gut aufwärmen."
+        }
+      ]
+    },
+    {
+      "id": "linsen-bolognese-vollkornnudeln",
+      "titel": "Linsen-Bolognese mit Vollkornnudeln",
+      "schwerpunkt": [
+        "Fitness",
+        "Familie"
+      ],
+      "ernaehrung": [
+        "vegetarisch",
+        "vegan",
+        "laktosefrei"
+      ],
+      "tags": [
+        "Protein",
+        "Ballaststoffreich",
+        "Günstig"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 30,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 540,
+        "eiweiss_g": 27,
+        "kohlenhydrate_g": 88,
+        "fett_g": 7
+      },
+      "zutaten": [
+        {
+          "zutat_id": "vollkornnudeln",
+          "menge": 200,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "rote-linsen",
+          "menge": 120,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "stueckige-tomaten-dose",
+          "menge": 400,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "karotte",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "zwiebel",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "tomatenmark",
+          "menge": 2,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "olivenoel",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "gemuesebruehe",
+          "menge": 300,
+          "einheit": "ml"
+        },
+        {
+          "zutat_id": "oregano-getrocknet",
+          "menge": 1,
+          "einheit": "TL"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Zwiebel und Karotte fein würfeln und in Olivenöl 4 Minuten andünsten.",
+          "timer_sekunden": 240
+        },
+        {
+          "text": "Tomatenmark kurz mitrösten, dann Linsen, Tomaten, Brühe und Oregano dazugeben."
+        },
+        {
+          "text": "15 Minuten köcheln lassen, bis die Linsen zerfallen.",
+          "timer_sekunden": 900
+        },
+        {
+          "text": "Währenddessen die Nudeln nach Packungsangabe kochen."
+        },
+        {
+          "text": "Soße mit Salz und Pfeffer abschmecken und mit den Nudeln mischen.",
+          "tipp": "Ein Schuss Nudelwasser macht die Soße sämig."
+        }
+      ]
+    },
+    {
+      "id": "rinderstreifen-paprika-reis",
+      "titel": "Rinderstreifen mit Paprika und Reis",
+      "schwerpunkt": [
+        "Fitness"
+      ],
+      "ernaehrung": [
+        "laktosefrei"
+      ],
+      "tags": [
+        "Protein",
+        "Eisen"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 25,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 580,
+        "eiweiss_g": 42,
+        "kohlenhydrate_g": 60,
+        "fett_g": 16
+      },
+      "zutaten": [
+        {
+          "zutat_id": "rinderhueftsteak",
+          "menge": 300,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "basmatireis",
+          "menge": 150,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "paprika",
+          "menge": 2,
+          "einheit": "Stück",
+          "zusatz": "rot und gelb"
+        },
+        {
+          "zutat_id": "zwiebel",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "sojasauce",
+          "menge": 2,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "rapsoel",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "speisestaerke",
+          "menge": 1,
+          "einheit": "TL"
+        },
+        {
+          "zutat_id": "knoblauch",
+          "menge": 1,
+          "einheit": "Stück"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Reis nach Packungsangabe etwa 10 Minuten garen.",
+          "timer_sekunden": 600
+        },
+        {
+          "text": "Fleisch quer zur Faser in dünne Streifen schneiden und mit Sojasauce und Stärke mischen.",
+          "tipp": "Quer zur Faser geschnitten bleibt das Fleisch zart."
+        },
+        {
+          "text": "Fleisch in sehr heißem Öl 2 Minuten scharf anbraten und herausnehmen.",
+          "timer_sekunden": 120
+        },
+        {
+          "text": "Paprika und Zwiebel in Streifen 4 Minuten in derselben Pfanne braten.",
+          "timer_sekunden": 240
+        },
+        {
+          "text": "Fleisch und Knoblauch zurückgeben, kurz durchschwenken und mit dem Reis servieren."
+        }
+      ]
+    },
+    {
+      "id": "quark-pfannkuchen-banane",
+      "titel": "Quark-Pfannkuchen mit Banane",
+      "schwerpunkt": [
+        "Fitness",
+        "Familie"
+      ],
+      "ernaehrung": [
+        "vegetarisch"
+      ],
+      "tags": [
+        "Protein",
+        "Kinderfreundlich",
+        "Wenig Aufwand"
+      ],
+      "mahlzeit": "Frühstück",
+      "minuten": 20,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 450,
+        "eiweiss_g": 30,
+        "kohlenhydrate_g": 50,
+        "fett_g": 13
+      },
+      "zutaten": [
+        {
+          "zutat_id": "magerquark",
+          "menge": 250,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "ei",
+          "menge": 3,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "haferflocken-zart",
+          "menge": 80,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "banane",
+          "menge": 2,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "backpulver",
+          "menge": 1,
+          "einheit": "TL"
+        },
+        {
+          "zutat_id": "butter",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "zimt",
+          "menge": 1,
+          "einheit": "TL"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Quark, Eier, Haferflocken, Backpulver, Zimt und eine zerdrückte Banane zu einem Teig verrühren."
+        },
+        {
+          "text": "5 Minuten quellen lassen.",
+          "timer_sekunden": 300
+        },
+        {
+          "text": "Butter in einer Pfanne schmelzen und kleine Pfannkuchen bei mittlerer Hitze 2 Minuten pro Seite backen.",
+          "timer_sekunden": 240,
+          "tipp": "Erst wenden, wenn sich oben kleine Bläschen zeigen."
+        },
+        {
+          "text": "Mit der zweiten Banane in Scheiben servieren."
+        }
+      ]
+    },
+    {
+      "id": "puten-gemuese-pfanne-kartoffeln",
+      "titel": "Puten-Gemüse-Pfanne mit Kartoffeln",
+      "schwerpunkt": [
+        "Fitness",
+        "Familie"
+      ],
+      "ernaehrung": [
+        "glutenfrei",
+        "laktosefrei"
+      ],
+      "tags": [
+        "Protein",
+        "Viel Gemüse",
+        "Kinderfreundlich"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 30,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 490,
+        "eiweiss_g": 44,
+        "kohlenhydrate_g": 46,
+        "fett_g": 13
+      },
+      "zutaten": [
+        {
+          "zutat_id": "putenbrust",
+          "menge": 300,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "kartoffeln-festkochend",
+          "menge": 400,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "zucchini",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "karotte",
+          "menge": 2,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "zwiebel",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "olivenoel",
+          "menge": 2,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "paprikapulver-edelsuess",
+          "menge": 1,
+          "einheit": "TL"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Kartoffeln in kleine Würfel schneiden und in 1 EL Öl 12 Minuten braten, dabei öfter wenden.",
+          "timer_sekunden": 720
+        },
+        {
+          "text": "Putenbrust würfeln und mit Paprikapulver und Salz würzen."
+        },
+        {
+          "text": "Kartoffeln an den Rand schieben, Fleisch im restlichen Öl 5 Minuten anbraten.",
+          "timer_sekunden": 300
+        },
+        {
+          "text": "Karotten, Zucchini und Zwiebel gewürfelt dazugeben und 6 Minuten mitbraten.",
+          "timer_sekunden": 360
+        },
+        {
+          "text": "Mit Salz und Pfeffer abschmecken."
+        }
+      ]
+    },
+    {
+      "id": "kabeljau-senfsosse-kartoffeln",
+      "titel": "Kabeljau in Senfsoße mit Kartoffeln",
+      "schwerpunkt": [
+        "Fisch",
+        "Familie"
+      ],
+      "ernaehrung": [
+        "pescetarisch",
+        "glutenfrei"
+      ],
+      "tags": [
+        "Protein",
+        "Kinderfreundlich"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 30,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 510,
+        "eiweiss_g": 38,
+        "kohlenhydrate_g": 44,
+        "fett_g": 19
+      },
+      "zutaten": [
+        {
+          "zutat_id": "kabeljaufilet",
+          "menge": 350,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "kartoffeln-festkochend",
+          "menge": 500,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "kochsahne",
+          "menge": 150,
+          "einheit": "ml"
+        },
+        {
+          "zutat_id": "senf",
+          "menge": 2,
+          "einheit": "EL",
+          "zusatz": "mittelscharf"
+        },
+        {
+          "zutat_id": "gemuesebruehe",
+          "menge": 100,
+          "einheit": "ml"
+        },
+        {
+          "zutat_id": "butter",
+          "menge": 15,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "dill",
+          "menge": 0.5,
+          "einheit": "Stück"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Kartoffeln schälen und 20 Minuten in Salzwasser kochen.",
+          "timer_sekunden": 1200
+        },
+        {
+          "text": "Sahne, Brühe und Senf in einer Pfanne aufkochen und 3 Minuten einkochen lassen.",
+          "timer_sekunden": 180
+        },
+        {
+          "text": "Kabeljau salzen, in die Soße legen und bei kleiner Hitze 7 Minuten zugedeckt gar ziehen lassen.",
+          "timer_sekunden": 420,
+          "tipp": "Der Fisch ist fertig, wenn er sich leicht in Lamellen teilt."
+        },
+        {
+          "text": "Butter und gehackten Dill unterrühren und mit den Kartoffeln servieren."
+        }
+      ]
+    },
+    {
+      "id": "lachs-teriyaki-pak-choi",
+      "titel": "Teriyaki-Lachs mit Pak Choi und Reis",
+      "schwerpunkt": [
+        "Fisch",
+        "Fitness"
+      ],
+      "ernaehrung": [
+        "pescetarisch",
+        "laktosefrei"
+      ],
+      "tags": [
+        "Protein",
+        "Omega-3"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 25,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 610,
+        "eiweiss_g": 38,
+        "kohlenhydrate_g": 60,
+        "fett_g": 23
+      },
+      "zutaten": [
+        {
+          "zutat_id": "lachsfilet",
+          "menge": 300,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "basmatireis",
+          "menge": 150,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "pak-choi",
+          "menge": 2,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "sojasauce",
+          "menge": 3,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "honig",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "ingwer",
+          "menge": 1,
+          "einheit": "Stück",
+          "zusatz": "daumengroß"
+        },
+        {
+          "zutat_id": "rapsoel",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "sesam",
+          "menge": 1,
+          "einheit": "EL"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Reis nach Packungsangabe etwa 10 Minuten garen.",
+          "timer_sekunden": 600
+        },
+        {
+          "text": "Sojasauce, Honig und geriebenen Ingwer verrühren."
+        },
+        {
+          "text": "Lachs in Öl auf der Hautseite 4 Minuten braten, wenden und 2 Minuten weiterbraten.",
+          "timer_sekunden": 360
+        },
+        {
+          "text": "Soße angießen und 1 Minute einkochen, dabei den Lachs damit beträufeln.",
+          "timer_sekunden": 60
+        },
+        {
+          "text": "Pak Choi halbieren und 3 Minuten in der Pfanne mitgaren.",
+          "timer_sekunden": 180
+        },
+        {
+          "text": "Mit Reis anrichten und mit Sesam bestreuen."
+        }
+      ]
+    },
+    {
+      "id": "forelle-mandelbutter-bohnen",
+      "titel": "Forellenfilet mit Mandelbutter und grünen Bohnen",
+      "schwerpunkt": [
+        "Fisch",
+        "Keto"
+      ],
+      "ernaehrung": [
+        "pescetarisch",
+        "glutenfrei"
+      ],
+      "tags": [
+        "Low Carb",
+        "Omega-3",
+        "Wenig Aufwand"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 20,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 480,
+        "eiweiss_g": 36,
+        "kohlenhydrate_g": 9,
+        "fett_g": 33
+      },
+      "zutaten": [
+        {
+          "zutat_id": "forellenfilets",
+          "menge": 4,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "gruene-bohnen-tk",
+          "menge": 300,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "mandelblaettchen",
+          "menge": 30,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "butter",
+          "menge": 30,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "zitrone",
+          "menge": 0.5,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "olivenoel",
+          "menge": 1,
+          "einheit": "EL"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Bohnen 6 Minuten in Salzwasser garen und abgießen.",
+          "timer_sekunden": 360
+        },
+        {
+          "text": "Forellenfilets salzen und in Olivenöl auf der Hautseite 3 Minuten braten, wenden und 1 Minute fertig garen.",
+          "timer_sekunden": 240
+        },
+        {
+          "text": "Fisch herausnehmen, Butter in der Pfanne schmelzen und die Mandeln darin 2 Minuten goldbraun rösten.",
+          "timer_sekunden": 120,
+          "tipp": "Bleib dabei, Mandeln verbrennen schnell."
+        },
+        {
+          "text": "Zitronensaft einrühren und die Mandelbutter über Fisch und Bohnen geben."
+        }
+      ]
+    },
+    {
+      "id": "thunfisch-nudelsalat",
+      "titel": "Thunfisch-Nudelsalat mit Mais und Paprika",
+      "schwerpunkt": [
+        "Fisch",
+        "Familie"
+      ],
+      "ernaehrung": [
+        "pescetarisch"
+      ],
+      "tags": [
+        "Kinderfreundlich",
+        "Günstig",
+        "Protein"
+      ],
+      "mahlzeit": "Mittagessen",
+      "minuten": 20,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 520,
+        "eiweiss_g": 32,
+        "kohlenhydrate_g": 66,
+        "fett_g": 13
+      },
+      "zutaten": [
+        {
+          "zutat_id": "nudeln-kurz",
+          "menge": 200,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "thunfisch-im-eigenen-saft",
+          "menge": 2,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "mais",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "paprika",
+          "menge": 1,
+          "einheit": "Stück",
+          "zusatz": "rot"
+        },
+        {
+          "zutat_id": "naturjoghurt",
+          "menge": 150,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "senf",
+          "menge": 1,
+          "einheit": "EL",
+          "zusatz": "mittelscharf"
+        },
+        {
+          "zutat_id": "zitrone",
+          "menge": 0.5,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "fruehlingszwiebeln",
+          "menge": 2,
+          "einheit": "Stück"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Nudeln nach Packungsangabe kochen, abgießen und kalt abspülen.",
+          "timer_sekunden": 600
+        },
+        {
+          "text": "Joghurt, Senf, Zitronensaft, Salz und Pfeffer zu einem Dressing verrühren."
+        },
+        {
+          "text": "Paprika würfeln, Frühlingszwiebeln in Ringe schneiden, Thunfisch und Mais abtropfen lassen."
+        },
+        {
+          "text": "Alles mit den Nudeln mischen und 10 Minuten durchziehen lassen.",
+          "timer_sekunden": 600,
+          "tipp": "Schmeckt am nächsten Tag noch besser, ideal fürs Büro."
+        }
+      ]
+    },
+    {
+      "id": "garnelen-curry-kokos",
+      "titel": "Garnelen-Curry mit Kokosmilch",
+      "schwerpunkt": [
+        "Fisch",
+        "Keto"
+      ],
+      "ernaehrung": [
+        "pescetarisch",
+        "glutenfrei",
+        "laktosefrei"
+      ],
+      "tags": [
+        "Low Carb",
+        "Protein",
+        "Wenig Aufwand"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 20,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 450,
+        "eiweiss_g": 28,
+        "kohlenhydrate_g": 12,
+        "fett_g": 32
+      },
+      "zutaten": [
+        {
+          "zutat_id": "garnelen-geschaelt",
+          "menge": 250,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "kokosmilch",
+          "menge": 400,
+          "einheit": "ml"
+        },
+        {
+          "zutat_id": "paprika",
+          "menge": 1,
+          "einheit": "Stück",
+          "zusatz": "rot"
+        },
+        {
+          "zutat_id": "zuckerschoten",
+          "menge": 150,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "rote-currypaste",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "ingwer",
+          "menge": 1,
+          "einheit": "Stück",
+          "zusatz": "daumengroß"
+        },
+        {
+          "zutat_id": "rapsoel",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "limette",
+          "menge": 0.5,
+          "einheit": "Stück"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Currypaste und geriebenen Ingwer in Öl 1 Minute anrösten.",
+          "timer_sekunden": 60
+        },
+        {
+          "text": "Kokosmilch angießen und aufkochen."
+        },
+        {
+          "text": "Paprika in Streifen und Zuckerschoten dazugeben und 5 Minuten köcheln lassen.",
+          "timer_sekunden": 300
+        },
+        {
+          "text": "Garnelen hineingeben und 3 Minuten gar ziehen lassen.",
+          "timer_sekunden": 180,
+          "tipp": "Garnelen nur kurz garen, sonst werden sie zäh."
+        },
+        {
+          "text": "Mit Limettensaft und Salz abschmecken.",
+          "tipp": "Wer nicht auf Kohlenhydrate achtet, isst Reis dazu."
+        }
+      ]
+    },
+    {
+      "id": "seelachs-tomaten-oliven",
+      "titel": "Seelachs aus dem Ofen mit Tomaten und Oliven",
+      "schwerpunkt": [
+        "Fisch",
+        "Keto"
+      ],
+      "ernaehrung": [
+        "pescetarisch",
+        "glutenfrei",
+        "laktosefrei"
+      ],
+      "tags": [
+        "Low Carb",
+        "Wenig Kalorien",
+        "Wenig Aufwand"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 25,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 330,
+        "eiweiss_g": 36,
+        "kohlenhydrate_g": 9,
+        "fett_g": 16
+      },
+      "zutaten": [
+        {
+          "zutat_id": "seelachsfilet",
+          "menge": 350,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "kirschtomaten",
+          "menge": 300,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "schwarze-oliven-entsteint",
+          "menge": 60,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "rote-zwiebel",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "olivenoel",
+          "menge": 2,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "knoblauch",
+          "menge": 2,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "zitrone",
+          "menge": 0.5,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "thymian-getrocknet",
+          "menge": 1,
+          "einheit": "TL"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Backofen auf 200 Grad Ober- und Unterhitze vorheizen."
+        },
+        {
+          "text": "Tomaten halbieren, Zwiebel in Spalten schneiden und mit Oliven, Knoblauch, Öl und Thymian in einer Auflaufform mischen."
+        },
+        {
+          "text": "10 Minuten vorgaren.",
+          "timer_sekunden": 600
+        },
+        {
+          "text": "Fisch salzen, auf das Gemüse legen, mit Zitronensaft beträufeln und weitere 12 Minuten backen.",
+          "timer_sekunden": 720
+        }
+      ]
+    },
+    {
+      "id": "matjes-pellkartoffeln-quark",
+      "titel": "Matjes mit Pellkartoffeln und Kräuterquark",
+      "schwerpunkt": [
+        "Fisch"
+      ],
+      "ernaehrung": [
+        "pescetarisch",
+        "glutenfrei"
+      ],
+      "tags": [
+        "Omega-3",
+        "Günstig",
+        "Wenig Aufwand"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 25,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 560,
+        "eiweiss_g": 30,
+        "kohlenhydrate_g": 44,
+        "fett_g": 28
+      },
+      "zutaten": [
+        {
+          "zutat_id": "matjesfilets",
+          "menge": 4,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "kartoffeln-festkochend",
+          "menge": 500,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "speisequark-20",
+          "menge": 250,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "apfel",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "rote-zwiebel",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "schnittlauch",
+          "menge": 0.5,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "milch",
+          "menge": 3,
+          "einheit": "EL"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Kartoffeln mit Schale 20 Minuten in Salzwasser kochen.",
+          "timer_sekunden": 1200
+        },
+        {
+          "text": "Quark mit Milch glatt rühren, Schnittlauch in Röllchen unterheben, salzen und pfeffern."
+        },
+        {
+          "text": "Apfel fein würfeln und Zwiebel in dünne Ringe schneiden."
+        },
+        {
+          "text": "Matjes mit Kartoffeln, Quark, Apfel und Zwiebel anrichten.",
+          "tipp": "Der Apfel nimmt dem Matjes die Schärfe, das mögen auch Kinder."
+        }
+      ]
+    },
+    {
+      "id": "kartoffel-gemuese-auflauf",
+      "titel": "Kartoffel-Gemüse-Auflauf",
+      "schwerpunkt": [
+        "Familie"
+      ],
+      "ernaehrung": [
+        "vegetarisch",
+        "glutenfrei"
+      ],
+      "tags": [
+        "Kinderfreundlich",
+        "Günstig",
+        "Viel Gemüse"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 50,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 520,
+        "eiweiss_g": 20,
+        "kohlenhydrate_g": 50,
+        "fett_g": 26
+      },
+      "zutaten": [
+        {
+          "zutat_id": "kartoffeln-festkochend",
+          "menge": 500,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "brokkoli",
+          "menge": 300,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "karotte",
+          "menge": 2,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "kochsahne",
+          "menge": 200,
+          "einheit": "ml"
+        },
+        {
+          "zutat_id": "ei",
+          "menge": 2,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "gouda-gerieben",
+          "menge": 100,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "muskatnuss",
+          "menge": 1,
+          "einheit": "Prise"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Backofen auf 190 Grad Umluft vorheizen."
+        },
+        {
+          "text": "Kartoffeln und Karotten in dünne Scheiben schneiden und 6 Minuten in Salzwasser vorkochen, in den letzten 2 Minuten den Brokkoli dazugeben.",
+          "timer_sekunden": 360
+        },
+        {
+          "text": "Gemüse abgießen und in eine Auflaufform schichten."
+        },
+        {
+          "text": "Sahne, Eier, Salz und Muskat verquirlen und darübergießen."
+        },
+        {
+          "text": "Mit Käse bestreuen und 30 Minuten goldbraun backen.",
+          "timer_sekunden": 1800
+        }
+      ]
+    },
+    {
+      "id": "haehnchen-nuggets-ofen",
+      "titel": "Hähnchen-Nuggets aus dem Ofen mit Gurkensticks",
+      "schwerpunkt": [
+        "Familie",
+        "Fitness"
+      ],
+      "ernaehrung": [
+        "laktosefrei"
+      ],
+      "tags": [
+        "Kinderfreundlich",
+        "Protein"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 30,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 450,
+        "eiweiss_g": 46,
+        "kohlenhydrate_g": 36,
+        "fett_g": 12
+      },
+      "zutaten": [
+        {
+          "zutat_id": "haehnchenbrustfilet",
+          "menge": 350,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "paniermehl",
+          "menge": 60,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "ei",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "mehl",
+          "menge": 2,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "paprikapulver-edelsuess",
+          "menge": 1,
+          "einheit": "TL"
+        },
+        {
+          "zutat_id": "rapsoel",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "salatgurke",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "karotte",
+          "menge": 2,
+          "einheit": "Stück"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Backofen auf 210 Grad Umluft vorheizen und ein Blech mit Backpapier belegen."
+        },
+        {
+          "text": "Hähnchen in mundgerechte Stücke schneiden und salzen."
+        },
+        {
+          "text": "Erst in Mehl, dann in verquirltem Ei und zuletzt in Paniermehl mit Paprikapulver wenden.",
+          "tipp": "Eine Hand fürs Trockene, eine fürs Nasse, dann verkleben die Finger nicht."
+        },
+        {
+          "text": "Auf dem Blech verteilen, mit Öl beträufeln und 15 Minuten backen, nach der Hälfte wenden.",
+          "timer_sekunden": 900
+        },
+        {
+          "text": "Gurke und Karotten in Sticks schneiden und dazu servieren."
+        }
+      ]
+    },
+    {
+      "id": "gemuesereis-ei",
+      "titel": "Bunter Gemüsereis mit Ei",
+      "schwerpunkt": [
+        "Familie"
+      ],
+      "ernaehrung": [
+        "vegetarisch",
+        "laktosefrei"
+      ],
+      "tags": [
+        "Kinderfreundlich",
+        "Günstig",
+        "Wenig Aufwand"
+      ],
+      "mahlzeit": "Mittagessen",
+      "minuten": 20,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 470,
+        "eiweiss_g": 18,
+        "kohlenhydrate_g": 66,
+        "fett_g": 14
+      },
+      "zutaten": [
+        {
+          "zutat_id": "basmatireis",
+          "menge": 150,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "ei",
+          "menge": 3,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "erbsen-tk",
+          "menge": 150,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "karotte",
+          "menge": 2,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "mais",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "sojasauce",
+          "menge": 2,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "rapsoel",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "fruehlingszwiebeln",
+          "menge": 2,
+          "einheit": "Stück"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Reis nach Packungsangabe etwa 10 Minuten garen.",
+          "timer_sekunden": 600,
+          "tipp": "Reis vom Vortag funktioniert sogar noch besser."
+        },
+        {
+          "text": "Karotten klein würfeln und in Öl 4 Minuten braten.",
+          "timer_sekunden": 240
+        },
+        {
+          "text": "Erbsen und Mais dazugeben und 2 Minuten mitbraten.",
+          "timer_sekunden": 120
+        },
+        {
+          "text": "Gemüse zur Seite schieben, Eier in die Pfanne schlagen und zu Rührei stocken lassen."
+        },
+        {
+          "text": "Reis und Sojasauce unterheben und mit Frühlingszwiebeln bestreuen."
+        }
+      ]
+    },
+    {
+      "id": "kuerbissuppe-ingwer",
+      "titel": "Kürbissuppe mit Ingwer",
+      "schwerpunkt": [
+        "Familie"
+      ],
+      "ernaehrung": [
+        "vegetarisch",
+        "vegan",
+        "glutenfrei",
+        "laktosefrei"
+      ],
+      "tags": [
+        "Kinderfreundlich",
+        "Günstig",
+        "Wenig Kalorien"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 30,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 290,
+        "eiweiss_g": 6,
+        "kohlenhydrate_g": 32,
+        "fett_g": 15
+      },
+      "zutaten": [
+        {
+          "zutat_id": "hokkaido-kuerbis",
+          "menge": 600,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "karotte",
+          "menge": 2,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "zwiebel",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "ingwer",
+          "menge": 1,
+          "einheit": "Stück",
+          "zusatz": "daumengroß"
+        },
+        {
+          "zutat_id": "gemuesebruehe",
+          "menge": 500,
+          "einheit": "ml"
+        },
+        {
+          "zutat_id": "kokosmilch",
+          "menge": 200,
+          "einheit": "ml"
+        },
+        {
+          "zutat_id": "olivenoel",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "kuerbiskerne",
+          "menge": 2,
+          "einheit": "EL"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Kürbis entkernen und mit Schale würfeln, Karotten und Zwiebel grob schneiden.",
+          "tipp": "Hokkaido musst du nicht schälen, die Schale wird weich."
+        },
+        {
+          "text": "Alles mit geriebenem Ingwer in Olivenöl 3 Minuten andünsten.",
+          "timer_sekunden": 180
+        },
+        {
+          "text": "Brühe angießen und 15 Minuten weich kochen.",
+          "timer_sekunden": 900
+        },
+        {
+          "text": "Kokosmilch dazugeben und fein pürieren."
+        },
+        {
+          "text": "Mit Salz abschmecken und mit Kürbiskernen bestreuen."
+        }
+      ]
+    },
+    {
+      "id": "pfannkuchen-apfelmus",
+      "titel": "Pfannkuchen mit Apfelmus",
+      "schwerpunkt": [
+        "Familie"
+      ],
+      "ernaehrung": [
+        "vegetarisch"
+      ],
+      "tags": [
+        "Kinderfreundlich",
+        "Günstig",
+        "Wenig Aufwand"
+      ],
+      "mahlzeit": "Mittagessen",
+      "minuten": 25,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 520,
+        "eiweiss_g": 18,
+        "kohlenhydrate_g": 76,
+        "fett_g": 15
+      },
+      "zutaten": [
+        {
+          "zutat_id": "mehl",
+          "menge": 200,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "ei",
+          "menge": 3,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "milch",
+          "menge": 350,
+          "einheit": "ml"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 1,
+          "einheit": "Prise"
+        },
+        {
+          "zutat_id": "butter",
+          "menge": 20,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "apfelmus",
+          "menge": 200,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "zimt",
+          "menge": 1,
+          "einheit": "TL"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Mehl, Eier, Milch und Salz zu einem glatten Teig verrühren."
+        },
+        {
+          "text": "10 Minuten ruhen lassen.",
+          "timer_sekunden": 600,
+          "tipp": "Durch die Ruhezeit werden die Pfannkuchen locker und reißen nicht."
+        },
+        {
+          "text": "Etwas Butter in der Pfanne schmelzen, eine Kelle Teig hineingeben und 2 Minuten pro Seite backen.",
+          "timer_sekunden": 240
+        },
+        {
+          "text": "So weitermachen, bis der Teig aufgebraucht ist."
+        },
+        {
+          "text": "Mit Apfelmus und Zimt servieren."
+        }
+      ]
+    },
+    {
+      "id": "kaese-spaetzle-roestzwiebeln",
+      "titel": "Käsespätzle mit Röstzwiebeln und Gurkensalat",
+      "schwerpunkt": [
+        "Familie"
+      ],
+      "ernaehrung": [
+        "vegetarisch"
+      ],
+      "tags": [
+        "Kinderfreundlich",
+        "Wenig Aufwand"
+      ],
+      "mahlzeit": "Abendessen",
+      "minuten": 25,
+      "portionen": 2,
+      "naehrwerte": {
+        "kcal": 640,
+        "eiweiss_g": 28,
+        "kohlenhydrate_g": 70,
+        "fett_g": 26
+      },
+      "zutaten": [
+        {
+          "zutat_id": "spaetzle-kuehlregal",
+          "menge": 400,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "bergkaese-gerieben",
+          "menge": 150,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "zwiebel",
+          "menge": 2,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "butter",
+          "menge": 20,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "salatgurke",
+          "menge": 1,
+          "einheit": "Stück"
+        },
+        {
+          "zutat_id": "naturjoghurt",
+          "menge": 100,
+          "einheit": "g"
+        },
+        {
+          "zutat_id": "weissweinessig",
+          "menge": 1,
+          "einheit": "EL"
+        },
+        {
+          "zutat_id": "schnittlauch",
+          "menge": 0.5,
+          "einheit": "Stück"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Zwiebeln in Ringe schneiden und in Butter bei mittlerer Hitze 10 Minuten goldbraun braten.",
+          "timer_sekunden": 600,
+          "tipp": "Geduld lohnt sich, bei zu viel Hitze werden die Zwiebeln bitter."
+        },
+        {
+          "text": "Gurke in dünne Scheiben hobeln und mit Joghurt, Essig, Salz und Pfeffer mischen."
+        },
+        {
+          "text": "Spätzle in einer zweiten Pfanne 4 Minuten erwärmen.",
+          "timer_sekunden": 240
+        },
+        {
+          "text": "Käse unterheben und schmelzen lassen."
+        },
+        {
+          "text": "Mit Röstzwiebeln und Schnittlauch bestreuen und mit dem Gurkensalat servieren."
+        }
+      ]
     }
-   ],
-   "schritte": [
-    {
-     "text": "Backofen auf 200 Grad Umluft vorheizen."
-    },
-    {
-     "text": "Hähnchen mit 1 EL Öl, Paprikapulver und Salz einreiben und auf ein Blech legen."
-    },
-    {
-     "text": "20 Minuten backen.",
-     "timer_sekunden": 1200
-    },
-    {
-     "text": "Gemüse grob würfeln, mit restlichem Öl, Thymian und Salz mischen und zum Hähnchen aufs Blech geben."
-    },
-    {
-     "text": "Weitere 20 Minuten backen, bis die Haut knusprig ist.",
-     "timer_sekunden": 1200,
-     "tipp": "Die Haut vorher trocken tupfen, dann wird sie besonders knusprig."
-    }
-   ]
-  },
-  {
-   "id": "blumenkohlreis-pfanne-hackfleisch",
-   "titel": "Blumenkohlreis-Pfanne mit Hackfleisch",
-   "schwerpunkt": [
-    "Keto"
-   ],
-   "ernaehrung": [
-    "glutenfrei",
-    "laktosefrei"
-   ],
-   "tags": [
-    "Low Carb",
-    "Protein",
-    "Günstig"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 25,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 520,
-    "eiweiss_g": 34,
-    "kohlenhydrate_g": 12,
-    "fett_g": 36
-   },
-   "zutaten": [
-    {
-     "menge": 300,
-     "einheit": "g",
-     "name": "Rinderhackfleisch",
-     "abteilung": "Fleisch",
-     "zutat_id": "rinderhackfleisch"
-    },
-    {
-     "menge": 500,
-     "einheit": "g",
-     "name": "Blumenkohl",
-     "abteilung": "Gemüse",
-     "zutat_id": "blumenkohl"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Rote Paprika",
-     "abteilung": "Gemüse",
-     "zutat_id": "rote-paprika"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Zwiebel",
-     "abteilung": "Gemüse",
-     "zutat_id": "zwiebel"
-    },
-    {
-     "menge": 2,
-     "einheit": "EL",
-     "name": "Tomatenmark",
-     "abteilung": "Vorrat",
-     "zutat_id": "tomatenmark"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Olivenöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "olivenoel"
-    },
-    {
-     "menge": 1,
-     "einheit": "TL",
-     "name": "Kreuzkümmel",
-     "abteilung": "Vorrat",
-     "zutat_id": "kreuzkuemmel"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Blumenkohl grob reiben oder im Mixer kurz zu Reiskorngröße zerkleinern."
-    },
-    {
-     "text": "Zwiebel und Paprika würfeln."
-    },
-    {
-     "text": "Hackfleisch in Olivenöl 5 Minuten krümelig braten.",
-     "timer_sekunden": 300
-    },
-    {
-     "text": "Zwiebel, Paprika, Tomatenmark und Kreuzkümmel dazugeben und 3 Minuten mitbraten.",
-     "timer_sekunden": 180
-    },
-    {
-     "text": "Blumenkohlreis unterheben und 5 Minuten braten, bis er gar ist, aber noch Biss hat.",
-     "timer_sekunden": 300,
-     "tipp": "Ohne Deckel braten, sonst wird der Blumenkohl matschig."
-    }
-   ]
-  },
-  {
-   "id": "caprese-haehnchen",
-   "titel": "Caprese-Hähnchen aus dem Ofen",
-   "schwerpunkt": [
-    "Keto",
-    "Fitness"
-   ],
-   "ernaehrung": [
-    "glutenfrei"
-   ],
-   "tags": [
-    "Low Carb",
-    "Protein",
-    "Wenig Aufwand"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 30,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 470,
-    "eiweiss_g": 52,
-    "kohlenhydrate_g": 6,
-    "fett_g": 26
-   },
-   "zutaten": [
-    {
-     "menge": 2,
-     "einheit": "Stück",
-     "name": "Hähnchenbrustfilet",
-     "abteilung": "Fleisch",
-     "zutat_id": "haehnchenbrustfilet"
-    },
-    {
-     "menge": 125,
-     "einheit": "g",
-     "name": "Mozzarella",
-     "abteilung": "Kühlregal",
-     "zutat_id": "mozzarella"
-    },
-    {
-     "menge": 2,
-     "einheit": "Stück",
-     "name": "Tomaten",
-     "abteilung": "Gemüse",
-     "zutat_id": "tomaten"
-    },
-    {
-     "menge": 2,
-     "einheit": "EL",
-     "name": "Pesto (grün)",
-     "abteilung": "Vorrat",
-     "zutat_id": "pesto-gruen"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Olivenöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "olivenoel"
-    },
-    {
-     "menge": 100,
-     "einheit": "g",
-     "name": "Rucola",
-     "abteilung": "Gemüse",
-     "zutat_id": "rucola"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Backofen auf 200 Grad Ober- und Unterhitze vorheizen."
-    },
-    {
-     "text": "Hähnchenbrust salzen und in Olivenöl von jeder Seite 2 Minuten scharf anbraten.",
-     "timer_sekunden": 240
-    },
-    {
-     "text": "In eine Auflaufform legen, mit Pesto bestreichen und mit Tomaten- und Mozzarellascheiben belegen."
-    },
-    {
-     "text": "18 Minuten backen, bis der Käse goldgelb ist.",
-     "timer_sekunden": 1080
-    },
-    {
-     "text": "Auf Rucola anrichten.",
-     "tipp": "Den Bratensaft aus der Form über den Rucola geben, das ersetzt das Dressing."
-    }
-   ]
-  },
-  {
-   "id": "shakshuka-feta",
-   "titel": "Shakshuka mit Feta",
-   "schwerpunkt": [
-    "Keto"
-   ],
-   "ernaehrung": [
-    "vegetarisch",
-    "glutenfrei"
-   ],
-   "tags": [
-    "Low Carb",
-    "Günstig",
-    "Wenig Aufwand"
-   ],
-   "mahlzeit": "Frühstück",
-   "minuten": 25,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 390,
-    "eiweiss_g": 22,
-    "kohlenhydrate_g": 14,
-    "fett_g": 27
-   },
-   "zutaten": [
-    {
-     "menge": 4,
-     "einheit": "Stück",
-     "name": "Eier",
-     "abteilung": "Kühlregal",
-     "zutat_id": "eier"
-    },
-    {
-     "menge": 400,
-     "einheit": "g",
-     "name": "Stückige Tomaten (Dose)",
-     "abteilung": "Konserven",
-     "zutat_id": "stueckige-tomaten-dose"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Rote Paprika",
-     "abteilung": "Gemüse",
-     "zutat_id": "rote-paprika"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Zwiebel",
-     "abteilung": "Gemüse",
-     "zutat_id": "zwiebel"
-    },
-    {
-     "menge": 2,
-     "einheit": "Zehen",
-     "name": "Knoblauch",
-     "abteilung": "Gemüse",
-     "zutat_id": "knoblauch"
-    },
-    {
-     "menge": 80,
-     "einheit": "g",
-     "name": "Feta",
-     "abteilung": "Kühlregal",
-     "zutat_id": "feta"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Olivenöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "olivenoel"
-    },
-    {
-     "menge": 1,
-     "einheit": "TL",
-     "name": "Kreuzkümmel",
-     "abteilung": "Vorrat",
-     "zutat_id": "kreuzkuemmel"
-    },
-    {
-     "menge": 1,
-     "einheit": "TL",
-     "name": "Paprikapulver (edelsüß)",
-     "abteilung": "Vorrat",
-     "zutat_id": "paprikapulver-edelsuess"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Zwiebel, Paprika und Knoblauch fein würfeln und in Olivenöl 5 Minuten weich dünsten.",
-     "timer_sekunden": 300
-    },
-    {
-     "text": "Gewürze kurz mitrösten, dann die Tomaten dazugeben und 8 Minuten einkochen lassen.",
-     "timer_sekunden": 480
-    },
-    {
-     "text": "Vier Mulden in die Soße drücken und je ein Ei hineinschlagen."
-    },
-    {
-     "text": "Deckel auflegen und 5 Minuten stocken lassen.",
-     "timer_sekunden": 300,
-     "tipp": "Das Eigelb bleibt cremig, wenn du die Pfanne nach 5 Minuten sofort vom Herd nimmst."
-    },
-    {
-     "text": "Mit zerbröseltem Feta bestreuen."
-    }
-   ]
-  },
-  {
-   "id": "avocado-eier-salat-raeucherlachs",
-   "titel": "Avocado-Eier-Salat mit Räucherlachs",
-   "schwerpunkt": [
-    "Keto",
-    "Fisch"
-   ],
-   "ernaehrung": [
-    "pescetarisch",
-    "glutenfrei",
-    "laktosefrei"
-   ],
-   "tags": [
-    "Low Carb",
-    "Omega-3",
-    "Wenig Aufwand"
-   ],
-   "mahlzeit": "Mittagessen",
-   "minuten": 15,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 460,
-    "eiweiss_g": 27,
-    "kohlenhydrate_g": 6,
-    "fett_g": 36
-   },
-   "zutaten": [
-    {
-     "menge": 4,
-     "einheit": "Stück",
-     "name": "Eier",
-     "abteilung": "Kühlregal",
-     "zutat_id": "eier"
-    },
-    {
-     "menge": 150,
-     "einheit": "g",
-     "name": "Räucherlachs",
-     "abteilung": "Fisch",
-     "zutat_id": "raeucherlachs"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Avocado",
-     "abteilung": "Obst",
-     "zutat_id": "avocado"
-    },
-    {
-     "menge": 100,
-     "einheit": "g",
-     "name": "Feldsalat",
-     "abteilung": "Gemüse",
-     "zutat_id": "feldsalat"
-    },
-    {
-     "menge": 0.5,
-     "einheit": "Stück",
-     "name": "Salatgurke",
-     "abteilung": "Gemüse",
-     "zutat_id": "salatgurke"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Olivenöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "olivenoel"
-    },
-    {
-     "menge": 0.5,
-     "einheit": "Stück",
-     "name": "Zitrone",
-     "abteilung": "Obst",
-     "zutat_id": "zitrone"
-    },
-    {
-     "menge": 1,
-     "einheit": "TL",
-     "name": "Senf",
-     "abteilung": "Vorrat",
-     "zutat_id": "senf"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Eier 8 Minuten kochen, abschrecken und pellen.",
-     "timer_sekunden": 480
-    },
-    {
-     "text": "Olivenöl, Zitronensaft und Senf zu einem Dressing verrühren."
-    },
-    {
-     "text": "Avocado und Gurke würfeln, Eier vierteln."
-    },
-    {
-     "text": "Feldsalat mit dem Dressing mischen, alles darauf anrichten und den Lachs in Streifen darüberlegen."
-    }
-   ]
-  },
-  {
-   "id": "zucchini-lasagne",
-   "titel": "Zucchini-Lasagne ohne Nudeln",
-   "schwerpunkt": [
-    "Keto",
-    "Familie"
-   ],
-   "ernaehrung": [
-    "glutenfrei"
-   ],
-   "tags": [
-    "Low Carb",
-    "Protein",
-    "Viel Gemüse"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 50,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 540,
-    "eiweiss_g": 38,
-    "kohlenhydrate_g": 13,
-    "fett_g": 36
-   },
-   "zutaten": [
-    {
-     "menge": 3,
-     "einheit": "Stück",
-     "name": "Zucchini",
-     "abteilung": "Gemüse",
-     "zutat_id": "zucchini"
-    },
-    {
-     "menge": 300,
-     "einheit": "g",
-     "name": "Rinderhackfleisch",
-     "abteilung": "Fleisch",
-     "zutat_id": "rinderhackfleisch"
-    },
-    {
-     "menge": 400,
-     "einheit": "g",
-     "name": "Passierte Tomaten",
-     "abteilung": "Konserven",
-     "zutat_id": "passierte-tomaten"
-    },
-    {
-     "menge": 125,
-     "einheit": "g",
-     "name": "Mozzarella",
-     "abteilung": "Kühlregal",
-     "zutat_id": "mozzarella"
-    },
-    {
-     "menge": 40,
-     "einheit": "g",
-     "name": "Parmesan (gerieben)",
-     "abteilung": "Kühlregal",
-     "zutat_id": "parmesan-gerieben"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Zwiebel",
-     "abteilung": "Gemüse",
-     "zutat_id": "zwiebel"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Olivenöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "olivenoel"
-    },
-    {
-     "menge": 1,
-     "einheit": "TL",
-     "name": "Oregano (getrocknet)",
-     "abteilung": "Vorrat",
-     "zutat_id": "oregano-getrocknet"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Backofen auf 200 Grad Ober- und Unterhitze vorheizen."
-    },
-    {
-     "text": "Zucchini längs in dünne Scheiben schneiden, salzen und 10 Minuten Wasser ziehen lassen, dann trocken tupfen.",
-     "timer_sekunden": 600,
-     "tipp": "Dieser Schritt verhindert, dass die Lasagne wässrig wird."
-    },
-    {
-     "text": "Zwiebel würfeln und mit dem Hackfleisch in Olivenöl 5 Minuten braten.",
-     "timer_sekunden": 300
-    },
-    {
-     "text": "Passierte Tomaten und Oregano dazugeben und 5 Minuten köcheln lassen.",
-     "timer_sekunden": 300
-    },
-    {
-     "text": "Abwechselnd Zucchini und Soße in eine Auflaufform schichten, mit Mozzarella und Parmesan abschließen."
-    },
-    {
-     "text": "25 Minuten backen.",
-     "timer_sekunden": 1500
-    }
-   ]
-  },
-  {
-   "id": "protein-haferbrei-beeren",
-   "titel": "Protein-Haferbrei mit Beeren",
-   "schwerpunkt": [
-    "Fitness"
-   ],
-   "ernaehrung": [
-    "vegetarisch"
-   ],
-   "tags": [
-    "Protein",
-    "Ballaststoffreich",
-    "Wenig Aufwand"
-   ],
-   "mahlzeit": "Frühstück",
-   "minuten": 10,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 430,
-    "eiweiss_g": 30,
-    "kohlenhydrate_g": 48,
-    "fett_g": 11
-   },
-   "zutaten": [
-    {
-     "menge": 100,
-     "einheit": "g",
-     "name": "Haferflocken (zart)",
-     "abteilung": "Vorrat",
-     "zutat_id": "haferflocken-zart"
-    },
-    {
-     "menge": 300,
-     "einheit": "ml",
-     "name": "Milch",
-     "abteilung": "Kühlregal",
-     "zutat_id": "milch"
-    },
-    {
-     "menge": 250,
-     "einheit": "g",
-     "name": "Magerquark",
-     "abteilung": "Kühlregal",
-     "zutat_id": "magerquark"
-    },
-    {
-     "menge": 200,
-     "einheit": "g",
-     "name": "Beerenmischung (TK)",
-     "abteilung": "Tiefkühl",
-     "zutat_id": "beerenmischung-tk"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Honig",
-     "abteilung": "Vorrat",
-     "zutat_id": "honig"
-    },
-    {
-     "menge": 20,
-     "einheit": "g",
-     "name": "Mandeln (gehackt)",
-     "abteilung": "Vorrat",
-     "zutat_id": "mandeln-gehackt"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Haferflocken mit der Milch aufkochen und 3 Minuten unter Rühren quellen lassen.",
-     "timer_sekunden": 180
-    },
-    {
-     "text": "Vom Herd nehmen und den Quark unterrühren.",
-     "tipp": "Den Quark erst am Ende einrühren, dann bleibt er cremig und flockt nicht aus."
-    },
-    {
-     "text": "Beeren kurz in einem kleinen Topf erwärmen."
-    },
-    {
-     "text": "Brei in Schalen füllen, Beeren, Honig und Mandeln daraufgeben."
-    }
-   ]
-  },
-  {
-   "id": "haehnchen-reis-brokkoli-meal-prep",
-   "titel": "Hähnchen mit Reis und Brokkoli zum Vorkochen",
-   "schwerpunkt": [
-    "Fitness"
-   ],
-   "ernaehrung": [
-    "glutenfrei",
-    "laktosefrei"
-   ],
-   "tags": [
-    "Protein",
-    "Wenig Aufwand",
-    "Günstig"
-   ],
-   "mahlzeit": "Mittagessen",
-   "minuten": 25,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 560,
-    "eiweiss_g": 48,
-    "kohlenhydrate_g": 58,
-    "fett_g": 12
-   },
-   "zutaten": [
-    {
-     "menge": 350,
-     "einheit": "g",
-     "name": "Hähnchenbrustfilet",
-     "abteilung": "Fleisch",
-     "zutat_id": "haehnchenbrustfilet"
-    },
-    {
-     "menge": 150,
-     "einheit": "g",
-     "name": "Basmatireis",
-     "abteilung": "Vorrat",
-     "zutat_id": "basmatireis"
-    },
-    {
-     "menge": 400,
-     "einheit": "g",
-     "name": "Brokkoli",
-     "abteilung": "Gemüse",
-     "zutat_id": "brokkoli"
-    },
-    {
-     "menge": 2,
-     "einheit": "EL",
-     "name": "Sojasauce",
-     "abteilung": "Vorrat",
-     "zutat_id": "sojasauce"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Honig",
-     "abteilung": "Vorrat",
-     "zutat_id": "honig"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Olivenöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "olivenoel"
-    },
-    {
-     "menge": 1,
-     "einheit": "Zehe",
-     "name": "Knoblauch",
-     "abteilung": "Gemüse",
-     "zutat_id": "knoblauch"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Reis nach Packungsangabe etwa 10 Minuten garen.",
-     "timer_sekunden": 600
-    },
-    {
-     "text": "Brokkoli in Röschen teilen und 4 Minuten dämpfen oder kochen.",
-     "timer_sekunden": 240
-    },
-    {
-     "text": "Hähnchen würfeln und in Olivenöl 6 Minuten goldbraun braten.",
-     "timer_sekunden": 360
-    },
-    {
-     "text": "Sojasauce, Honig und gehackten Knoblauch dazugeben und 1 Minute glasieren.",
-     "timer_sekunden": 60
-    },
-    {
-     "text": "Alles auf zwei Dosen verteilen.",
-     "tipp": "Hält sich im Kühlschrank drei Tage und lässt sich gut aufwärmen."
-    }
-   ]
-  },
-  {
-   "id": "linsen-bolognese-vollkornnudeln",
-   "titel": "Linsen-Bolognese mit Vollkornnudeln",
-   "schwerpunkt": [
-    "Fitness",
-    "Familie"
-   ],
-   "ernaehrung": [
-    "vegetarisch",
-    "vegan",
-    "laktosefrei"
-   ],
-   "tags": [
-    "Protein",
-    "Ballaststoffreich",
-    "Günstig"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 30,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 540,
-    "eiweiss_g": 27,
-    "kohlenhydrate_g": 88,
-    "fett_g": 7
-   },
-   "zutaten": [
-    {
-     "menge": 200,
-     "einheit": "g",
-     "name": "Vollkornnudeln",
-     "abteilung": "Vorrat",
-     "zutat_id": "vollkornnudeln"
-    },
-    {
-     "menge": 120,
-     "einheit": "g",
-     "name": "Rote Linsen",
-     "abteilung": "Vorrat",
-     "zutat_id": "rote-linsen"
-    },
-    {
-     "menge": 400,
-     "einheit": "g",
-     "name": "Stückige Tomaten (Dose)",
-     "abteilung": "Konserven",
-     "zutat_id": "stueckige-tomaten-dose"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Karotte",
-     "abteilung": "Gemüse",
-     "zutat_id": "karotte"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Zwiebel",
-     "abteilung": "Gemüse",
-     "zutat_id": "zwiebel"
-    },
-    {
-     "menge": 2,
-     "einheit": "EL",
-     "name": "Tomatenmark",
-     "abteilung": "Vorrat",
-     "zutat_id": "tomatenmark"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Olivenöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "olivenoel"
-    },
-    {
-     "menge": 300,
-     "einheit": "ml",
-     "name": "Gemüsebrühe",
-     "abteilung": "Vorrat",
-     "zutat_id": "gemuesebruehe"
-    },
-    {
-     "menge": 1,
-     "einheit": "TL",
-     "name": "Oregano (getrocknet)",
-     "abteilung": "Vorrat",
-     "zutat_id": "oregano-getrocknet"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Zwiebel und Karotte fein würfeln und in Olivenöl 4 Minuten andünsten.",
-     "timer_sekunden": 240
-    },
-    {
-     "text": "Tomatenmark kurz mitrösten, dann Linsen, Tomaten, Brühe und Oregano dazugeben."
-    },
-    {
-     "text": "15 Minuten köcheln lassen, bis die Linsen zerfallen.",
-     "timer_sekunden": 900
-    },
-    {
-     "text": "Währenddessen die Nudeln nach Packungsangabe kochen."
-    },
-    {
-     "text": "Soße mit Salz und Pfeffer abschmecken und mit den Nudeln mischen.",
-     "tipp": "Ein Schuss Nudelwasser macht die Soße sämig."
-    }
-   ]
-  },
-  {
-   "id": "rinderstreifen-paprika-reis",
-   "titel": "Rinderstreifen mit Paprika und Reis",
-   "schwerpunkt": [
-    "Fitness"
-   ],
-   "ernaehrung": [
-    "laktosefrei"
-   ],
-   "tags": [
-    "Protein",
-    "Eisen"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 25,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 580,
-    "eiweiss_g": 42,
-    "kohlenhydrate_g": 60,
-    "fett_g": 16
-   },
-   "zutaten": [
-    {
-     "menge": 300,
-     "einheit": "g",
-     "name": "Rinderhüftsteak",
-     "abteilung": "Fleisch",
-     "zutat_id": "rinderhueftsteak"
-    },
-    {
-     "menge": 150,
-     "einheit": "g",
-     "name": "Basmatireis",
-     "abteilung": "Vorrat",
-     "zutat_id": "basmatireis"
-    },
-    {
-     "menge": 2,
-     "einheit": "Stück",
-     "name": "Paprika (rot und gelb)",
-     "abteilung": "Gemüse",
-     "zutat_id": "paprika-rot-und-gelb"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Zwiebel",
-     "abteilung": "Gemüse",
-     "zutat_id": "zwiebel"
-    },
-    {
-     "menge": 2,
-     "einheit": "EL",
-     "name": "Sojasauce",
-     "abteilung": "Vorrat",
-     "zutat_id": "sojasauce"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Rapsöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "rapsoel"
-    },
-    {
-     "menge": 1,
-     "einheit": "TL",
-     "name": "Speisestärke",
-     "abteilung": "Vorrat",
-     "zutat_id": "speisestaerke"
-    },
-    {
-     "menge": 1,
-     "einheit": "Zehe",
-     "name": "Knoblauch",
-     "abteilung": "Gemüse",
-     "zutat_id": "knoblauch"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Reis nach Packungsangabe etwa 10 Minuten garen.",
-     "timer_sekunden": 600
-    },
-    {
-     "text": "Fleisch quer zur Faser in dünne Streifen schneiden und mit Sojasauce und Stärke mischen.",
-     "tipp": "Quer zur Faser geschnitten bleibt das Fleisch zart."
-    },
-    {
-     "text": "Fleisch in sehr heißem Öl 2 Minuten scharf anbraten und herausnehmen.",
-     "timer_sekunden": 120
-    },
-    {
-     "text": "Paprika und Zwiebel in Streifen 4 Minuten in derselben Pfanne braten.",
-     "timer_sekunden": 240
-    },
-    {
-     "text": "Fleisch und Knoblauch zurückgeben, kurz durchschwenken und mit dem Reis servieren."
-    }
-   ]
-  },
-  {
-   "id": "quark-pfannkuchen-banane",
-   "titel": "Quark-Pfannkuchen mit Banane",
-   "schwerpunkt": [
-    "Fitness",
-    "Familie"
-   ],
-   "ernaehrung": [
-    "vegetarisch"
-   ],
-   "tags": [
-    "Protein",
-    "Kinderfreundlich",
-    "Wenig Aufwand"
-   ],
-   "mahlzeit": "Frühstück",
-   "minuten": 20,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 450,
-    "eiweiss_g": 30,
-    "kohlenhydrate_g": 50,
-    "fett_g": 13
-   },
-   "zutaten": [
-    {
-     "menge": 250,
-     "einheit": "g",
-     "name": "Magerquark",
-     "abteilung": "Kühlregal",
-     "zutat_id": "magerquark"
-    },
-    {
-     "menge": 3,
-     "einheit": "Stück",
-     "name": "Eier",
-     "abteilung": "Kühlregal",
-     "zutat_id": "eier"
-    },
-    {
-     "menge": 80,
-     "einheit": "g",
-     "name": "Haferflocken (zart)",
-     "abteilung": "Vorrat",
-     "zutat_id": "haferflocken-zart"
-    },
-    {
-     "menge": 2,
-     "einheit": "Stück",
-     "name": "Bananen",
-     "abteilung": "Obst",
-     "zutat_id": "bananen"
-    },
-    {
-     "menge": 1,
-     "einheit": "TL",
-     "name": "Backpulver",
-     "abteilung": "Vorrat",
-     "zutat_id": "backpulver"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Butter",
-     "abteilung": "Kühlregal",
-     "zutat_id": "butter"
-    },
-    {
-     "menge": 1,
-     "einheit": "TL",
-     "name": "Zimt",
-     "abteilung": "Vorrat",
-     "zutat_id": "zimt"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Quark, Eier, Haferflocken, Backpulver, Zimt und eine zerdrückte Banane zu einem Teig verrühren."
-    },
-    {
-     "text": "5 Minuten quellen lassen.",
-     "timer_sekunden": 300
-    },
-    {
-     "text": "Butter in einer Pfanne schmelzen und kleine Pfannkuchen bei mittlerer Hitze 2 Minuten pro Seite backen.",
-     "timer_sekunden": 240,
-     "tipp": "Erst wenden, wenn sich oben kleine Bläschen zeigen."
-    },
-    {
-     "text": "Mit der zweiten Banane in Scheiben servieren."
-    }
-   ]
-  },
-  {
-   "id": "puten-gemuese-pfanne-kartoffeln",
-   "titel": "Puten-Gemüse-Pfanne mit Kartoffeln",
-   "schwerpunkt": [
-    "Fitness",
-    "Familie"
-   ],
-   "ernaehrung": [
-    "glutenfrei",
-    "laktosefrei"
-   ],
-   "tags": [
-    "Protein",
-    "Viel Gemüse",
-    "Kinderfreundlich"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 30,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 490,
-    "eiweiss_g": 44,
-    "kohlenhydrate_g": 46,
-    "fett_g": 13
-   },
-   "zutaten": [
-    {
-     "menge": 300,
-     "einheit": "g",
-     "name": "Putenbrust",
-     "abteilung": "Fleisch",
-     "zutat_id": "putenbrust"
-    },
-    {
-     "menge": 400,
-     "einheit": "g",
-     "name": "Kartoffeln (festkochend)",
-     "abteilung": "Gemüse",
-     "zutat_id": "kartoffeln-festkochend"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Zucchini",
-     "abteilung": "Gemüse",
-     "zutat_id": "zucchini"
-    },
-    {
-     "menge": 2,
-     "einheit": "Stück",
-     "name": "Karotten",
-     "abteilung": "Gemüse",
-     "zutat_id": "karotten"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Zwiebel",
-     "abteilung": "Gemüse",
-     "zutat_id": "zwiebel"
-    },
-    {
-     "menge": 2,
-     "einheit": "EL",
-     "name": "Olivenöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "olivenoel"
-    },
-    {
-     "menge": 1,
-     "einheit": "TL",
-     "name": "Paprikapulver (edelsüß)",
-     "abteilung": "Vorrat",
-     "zutat_id": "paprikapulver-edelsuess"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Kartoffeln in kleine Würfel schneiden und in 1 EL Öl 12 Minuten braten, dabei öfter wenden.",
-     "timer_sekunden": 720
-    },
-    {
-     "text": "Putenbrust würfeln und mit Paprikapulver und Salz würzen."
-    },
-    {
-     "text": "Kartoffeln an den Rand schieben, Fleisch im restlichen Öl 5 Minuten anbraten.",
-     "timer_sekunden": 300
-    },
-    {
-     "text": "Karotten, Zucchini und Zwiebel gewürfelt dazugeben und 6 Minuten mitbraten.",
-     "timer_sekunden": 360
-    },
-    {
-     "text": "Mit Salz und Pfeffer abschmecken."
-    }
-   ]
-  },
-  {
-   "id": "kabeljau-senfsosse-kartoffeln",
-   "titel": "Kabeljau in Senfsoße mit Kartoffeln",
-   "schwerpunkt": [
-    "Fisch",
-    "Familie"
-   ],
-   "ernaehrung": [
-    "pescetarisch",
-    "glutenfrei"
-   ],
-   "tags": [
-    "Protein",
-    "Kinderfreundlich"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 30,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 510,
-    "eiweiss_g": 38,
-    "kohlenhydrate_g": 44,
-    "fett_g": 19
-   },
-   "zutaten": [
-    {
-     "menge": 350,
-     "einheit": "g",
-     "name": "Kabeljaufilet",
-     "abteilung": "Fisch",
-     "zutat_id": "kabeljaufilet"
-    },
-    {
-     "menge": 500,
-     "einheit": "g",
-     "name": "Kartoffeln (festkochend)",
-     "abteilung": "Gemüse",
-     "zutat_id": "kartoffeln-festkochend"
-    },
-    {
-     "menge": 150,
-     "einheit": "ml",
-     "name": "Kochsahne",
-     "abteilung": "Kühlregal",
-     "zutat_id": "kochsahne"
-    },
-    {
-     "menge": 2,
-     "einheit": "EL",
-     "name": "Senf (mittelscharf)",
-     "abteilung": "Vorrat",
-     "zutat_id": "senf-mittelscharf"
-    },
-    {
-     "menge": 100,
-     "einheit": "ml",
-     "name": "Gemüsebrühe",
-     "abteilung": "Vorrat",
-     "zutat_id": "gemuesebruehe"
-    },
-    {
-     "menge": 15,
-     "einheit": "g",
-     "name": "Butter",
-     "abteilung": "Kühlregal",
-     "zutat_id": "butter"
-    },
-    {
-     "menge": 0.5,
-     "einheit": "Bund",
-     "name": "Dill",
-     "abteilung": "Gemüse",
-     "zutat_id": "dill"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Kartoffeln schälen und 20 Minuten in Salzwasser kochen.",
-     "timer_sekunden": 1200
-    },
-    {
-     "text": "Sahne, Brühe und Senf in einer Pfanne aufkochen und 3 Minuten einkochen lassen.",
-     "timer_sekunden": 180
-    },
-    {
-     "text": "Kabeljau salzen, in die Soße legen und bei kleiner Hitze 7 Minuten zugedeckt gar ziehen lassen.",
-     "timer_sekunden": 420,
-     "tipp": "Der Fisch ist fertig, wenn er sich leicht in Lamellen teilt."
-    },
-    {
-     "text": "Butter und gehackten Dill unterrühren und mit den Kartoffeln servieren."
-    }
-   ]
-  },
-  {
-   "id": "lachs-teriyaki-pak-choi",
-   "titel": "Teriyaki-Lachs mit Pak Choi und Reis",
-   "schwerpunkt": [
-    "Fisch",
-    "Fitness"
-   ],
-   "ernaehrung": [
-    "pescetarisch",
-    "laktosefrei"
-   ],
-   "tags": [
-    "Protein",
-    "Omega-3"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 25,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 610,
-    "eiweiss_g": 38,
-    "kohlenhydrate_g": 60,
-    "fett_g": 23
-   },
-   "zutaten": [
-    {
-     "menge": 300,
-     "einheit": "g",
-     "name": "Lachsfilet",
-     "abteilung": "Fisch",
-     "zutat_id": "lachsfilet"
-    },
-    {
-     "menge": 150,
-     "einheit": "g",
-     "name": "Basmatireis",
-     "abteilung": "Vorrat",
-     "zutat_id": "basmatireis"
-    },
-    {
-     "menge": 2,
-     "einheit": "Stück",
-     "name": "Pak Choi",
-     "abteilung": "Gemüse",
-     "zutat_id": "pak-choi"
-    },
-    {
-     "menge": 3,
-     "einheit": "EL",
-     "name": "Sojasauce",
-     "abteilung": "Vorrat",
-     "zutat_id": "sojasauce"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Honig",
-     "abteilung": "Vorrat",
-     "zutat_id": "honig"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Ingwer (daumengroß)",
-     "abteilung": "Gemüse",
-     "zutat_id": "ingwer-daumengross"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Rapsöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "rapsoel"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Sesam",
-     "abteilung": "Vorrat",
-     "zutat_id": "sesam"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Reis nach Packungsangabe etwa 10 Minuten garen.",
-     "timer_sekunden": 600
-    },
-    {
-     "text": "Sojasauce, Honig und geriebenen Ingwer verrühren."
-    },
-    {
-     "text": "Lachs in Öl auf der Hautseite 4 Minuten braten, wenden und 2 Minuten weiterbraten.",
-     "timer_sekunden": 360
-    },
-    {
-     "text": "Soße angießen und 1 Minute einkochen, dabei den Lachs damit beträufeln.",
-     "timer_sekunden": 60
-    },
-    {
-     "text": "Pak Choi halbieren und 3 Minuten in der Pfanne mitgaren.",
-     "timer_sekunden": 180
-    },
-    {
-     "text": "Mit Reis anrichten und mit Sesam bestreuen."
-    }
-   ]
-  },
-  {
-   "id": "forelle-mandelbutter-bohnen",
-   "titel": "Forellenfilet mit Mandelbutter und grünen Bohnen",
-   "schwerpunkt": [
-    "Fisch",
-    "Keto"
-   ],
-   "ernaehrung": [
-    "pescetarisch",
-    "glutenfrei"
-   ],
-   "tags": [
-    "Low Carb",
-    "Omega-3",
-    "Wenig Aufwand"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 20,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 480,
-    "eiweiss_g": 36,
-    "kohlenhydrate_g": 9,
-    "fett_g": 33
-   },
-   "zutaten": [
-    {
-     "menge": 4,
-     "einheit": "Stück",
-     "name": "Forellenfilets",
-     "abteilung": "Fisch",
-     "zutat_id": "forellenfilets"
-    },
-    {
-     "menge": 300,
-     "einheit": "g",
-     "name": "Grüne Bohnen (TK)",
-     "abteilung": "Tiefkühl",
-     "zutat_id": "gruene-bohnen-tk"
-    },
-    {
-     "menge": 30,
-     "einheit": "g",
-     "name": "Mandelblättchen",
-     "abteilung": "Vorrat",
-     "zutat_id": "mandelblaettchen"
-    },
-    {
-     "menge": 30,
-     "einheit": "g",
-     "name": "Butter",
-     "abteilung": "Kühlregal",
-     "zutat_id": "butter"
-    },
-    {
-     "menge": 0.5,
-     "einheit": "Stück",
-     "name": "Zitrone",
-     "abteilung": "Obst",
-     "zutat_id": "zitrone"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Olivenöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "olivenoel"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Bohnen 6 Minuten in Salzwasser garen und abgießen.",
-     "timer_sekunden": 360
-    },
-    {
-     "text": "Forellenfilets salzen und in Olivenöl auf der Hautseite 3 Minuten braten, wenden und 1 Minute fertig garen.",
-     "timer_sekunden": 240
-    },
-    {
-     "text": "Fisch herausnehmen, Butter in der Pfanne schmelzen und die Mandeln darin 2 Minuten goldbraun rösten.",
-     "timer_sekunden": 120,
-     "tipp": "Bleib dabei, Mandeln verbrennen schnell."
-    },
-    {
-     "text": "Zitronensaft einrühren und die Mandelbutter über Fisch und Bohnen geben."
-    }
-   ]
-  },
-  {
-   "id": "thunfisch-nudelsalat",
-   "titel": "Thunfisch-Nudelsalat mit Mais und Paprika",
-   "schwerpunkt": [
-    "Fisch",
-    "Familie"
-   ],
-   "ernaehrung": [
-    "pescetarisch"
-   ],
-   "tags": [
-    "Kinderfreundlich",
-    "Günstig",
-    "Protein"
-   ],
-   "mahlzeit": "Mittagessen",
-   "minuten": 20,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 520,
-    "eiweiss_g": 32,
-    "kohlenhydrate_g": 66,
-    "fett_g": 13
-   },
-   "zutaten": [
-    {
-     "menge": 200,
-     "einheit": "g",
-     "name": "Nudeln (kurz)",
-     "abteilung": "Vorrat",
-     "zutat_id": "nudeln-kurz"
-    },
-    {
-     "menge": 2,
-     "einheit": "Dosen",
-     "name": "Thunfisch im eigenen Saft",
-     "abteilung": "Konserven",
-     "zutat_id": "thunfisch-im-eigenen-saft"
-    },
-    {
-     "menge": 1,
-     "einheit": "Dose",
-     "name": "Mais",
-     "abteilung": "Konserven",
-     "zutat_id": "mais"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Rote Paprika",
-     "abteilung": "Gemüse",
-     "zutat_id": "rote-paprika"
-    },
-    {
-     "menge": 150,
-     "einheit": "g",
-     "name": "Naturjoghurt",
-     "abteilung": "Kühlregal",
-     "zutat_id": "naturjoghurt"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Senf (mittelscharf)",
-     "abteilung": "Vorrat",
-     "zutat_id": "senf-mittelscharf"
-    },
-    {
-     "menge": 0.5,
-     "einheit": "Stück",
-     "name": "Zitrone",
-     "abteilung": "Obst",
-     "zutat_id": "zitrone"
-    },
-    {
-     "menge": 2,
-     "einheit": "Stück",
-     "name": "Frühlingszwiebeln",
-     "abteilung": "Gemüse",
-     "zutat_id": "fruehlingszwiebeln"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Nudeln nach Packungsangabe kochen, abgießen und kalt abspülen.",
-     "timer_sekunden": 600
-    },
-    {
-     "text": "Joghurt, Senf, Zitronensaft, Salz und Pfeffer zu einem Dressing verrühren."
-    },
-    {
-     "text": "Paprika würfeln, Frühlingszwiebeln in Ringe schneiden, Thunfisch und Mais abtropfen lassen."
-    },
-    {
-     "text": "Alles mit den Nudeln mischen und 10 Minuten durchziehen lassen.",
-     "timer_sekunden": 600,
-     "tipp": "Schmeckt am nächsten Tag noch besser, ideal fürs Büro."
-    }
-   ]
-  },
-  {
-   "id": "garnelen-curry-kokos",
-   "titel": "Garnelen-Curry mit Kokosmilch",
-   "schwerpunkt": [
-    "Fisch",
-    "Keto"
-   ],
-   "ernaehrung": [
-    "pescetarisch",
-    "glutenfrei",
-    "laktosefrei"
-   ],
-   "tags": [
-    "Low Carb",
-    "Protein",
-    "Wenig Aufwand"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 20,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 450,
-    "eiweiss_g": 28,
-    "kohlenhydrate_g": 12,
-    "fett_g": 32
-   },
-   "zutaten": [
-    {
-     "menge": 250,
-     "einheit": "g",
-     "name": "Garnelen (geschält)",
-     "abteilung": "Fisch",
-     "zutat_id": "garnelen-geschaelt"
-    },
-    {
-     "menge": 400,
-     "einheit": "ml",
-     "name": "Kokosmilch",
-     "abteilung": "Konserven",
-     "zutat_id": "kokosmilch"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Rote Paprika",
-     "abteilung": "Gemüse",
-     "zutat_id": "rote-paprika"
-    },
-    {
-     "menge": 150,
-     "einheit": "g",
-     "name": "Zuckerschoten",
-     "abteilung": "Gemüse",
-     "zutat_id": "zuckerschoten"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Rote Currypaste",
-     "abteilung": "Vorrat",
-     "zutat_id": "rote-currypaste"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Ingwer (daumengroß)",
-     "abteilung": "Gemüse",
-     "zutat_id": "ingwer-daumengross"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Rapsöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "rapsoel"
-    },
-    {
-     "menge": 0.5,
-     "einheit": "Stück",
-     "name": "Limette",
-     "abteilung": "Obst",
-     "zutat_id": "limette"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Currypaste und geriebenen Ingwer in Öl 1 Minute anrösten.",
-     "timer_sekunden": 60
-    },
-    {
-     "text": "Kokosmilch angießen und aufkochen."
-    },
-    {
-     "text": "Paprika in Streifen und Zuckerschoten dazugeben und 5 Minuten köcheln lassen.",
-     "timer_sekunden": 300
-    },
-    {
-     "text": "Garnelen hineingeben und 3 Minuten gar ziehen lassen.",
-     "timer_sekunden": 180,
-     "tipp": "Garnelen nur kurz garen, sonst werden sie zäh."
-    },
-    {
-     "text": "Mit Limettensaft und Salz abschmecken.",
-     "tipp": "Wer nicht auf Kohlenhydrate achtet, isst Reis dazu."
-    }
-   ]
-  },
-  {
-   "id": "seelachs-tomaten-oliven",
-   "titel": "Seelachs aus dem Ofen mit Tomaten und Oliven",
-   "schwerpunkt": [
-    "Fisch",
-    "Keto"
-   ],
-   "ernaehrung": [
-    "pescetarisch",
-    "glutenfrei",
-    "laktosefrei"
-   ],
-   "tags": [
-    "Low Carb",
-    "Wenig Kalorien",
-    "Wenig Aufwand"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 25,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 330,
-    "eiweiss_g": 36,
-    "kohlenhydrate_g": 9,
-    "fett_g": 16
-   },
-   "zutaten": [
-    {
-     "menge": 350,
-     "einheit": "g",
-     "name": "Seelachsfilet",
-     "abteilung": "Fisch",
-     "zutat_id": "seelachsfilet"
-    },
-    {
-     "menge": 300,
-     "einheit": "g",
-     "name": "Kirschtomaten",
-     "abteilung": "Gemüse",
-     "zutat_id": "kirschtomaten"
-    },
-    {
-     "menge": 60,
-     "einheit": "g",
-     "name": "Schwarze Oliven (entsteint)",
-     "abteilung": "Konserven",
-     "zutat_id": "schwarze-oliven-entsteint"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Rote Zwiebel",
-     "abteilung": "Gemüse",
-     "zutat_id": "rote-zwiebel"
-    },
-    {
-     "menge": 2,
-     "einheit": "EL",
-     "name": "Olivenöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "olivenoel"
-    },
-    {
-     "menge": 2,
-     "einheit": "Zehen",
-     "name": "Knoblauch",
-     "abteilung": "Gemüse",
-     "zutat_id": "knoblauch"
-    },
-    {
-     "menge": 0.5,
-     "einheit": "Stück",
-     "name": "Zitrone",
-     "abteilung": "Obst",
-     "zutat_id": "zitrone"
-    },
-    {
-     "menge": 1,
-     "einheit": "TL",
-     "name": "Thymian (getrocknet)",
-     "abteilung": "Vorrat",
-     "zutat_id": "thymian-getrocknet"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Backofen auf 200 Grad Ober- und Unterhitze vorheizen."
-    },
-    {
-     "text": "Tomaten halbieren, Zwiebel in Spalten schneiden und mit Oliven, Knoblauch, Öl und Thymian in einer Auflaufform mischen."
-    },
-    {
-     "text": "10 Minuten vorgaren.",
-     "timer_sekunden": 600
-    },
-    {
-     "text": "Fisch salzen, auf das Gemüse legen, mit Zitronensaft beträufeln und weitere 12 Minuten backen.",
-     "timer_sekunden": 720
-    }
-   ]
-  },
-  {
-   "id": "matjes-pellkartoffeln-quark",
-   "titel": "Matjes mit Pellkartoffeln und Kräuterquark",
-   "schwerpunkt": [
-    "Fisch"
-   ],
-   "ernaehrung": [
-    "pescetarisch",
-    "glutenfrei"
-   ],
-   "tags": [
-    "Omega-3",
-    "Günstig",
-    "Wenig Aufwand"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 25,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 560,
-    "eiweiss_g": 30,
-    "kohlenhydrate_g": 44,
-    "fett_g": 28
-   },
-   "zutaten": [
-    {
-     "menge": 4,
-     "einheit": "Stück",
-     "name": "Matjesfilets",
-     "abteilung": "Fisch",
-     "zutat_id": "matjesfilets"
-    },
-    {
-     "menge": 500,
-     "einheit": "g",
-     "name": "Kartoffeln (festkochend)",
-     "abteilung": "Gemüse",
-     "zutat_id": "kartoffeln-festkochend"
-    },
-    {
-     "menge": 250,
-     "einheit": "g",
-     "name": "Speisequark (20 %)",
-     "abteilung": "Kühlregal",
-     "zutat_id": "speisequark-20"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Apfel",
-     "abteilung": "Obst",
-     "zutat_id": "apfel"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Rote Zwiebel",
-     "abteilung": "Gemüse",
-     "zutat_id": "rote-zwiebel"
-    },
-    {
-     "menge": 0.5,
-     "einheit": "Bund",
-     "name": "Schnittlauch",
-     "abteilung": "Gemüse",
-     "zutat_id": "schnittlauch"
-    },
-    {
-     "menge": 3,
-     "einheit": "EL",
-     "name": "Milch",
-     "abteilung": "Kühlregal",
-     "zutat_id": "milch"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Kartoffeln mit Schale 20 Minuten in Salzwasser kochen.",
-     "timer_sekunden": 1200
-    },
-    {
-     "text": "Quark mit Milch glatt rühren, Schnittlauch in Röllchen unterheben, salzen und pfeffern."
-    },
-    {
-     "text": "Apfel fein würfeln und Zwiebel in dünne Ringe schneiden."
-    },
-    {
-     "text": "Matjes mit Kartoffeln, Quark, Apfel und Zwiebel anrichten.",
-     "tipp": "Der Apfel nimmt dem Matjes die Schärfe, das mögen auch Kinder."
-    }
-   ]
-  },
-  {
-   "id": "kartoffel-gemuese-auflauf",
-   "titel": "Kartoffel-Gemüse-Auflauf",
-   "schwerpunkt": [
-    "Familie"
-   ],
-   "ernaehrung": [
-    "vegetarisch",
-    "glutenfrei"
-   ],
-   "tags": [
-    "Kinderfreundlich",
-    "Günstig",
-    "Viel Gemüse"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 50,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 520,
-    "eiweiss_g": 20,
-    "kohlenhydrate_g": 50,
-    "fett_g": 26
-   },
-   "zutaten": [
-    {
-     "menge": 500,
-     "einheit": "g",
-     "name": "Kartoffeln (festkochend)",
-     "abteilung": "Gemüse",
-     "zutat_id": "kartoffeln-festkochend"
-    },
-    {
-     "menge": 300,
-     "einheit": "g",
-     "name": "Brokkoli",
-     "abteilung": "Gemüse",
-     "zutat_id": "brokkoli"
-    },
-    {
-     "menge": 2,
-     "einheit": "Stück",
-     "name": "Karotten",
-     "abteilung": "Gemüse",
-     "zutat_id": "karotten"
-    },
-    {
-     "menge": 200,
-     "einheit": "ml",
-     "name": "Kochsahne",
-     "abteilung": "Kühlregal",
-     "zutat_id": "kochsahne"
-    },
-    {
-     "menge": 2,
-     "einheit": "Stück",
-     "name": "Eier",
-     "abteilung": "Kühlregal",
-     "zutat_id": "eier"
-    },
-    {
-     "menge": 100,
-     "einheit": "g",
-     "name": "Gouda (gerieben)",
-     "abteilung": "Kühlregal",
-     "zutat_id": "gouda-gerieben"
-    },
-    {
-     "menge": 1,
-     "einheit": "Prise",
-     "name": "Muskatnuss",
-     "abteilung": "Vorrat",
-     "zutat_id": "muskatnuss"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Backofen auf 190 Grad Umluft vorheizen."
-    },
-    {
-     "text": "Kartoffeln und Karotten in dünne Scheiben schneiden und 6 Minuten in Salzwasser vorkochen, in den letzten 2 Minuten den Brokkoli dazugeben.",
-     "timer_sekunden": 360
-    },
-    {
-     "text": "Gemüse abgießen und in eine Auflaufform schichten."
-    },
-    {
-     "text": "Sahne, Eier, Salz und Muskat verquirlen und darübergießen."
-    },
-    {
-     "text": "Mit Käse bestreuen und 30 Minuten goldbraun backen.",
-     "timer_sekunden": 1800
-    }
-   ]
-  },
-  {
-   "id": "haehnchen-nuggets-ofen",
-   "titel": "Hähnchen-Nuggets aus dem Ofen mit Gurkensticks",
-   "schwerpunkt": [
-    "Familie",
-    "Fitness"
-   ],
-   "ernaehrung": [
-    "laktosefrei"
-   ],
-   "tags": [
-    "Kinderfreundlich",
-    "Protein"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 30,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 450,
-    "eiweiss_g": 46,
-    "kohlenhydrate_g": 36,
-    "fett_g": 12
-   },
-   "zutaten": [
-    {
-     "menge": 350,
-     "einheit": "g",
-     "name": "Hähnchenbrustfilet",
-     "abteilung": "Fleisch",
-     "zutat_id": "haehnchenbrustfilet"
-    },
-    {
-     "menge": 60,
-     "einheit": "g",
-     "name": "Paniermehl",
-     "abteilung": "Vorrat",
-     "zutat_id": "paniermehl"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Ei",
-     "abteilung": "Kühlregal",
-     "zutat_id": "ei"
-    },
-    {
-     "menge": 2,
-     "einheit": "EL",
-     "name": "Mehl",
-     "abteilung": "Vorrat",
-     "zutat_id": "mehl"
-    },
-    {
-     "menge": 1,
-     "einheit": "TL",
-     "name": "Paprikapulver (edelsüß)",
-     "abteilung": "Vorrat",
-     "zutat_id": "paprikapulver-edelsuess"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Rapsöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "rapsoel"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Salatgurke",
-     "abteilung": "Gemüse",
-     "zutat_id": "salatgurke"
-    },
-    {
-     "menge": 2,
-     "einheit": "Stück",
-     "name": "Karotten",
-     "abteilung": "Gemüse",
-     "zutat_id": "karotten"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Backofen auf 210 Grad Umluft vorheizen und ein Blech mit Backpapier belegen."
-    },
-    {
-     "text": "Hähnchen in mundgerechte Stücke schneiden und salzen."
-    },
-    {
-     "text": "Erst in Mehl, dann in verquirltem Ei und zuletzt in Paniermehl mit Paprikapulver wenden.",
-     "tipp": "Eine Hand fürs Trockene, eine fürs Nasse, dann verkleben die Finger nicht."
-    },
-    {
-     "text": "Auf dem Blech verteilen, mit Öl beträufeln und 15 Minuten backen, nach der Hälfte wenden.",
-     "timer_sekunden": 900
-    },
-    {
-     "text": "Gurke und Karotten in Sticks schneiden und dazu servieren."
-    }
-   ]
-  },
-  {
-   "id": "gemuesereis-ei",
-   "titel": "Bunter Gemüsereis mit Ei",
-   "schwerpunkt": [
-    "Familie"
-   ],
-   "ernaehrung": [
-    "vegetarisch",
-    "laktosefrei"
-   ],
-   "tags": [
-    "Kinderfreundlich",
-    "Günstig",
-    "Wenig Aufwand"
-   ],
-   "mahlzeit": "Mittagessen",
-   "minuten": 20,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 470,
-    "eiweiss_g": 18,
-    "kohlenhydrate_g": 66,
-    "fett_g": 14
-   },
-   "zutaten": [
-    {
-     "menge": 150,
-     "einheit": "g",
-     "name": "Basmatireis",
-     "abteilung": "Vorrat",
-     "zutat_id": "basmatireis"
-    },
-    {
-     "menge": 3,
-     "einheit": "Stück",
-     "name": "Eier",
-     "abteilung": "Kühlregal",
-     "zutat_id": "eier"
-    },
-    {
-     "menge": 150,
-     "einheit": "g",
-     "name": "Erbsen (TK)",
-     "abteilung": "Tiefkühl",
-     "zutat_id": "erbsen-tk"
-    },
-    {
-     "menge": 2,
-     "einheit": "Stück",
-     "name": "Karotten",
-     "abteilung": "Gemüse",
-     "zutat_id": "karotten"
-    },
-    {
-     "menge": 1,
-     "einheit": "Dose",
-     "name": "Mais",
-     "abteilung": "Konserven",
-     "zutat_id": "mais"
-    },
-    {
-     "menge": 2,
-     "einheit": "EL",
-     "name": "Sojasauce",
-     "abteilung": "Vorrat",
-     "zutat_id": "sojasauce"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Rapsöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "rapsoel"
-    },
-    {
-     "menge": 2,
-     "einheit": "Stück",
-     "name": "Frühlingszwiebeln",
-     "abteilung": "Gemüse",
-     "zutat_id": "fruehlingszwiebeln"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Reis nach Packungsangabe etwa 10 Minuten garen.",
-     "timer_sekunden": 600,
-     "tipp": "Reis vom Vortag funktioniert sogar noch besser."
-    },
-    {
-     "text": "Karotten klein würfeln und in Öl 4 Minuten braten.",
-     "timer_sekunden": 240
-    },
-    {
-     "text": "Erbsen und Mais dazugeben und 2 Minuten mitbraten.",
-     "timer_sekunden": 120
-    },
-    {
-     "text": "Gemüse zur Seite schieben, Eier in die Pfanne schlagen und zu Rührei stocken lassen."
-    },
-    {
-     "text": "Reis und Sojasauce unterheben und mit Frühlingszwiebeln bestreuen."
-    }
-   ]
-  },
-  {
-   "id": "kuerbissuppe-ingwer",
-   "titel": "Kürbissuppe mit Ingwer",
-   "schwerpunkt": [
-    "Familie"
-   ],
-   "ernaehrung": [
-    "vegetarisch",
-    "vegan",
-    "glutenfrei",
-    "laktosefrei"
-   ],
-   "tags": [
-    "Kinderfreundlich",
-    "Günstig",
-    "Wenig Kalorien"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 30,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 290,
-    "eiweiss_g": 6,
-    "kohlenhydrate_g": 32,
-    "fett_g": 15
-   },
-   "zutaten": [
-    {
-     "menge": 600,
-     "einheit": "g",
-     "name": "Hokkaido-Kürbis",
-     "abteilung": "Gemüse",
-     "zutat_id": "hokkaido-kuerbis"
-    },
-    {
-     "menge": 2,
-     "einheit": "Stück",
-     "name": "Karotten",
-     "abteilung": "Gemüse",
-     "zutat_id": "karotten"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Zwiebel",
-     "abteilung": "Gemüse",
-     "zutat_id": "zwiebel"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Ingwer (daumengroß)",
-     "abteilung": "Gemüse",
-     "zutat_id": "ingwer-daumengross"
-    },
-    {
-     "menge": 500,
-     "einheit": "ml",
-     "name": "Gemüsebrühe",
-     "abteilung": "Vorrat",
-     "zutat_id": "gemuesebruehe"
-    },
-    {
-     "menge": 200,
-     "einheit": "ml",
-     "name": "Kokosmilch",
-     "abteilung": "Konserven",
-     "zutat_id": "kokosmilch"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Olivenöl",
-     "abteilung": "Vorrat",
-     "zutat_id": "olivenoel"
-    },
-    {
-     "menge": 2,
-     "einheit": "EL",
-     "name": "Kürbiskerne",
-     "abteilung": "Vorrat",
-     "zutat_id": "kuerbiskerne"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Kürbis entkernen und mit Schale würfeln, Karotten und Zwiebel grob schneiden.",
-     "tipp": "Hokkaido musst du nicht schälen, die Schale wird weich."
-    },
-    {
-     "text": "Alles mit geriebenem Ingwer in Olivenöl 3 Minuten andünsten.",
-     "timer_sekunden": 180
-    },
-    {
-     "text": "Brühe angießen und 15 Minuten weich kochen.",
-     "timer_sekunden": 900
-    },
-    {
-     "text": "Kokosmilch dazugeben und fein pürieren."
-    },
-    {
-     "text": "Mit Salz abschmecken und mit Kürbiskernen bestreuen."
-    }
-   ]
-  },
-  {
-   "id": "pfannkuchen-apfelmus",
-   "titel": "Pfannkuchen mit Apfelmus",
-   "schwerpunkt": [
-    "Familie"
-   ],
-   "ernaehrung": [
-    "vegetarisch"
-   ],
-   "tags": [
-    "Kinderfreundlich",
-    "Günstig",
-    "Wenig Aufwand"
-   ],
-   "mahlzeit": "Mittagessen",
-   "minuten": 25,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 520,
-    "eiweiss_g": 18,
-    "kohlenhydrate_g": 76,
-    "fett_g": 15
-   },
-   "zutaten": [
-    {
-     "menge": 200,
-     "einheit": "g",
-     "name": "Mehl",
-     "abteilung": "Vorrat",
-     "zutat_id": "mehl"
-    },
-    {
-     "menge": 3,
-     "einheit": "Stück",
-     "name": "Eier",
-     "abteilung": "Kühlregal",
-     "zutat_id": "eier"
-    },
-    {
-     "menge": 350,
-     "einheit": "ml",
-     "name": "Milch",
-     "abteilung": "Kühlregal",
-     "zutat_id": "milch"
-    },
-    {
-     "menge": 1,
-     "einheit": "Prise",
-     "name": "Salz",
-     "abteilung": "Vorrat",
-     "zutat_id": "salz"
-    },
-    {
-     "menge": 20,
-     "einheit": "g",
-     "name": "Butter",
-     "abteilung": "Kühlregal",
-     "zutat_id": "butter"
-    },
-    {
-     "menge": 200,
-     "einheit": "g",
-     "name": "Apfelmus",
-     "abteilung": "Konserven",
-     "zutat_id": "apfelmus"
-    },
-    {
-     "menge": 1,
-     "einheit": "TL",
-     "name": "Zimt",
-     "abteilung": "Vorrat",
-     "zutat_id": "zimt"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Mehl, Eier, Milch und Salz zu einem glatten Teig verrühren."
-    },
-    {
-     "text": "10 Minuten ruhen lassen.",
-     "timer_sekunden": 600,
-     "tipp": "Durch die Ruhezeit werden die Pfannkuchen locker und reißen nicht."
-    },
-    {
-     "text": "Etwas Butter in der Pfanne schmelzen, eine Kelle Teig hineingeben und 2 Minuten pro Seite backen.",
-     "timer_sekunden": 240
-    },
-    {
-     "text": "So weitermachen, bis der Teig aufgebraucht ist."
-    },
-    {
-     "text": "Mit Apfelmus und Zimt servieren."
-    }
-   ]
-  },
-  {
-   "id": "kaese-spaetzle-roestzwiebeln",
-   "titel": "Käsespätzle mit Röstzwiebeln und Gurkensalat",
-   "schwerpunkt": [
-    "Familie"
-   ],
-   "ernaehrung": [
-    "vegetarisch"
-   ],
-   "tags": [
-    "Kinderfreundlich",
-    "Wenig Aufwand"
-   ],
-   "mahlzeit": "Abendessen",
-   "minuten": 25,
-   "portionen": 2,
-   "naehrwerte": {
-    "kcal": 640,
-    "eiweiss_g": 28,
-    "kohlenhydrate_g": 70,
-    "fett_g": 26
-   },
-   "zutaten": [
-    {
-     "menge": 400,
-     "einheit": "g",
-     "name": "Spätzle (Kühlregal)",
-     "abteilung": "Kühlregal",
-     "zutat_id": "spaetzle-kuehlregal"
-    },
-    {
-     "menge": 150,
-     "einheit": "g",
-     "name": "Bergkäse (gerieben)",
-     "abteilung": "Kühlregal",
-     "zutat_id": "bergkaese-gerieben"
-    },
-    {
-     "menge": 2,
-     "einheit": "Stück",
-     "name": "Zwiebeln",
-     "abteilung": "Gemüse",
-     "zutat_id": "zwiebeln"
-    },
-    {
-     "menge": 20,
-     "einheit": "g",
-     "name": "Butter",
-     "abteilung": "Kühlregal",
-     "zutat_id": "butter"
-    },
-    {
-     "menge": 1,
-     "einheit": "Stück",
-     "name": "Salatgurke",
-     "abteilung": "Gemüse",
-     "zutat_id": "salatgurke"
-    },
-    {
-     "menge": 100,
-     "einheit": "g",
-     "name": "Naturjoghurt",
-     "abteilung": "Kühlregal",
-     "zutat_id": "naturjoghurt"
-    },
-    {
-     "menge": 1,
-     "einheit": "EL",
-     "name": "Weißweinessig",
-     "abteilung": "Vorrat",
-     "zutat_id": "weissweinessig"
-    },
-    {
-     "menge": 0.5,
-     "einheit": "Bund",
-     "name": "Schnittlauch",
-     "abteilung": "Gemüse",
-     "zutat_id": "schnittlauch"
-    }
-   ],
-   "schritte": [
-    {
-     "text": "Zwiebeln in Ringe schneiden und in Butter bei mittlerer Hitze 10 Minuten goldbraun braten.",
-     "timer_sekunden": 600,
-     "tipp": "Geduld lohnt sich, bei zu viel Hitze werden die Zwiebeln bitter."
-    },
-    {
-     "text": "Gurke in dünne Scheiben hobeln und mit Joghurt, Essig, Salz und Pfeffer mischen."
-    },
-    {
-     "text": "Spätzle in einer zweiten Pfanne 4 Minuten erwärmen.",
-     "timer_sekunden": 240
-    },
-    {
-     "text": "Käse unterheben und schmelzen lassen."
-    },
-    {
-     "text": "Mit Röstzwiebeln und Schnittlauch bestreuen und mit dem Gurkensalat servieren."
-    }
-   ]
-  }
- ]
+  ]
 }

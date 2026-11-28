@@ -11,7 +11,7 @@ Stand: Grundgerüst mit vier Bereichen und Einstellungen, noch ohne Funktionen. 
 | `docs/spec.md` | Spec der ersten Version mit Datenmodell, Regeln und Abnahmekriterien |
 | `docs/konzept.md` | Konzeptstand mit Umfang, Design und offenen Punkten |
 | `data/rezepte/` | Eigene Rezepte als JSON, bisher 33 Stück |
-| `data/zutatenkatalog-entwurf.json` | Zutatenkatalog mit festen Kennungen, Entwurf |
+| `data/zutatenkatalog.json` | Zutatenkatalog mit festen Kennungen, Basiseinheit und Umrechnung |
 | `docs/entscheidungen/` | Architekturentscheidungen |
 | `src/` | App-Code |
 | `AGENTS.md` | Arbeitsregeln für KI-Agenten in diesem Repository |
