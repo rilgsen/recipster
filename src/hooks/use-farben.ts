@@ -1,6 +1,8 @@
-import { STANDARD_KOCHWELT, type Kochwelt } from '@/constants/theme';
+import { kochwelt, type Kochwelt } from '@/constants/theme';
+import { useStore } from '@/store/store';
 
-/** Farben der gewählten Kochwelt. Bis Bauschritt 6 ist das immer der Kürbis. */
+/** Farben der gewählten Kochwelt (S6-2). Ohne Auswahl gilt der Kürbis. */
 export function useFarben(): Kochwelt {
-  return STANDARD_KOCHWELT;
+  const { zustand } = useStore();
+  return kochwelt(zustand.einstellungen.kochwelt);
 }

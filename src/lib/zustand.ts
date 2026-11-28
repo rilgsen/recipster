@@ -27,7 +27,7 @@ export type Zustand = {
    */
   timer: Kochtimer[];
   /** Hinweise, die nur einmal erscheinen. */
-  gesehen: { stummHinweis?: true };
+  gesehen: { stummHinweis?: true; start?: true };
 };
 
 export type Kochtimer = {
@@ -65,6 +65,8 @@ export type Vorratseintrag = {
 export type Einstellungen = {
   personen: number;
   ernaehrung: string[];
+  /** Kennung der gewählten Kochwelt aus src/constants/theme.ts, zum Beispiel „kuerbis-1“. */
+  kochwelt: string;
 };
 
 export type Rezeptstatus = {
@@ -74,7 +76,7 @@ export type Rezeptstatus = {
 
 export const STARTZUSTAND: Zustand = {
   version: 1,
-  einstellungen: { personen: 2, ernaehrung: [] },
+  einstellungen: { personen: 2, ernaehrung: [], kochwelt: 'kuerbis-1' },
   rezeptstatus: {},
   plan: [],
   vorrat: {},
@@ -103,7 +105,9 @@ export type Aktion =
   | { typ: 'gekocht'; planId: string; heute: Tag; aufgebraucht: string[] }
   | { typ: 'timerStart'; timer: Kochtimer }
   | { typ: 'timerStopp'; rezeptId: string; schritt: number }
-  | { typ: 'stummHinweisGesehen' };
+  | { typ: 'stummHinweisGesehen' }
+  | { typ: 'kochwelt'; id: string }
+  | { typ: 'startGesehen' };
 
 export function reduziere(zustand: Zustand, aktion: Aktion): Zustand {
   switch (aktion.typ) {
@@ -250,6 +254,10 @@ export function reduziere(zustand: Zustand, aktion: Aktion): Zustand {
     }
     case 'stummHinweisGesehen':
       return zustand.gesehen.stummHinweis ? zustand : { ...zustand, gesehen: { ...zustand.gesehen, stummHinweis: true } };
+    case 'kochwelt':
+      return { ...zustand, einstellungen: { ...zustand.einstellungen, kochwelt: aktion.id } };
+    case 'startGesehen':
+      return zustand.gesehen.start ? zustand : { ...zustand, gesehen: { ...zustand.gesehen, start: true } };
     default:
       return zustand;
   }
@@ -275,6 +283,8 @@ export function ausGespeichertem(roh: unknown): Zustand {
       ernaehrung: Array.isArray(einstellungen.ernaehrung)
         ? einstellungen.ernaehrung.filter((form): form is string => typeof form === 'string')
         : [],
+      kochwelt:
+        typeof einstellungen.kochwelt === 'string' ? einstellungen.kochwelt : STARTZUSTAND.einstellungen.kochwelt,
     },
     rezeptstatus:
       daten.rezeptstatus && typeof daten.rezeptstatus === 'object' ? { ...daten.rezeptstatus } : {},
@@ -314,7 +324,13 @@ export function ausGespeichertem(roh: unknown): Zustand {
             ...(typeof t.mitteilungId === 'string' ? { mitteilungId: t.mitteilungId } : {}),
           }))
       : [],
-    gesehen: daten.gesehen && typeof daten.gesehen === 'object' && daten.gesehen.stummHinweis ? { stummHinweis: true } : {},
+    gesehen:
+      daten.gesehen && typeof daten.gesehen === 'object'
+        ? {
+            ...(daten.gesehen.stummHinweis ? { stummHinweis: true as const } : {}),
+            ...(daten.gesehen.start ? { start: true as const } : {}),
+          }
+        : {},
   };
 }
 

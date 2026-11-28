@@ -1,9 +1,11 @@
-import { Tabs, useRouter } from 'expo-router';
+import { Redirect, Tabs, useRouter } from 'expo-router';
 import { Pressable, StyleSheet } from 'react-native';
 
 import { Sinnbild } from '@/components/sinnbild';
 import { Wortmarke } from '@/components/wortmarke';
-import { Abstand, Basis, Schrift, STANDARD_KOCHWELT } from '@/constants/theme';
+import { Abstand, Basis, Schrift } from '@/constants/theme';
+import { useFarben } from '@/hooks/use-farben';
+import { useStore } from '@/store/store';
 import { de } from '@/i18n/de';
 
 function MenueKnopf() {
@@ -21,6 +23,14 @@ function MenueKnopf() {
 }
 
 export default function TabLayout() {
+  const farben = useFarben();
+  const { zustand, geladen } = useStore();
+  if (!geladen) {
+    return null;
+  }
+  if (!zustand.gesehen.start) {
+    return <Redirect href="/start" />;
+  }
   return (
     <Tabs
       screenOptions={{
@@ -30,7 +40,7 @@ export default function TabLayout() {
         headerStyle: { backgroundColor: Basis.hintergrund },
         headerShadowVisible: false,
         sceneStyle: { backgroundColor: Basis.hintergrund },
-        tabBarActiveTintColor: STANDARD_KOCHWELT.primaer,
+        tabBarActiveTintColor: farben.primaer,
         tabBarInactiveTintColor: Basis.textGedaempft,
         tabBarStyle: { backgroundColor: Basis.flaeche, borderTopColor: Basis.linie },
         tabBarLabelStyle: { fontFamily: Schrift.textMittel, fontSize: 12 },

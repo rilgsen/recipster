@@ -17,7 +17,7 @@ describe('Kontrastberechnung', () => {
 
 describe('Farben des Entwurfs (S1-2, S8-1)', () => {
   it('nutzt den Kürbis als Standard', () => {
-    expect(STANDARD_KOCHWELT.id).toBe('kuerbis');
+    expect(STANDARD_KOCHWELT.id).toBe('kuerbis-1');
     expect(STANDARD_KOCHWELT.primaer).toBe('#1F5C70');
     expect(STANDARD_KOCHWELT.akzent).toBe('#D2691E');
   });

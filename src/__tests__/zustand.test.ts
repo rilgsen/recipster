@@ -1,3 +1,4 @@
+import { Kochfiguren, kochwelt, kochweltenFuer } from '@/constants/theme';
 import { ausGespeichertem, magIchNichtIds, planFuerTag, reduziere, STARTZUSTAND } from '@/lib/zustand';
 
 describe('Einstellungen', () => {
@@ -100,5 +101,33 @@ describe('Wochenplan (S3-1, S3-3)', () => {
   it('lädt gespeicherte Pläne und wirft kaputte Einträge weg', () => {
     const z = ausGespeichertem({ plan: [eintrag('a'), { id: 'b' }, null, eintrag('c', { datum: 'gestern' })] });
     expect(z.plan.map((e) => e.id)).toEqual(['a']);
+  });
+});
+
+describe('Koch-Auswahl (S6-1, S6-2)', () => {
+  it('startet mit dem Kürbis und merkt sich die Wahl über einen Neustart', () => {
+    expect(kochwelt(STARTZUSTAND.einstellungen.kochwelt).id).toBe('kuerbis-1');
+    const z = reduziere(STARTZUSTAND, { typ: 'kochwelt', id: 'olive-2' });
+    const geladen = ausGespeichertem(JSON.parse(JSON.stringify(z)));
+    expect(kochwelt(geladen.einstellungen.kochwelt)).toMatchObject({ figur: 'olive', id: 'olive-2' });
+  });
+
+  it('fällt bei einer unbekannten Kennung auf den Kürbis zurück', () => {
+    expect(kochwelt('gibt-es-nicht').id).toBe('kuerbis-1');
+    expect(kochwelt(undefined).id).toBe('kuerbis-1');
+    expect(ausGespeichertem({ einstellungen: { kochwelt: 5 } }).einstellungen.kochwelt).toBe('kuerbis-1');
+  });
+
+  it('bietet sechs Figuren mit je drei Farbwelten', () => {
+    expect(Kochfiguren).toHaveLength(6);
+    for (const figur of Kochfiguren) {
+      expect(kochweltenFuer(figur.id)).toHaveLength(3);
+    }
+  });
+
+  it('zeigt die Auswahl nur beim ersten Start', () => {
+    expect(STARTZUSTAND.gesehen.start).toBeUndefined();
+    const z = reduziere(STARTZUSTAND, { typ: 'startGesehen' });
+    expect(ausGespeichertem(JSON.parse(JSON.stringify(z))).gesehen.start).toBe(true);
   });
 });
