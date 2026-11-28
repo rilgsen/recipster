@@ -18,6 +18,7 @@ import {
   zutatName,
 } from '@/lib/mengen';
 import { tagName } from '@/lib/tagname';
+import { istVorhanden } from '@/lib/vorrat';
 import { neueId } from '@/lib/zustand';
 import { useDaten, useStore } from '@/store/store';
 
@@ -63,6 +64,27 @@ export default function RezeptSeite() {
       </View>
 
       <Knopf titel={de.woche.einplanen} onPress={() => setEinplanen(true)} />
+      <Knopf
+        titel={de.einkauf.aufListe}
+        art="neben"
+        onPress={() => {
+          let zahl = 0;
+          for (const zeile of rezept.zutaten) {
+            const zutat = katalog.get(zeile.zutat_id);
+            if (!zutat || istVorhanden(zutat, zustand.vorrat) || zeile.einheit === 'Prise') {
+              continue;
+            }
+            const menge = skaliereMenge(zeile.menge, zeile.einheit, faktor);
+            aktion({
+              typ: 'einkaufHandHinzu',
+              id: neueId(),
+              text: `${formatiereMenge(zutat, menge, zeile.einheit)} ${zutatName(zutat, menge, zeile.einheit)}`,
+            });
+            zahl += 1;
+          }
+          setMeldung(de.einkauf.aufListeFertig(zahl));
+        }}
+      />
       {meldung ? (
         <Text style={[styles.hinweis, { color: farben.primaer }]} accessibilityLiveRegion="polite">
           {meldung}

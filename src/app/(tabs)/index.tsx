@@ -5,6 +5,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { Karte, Knopf } from '@/components/bausteine';
 import { Eintragsblatt } from '@/components/eintragsblatt';
+import { Gekochtblatt } from '@/components/gekochtblatt';
 import { Planblatt } from '@/components/planblatt';
 import { Planzeile } from '@/components/planzeile';
 import { Abstand, Basis, Radius, Schrift } from '@/constants/theme';
@@ -12,16 +13,20 @@ import { useFarben } from '@/hooks/use-farben';
 import { useHeute } from '@/hooks/use-heute';
 import { de } from '@/i18n/de';
 import { kurzesDatum, wochentag } from '@/lib/datum';
+import { baldAufbrauchen } from '@/lib/vorrat';
 import { planFuerTag } from '@/lib/zustand';
-import { useStore } from '@/store/store';
+import { useDaten, useStore } from '@/store/store';
 
 export default function Heute() {
   const router = useRouter();
   const farben = useFarben();
   const heute = useHeute();
   const { zustand } = useStore();
+  const { katalog } = useDaten();
+  const bald = baldAufbrauchen(zustand.vorrat, katalog, heute);
   const [planen, setPlanen] = useState(false);
   const [eintragId, setEintragId] = useState<string | null>(null);
+  const [gekochtId, setGekochtId] = useState<string | null>(null);
   const eintraege = planFuerTag(zustand, heute);
   const eintrag = zustand.plan.find((e) => e.id === eintragId) ?? null;
 
@@ -43,6 +48,25 @@ export default function Heute() {
         <Knopf titel={de.heute.zurWoche} art="neben" onPress={() => router.push('/woche')} />
       </Karte>
 
+      {bald.length > 0 ? (
+        <Karte style={styles.plan}>
+          <Text style={[styles.tippTitel, { color: farben.primaer }]} accessibilityRole="header">
+            {de.vorrat.bald}
+          </Text>
+          {bald.map(({ zutat, resttage }) => (
+            <Text key={zutat.id} style={styles.tippInhalt}>
+              {zutat.name}:{' '}
+              {resttage === 1
+                ? de.vorrat.baldMorgen
+                : resttage === 0
+                  ? de.vorrat.baldHeute
+                  : de.vorrat.baldUeber(-resttage)}
+            </Text>
+          ))}
+          <Text style={styles.klein}>{de.vorrat.baldHinweis}</Text>
+        </Karte>
+      ) : null}
+
       {eintraege.length === 0 ? (
         <View style={[styles.tipp, { backgroundColor: farben.ton }]}>
           <Image
@@ -59,7 +83,16 @@ export default function Heute() {
       ) : null}
 
       <Planblatt datum={planen ? heute : null} tagName={de.allgemein.heute} onSchliessen={() => setPlanen(false)} />
-      <Eintragsblatt eintrag={eintrag} heute={heute} onSchliessen={() => setEintragId(null)} />
+      <Eintragsblatt
+        eintrag={eintrag}
+        heute={heute}
+        onSchliessen={() => setEintragId(null)}
+        onGekocht={(e) => setGekochtId(e.id)}
+      />
+      <Gekochtblatt
+        eintrag={zustand.plan.find((e) => e.id === gekochtId) ?? null}
+        onSchliessen={() => setGekochtId(null)}
+      />
     </ScrollView>
   );
 }
@@ -112,6 +145,12 @@ const styles = StyleSheet.create({
   tippTitel: {
     fontFamily: Schrift.textFett,
     fontSize: 15,
+  },
+  klein: {
+    fontFamily: Schrift.text,
+    fontSize: 13,
+    lineHeight: 18,
+    color: Basis.textGedaempft,
   },
   tippInhalt: {
     fontFamily: Schrift.text,

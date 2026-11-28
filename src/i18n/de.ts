@@ -100,7 +100,52 @@ export const de = {
   },
   einkauf: {
     titel: 'Einkaufsliste',
-    leer: 'Die Einkaufsliste kommt mit Bauschritt 4.',
+    zeitraum: (tage: number) => `Nächste ${tage} Tage`,
+    leer: 'Deine Liste ist leer.',
+    leerTipp: 'Plane Gerichte in der Woche, dann erscheinen die Zutaten hier von selbst.',
+    allesDa: 'Für deinen Plan hast du alles im Haus.',
+    vorratPruefen: 'Vorrat prüfen',
+    vorratHinweis: 'Hake vor dem Einkauf ab, was du schon zu Hause hast.',
+    abschliessen: 'Einkauf abschließen',
+    abschliessenHinweis: (zahl: number) =>
+      zahl === 1
+        ? '1 abgehakter Eintrag wandert in den Vorrat.'
+        : `${zahl} abgehakte Einträge wandern in den Vorrat.`,
+    eigene: 'Eigene Einträge',
+    eigenePlatzhalter: 'Ich brauche noch …',
+    hinzufuegen: 'Hinzufügen',
+    entfernen: (name: string) => `${name} entfernen`,
+    haeufig: 'Häufig gekauft',
+    fuer: (rezepte: string) => `für ${rezepte}`,
+    nachGeschmack: 'nach Bedarf',
+    aufListe: 'Zutaten auf die Einkaufsliste',
+    aufListeFertig: (zahl: number) =>
+      zahl === 0
+        ? 'Alles schon im Haus, nichts hinzugefügt.'
+        : zahl === 1
+          ? '1 Zutat auf die Einkaufsliste gesetzt.'
+          : `${zahl} Zutaten auf die Einkaufsliste gesetzt.`,
+  },
+  vorrat: {
+    titel: 'Vorrat',
+    fuerPlan: 'Für deinen Plan gebraucht',
+    fuerPlanLeer: 'In den nächsten Tagen ist nichts geplant.',
+    imHaus: 'Außerdem im Haus',
+    imHausLeer: 'Hier steht, was du gekauft oder als vorhanden markiert hast.',
+    vorhanden: 'Habe ich',
+    fehlt: 'Fehlt',
+    hinweis: 'Der Vorrat kennt nur „vorhanden“ oder „nicht vorhanden“, keine Mengen.',
+    bald: 'Bald aufbrauchen',
+    baldHeute: 'Haltbarkeit läuft heute ab',
+    baldMorgen: 'noch 1 Tag',
+    baldUeber: (tage: number) => (tage === 1 ? 'seit 1 Tag über der Haltbarkeit' : `seit ${tage} Tagen über der Haltbarkeit`),
+    baldHinweis: 'Richtwerte ab Kaufdatum. Bitte selbst prüfen, ob etwas noch gut ist.',
+  },
+  gekocht: {
+    knopf: 'Fertig gekocht',
+    titel: 'Was ist aufgebraucht?',
+    hinweis: 'Aufgebrauchte Zutaten verschwinden aus dem Vorrat und kommen beim nächsten Mal wieder auf die Liste.',
+    bestaetigen: 'Bestätigen',
   },
   einstellungen: {
     titel: 'Einstellungen',
