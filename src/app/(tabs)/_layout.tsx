@@ -1,5 +1,6 @@
 import { Redirect, Tabs, useRouter } from 'expo-router';
 import { Pressable, StyleSheet } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Sinnbild } from '@/components/sinnbild';
 import { Wortmarke } from '@/components/wortmarke';
@@ -7,6 +8,9 @@ import { Abstand, Basis, Schrift } from '@/constants/theme';
 import { useFarben } from '@/hooks/use-farben';
 import { useStore } from '@/store/store';
 import { de } from '@/i18n/de';
+
+/** Höhe des Kopfbereichs unter der Statusleiste. Die Figur ist 48 hoch und braucht Luft nach oben und unten. */
+const KOPF_HOEHE = 68;
 
 function MenueKnopf() {
   const router = useRouter();
@@ -25,6 +29,7 @@ function MenueKnopf() {
 export default function TabLayout() {
   const farben = useFarben();
   const { zustand, geladen } = useStore();
+  const rand = useSafeAreaInsets();
   if (!geladen) {
     return null;
   }
@@ -37,8 +42,17 @@ export default function TabLayout() {
         headerTitle: () => <Wortmarke />,
         headerTitleAlign: 'left',
         headerRight: () => <MenueKnopf />,
-        headerStyle: { backgroundColor: Basis.hintergrund },
-        headerShadowVisible: false,
+        // Die feine Linie trennt den Kopf vom Inhalt, der darunter durchläuft.
+        headerStyle: {
+          backgroundColor: Basis.hintergrund,
+          height: rand.top + KOPF_HOEHE,
+          borderBottomWidth: StyleSheet.hairlineWidth,
+          borderBottomColor: Basis.linie,
+          shadowOpacity: 0,
+          elevation: 0,
+        },
+        headerTitleContainerStyle: { marginStart: Abstand.l },
+        headerRightContainerStyle: { paddingEnd: Abstand.l - Abstand.m },
         sceneStyle: { backgroundColor: Basis.hintergrund },
         tabBarActiveTintColor: farben.primaer,
         tabBarInactiveTintColor: Basis.textGedaempft,
