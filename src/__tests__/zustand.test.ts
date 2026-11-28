@@ -1,4 +1,4 @@
-import { ausGespeichertem, magIchNichtIds, reduziere, STARTZUSTAND } from '@/lib/zustand';
+import { ausGespeichertem, magIchNichtIds, planFuerTag, reduziere, STARTZUSTAND } from '@/lib/zustand';
 
 describe('Einstellungen', () => {
   it('begrenzt die Personenzahl', () => {
@@ -44,5 +44,61 @@ describe('Gespeicherte Daten laden', () => {
     expect(z.einstellungen.personen).toBe(12);
     expect(z.einstellungen.ernaehrung).toEqual(['vegan']);
     expect(magIchNichtIds(z)).toEqual(['a']);
+  });
+});
+
+describe('Wochenplan (S3-1, S3-3)', () => {
+  const eintrag = (id: string, teile: object = {}) => ({
+    id,
+    datum: '2026-11-30',
+    mahlzeit: 'Abendessen' as const,
+    rezeptId: 'r1',
+    portionen: 2,
+    gekocht: false,
+    ...teile,
+  });
+
+  it('erlaubt mehrere Gerichte an einem Tag und sortiert nach Mahlzeit', () => {
+    let z = reduziere(STARTZUSTAND, { typ: 'planHinzu', eintrag: eintrag('a') });
+    z = reduziere(z, { typ: 'planHinzu', eintrag: eintrag('b', { mahlzeit: 'Frühstück', rezeptId: 'r2' }) });
+    z = reduziere(z, { typ: 'planHinzu', eintrag: eintrag('c', { rezeptId: 'r3' }) });
+    expect(planFuerTag(z, '2026-11-30').map((e) => e.id)).toEqual(['b', 'a', 'c']);
+  });
+
+  it('nimmt eine Notiz statt eines Rezepts an', () => {
+    const z = reduziere(STARTZUSTAND, {
+      typ: 'planHinzu',
+      eintrag: eintrag('n', { rezeptId: undefined, notiz: '  Reste  ' }),
+    });
+    expect(z.plan[0].notiz).toBe('Reste');
+    expect(z.plan[0].rezeptId).toBeUndefined();
+  });
+
+  it('lehnt Einträge ohne Rezept und ohne Notiz sowie doppelte Kennungen ab', () => {
+    let z = reduziere(STARTZUSTAND, { typ: 'planHinzu', eintrag: eintrag('x', { rezeptId: undefined }) });
+    expect(z.plan).toEqual([]);
+    z = reduziere(z, { typ: 'planHinzu', eintrag: eintrag('a') });
+    z = reduziere(z, { typ: 'planHinzu', eintrag: eintrag('a') });
+    expect(z.plan).toHaveLength(1);
+  });
+
+  it('verschiebt ein Gericht auf einen anderen Tag', () => {
+    let z = reduziere(STARTZUSTAND, { typ: 'planHinzu', eintrag: eintrag('a') });
+    z = reduziere(z, { typ: 'planVerschieben', id: 'a', datum: '2026-12-02' });
+    expect(planFuerTag(z, '2026-11-30')).toEqual([]);
+    expect(planFuerTag(z, '2026-12-02').map((e) => e.id)).toEqual(['a']);
+  });
+
+  it('ändert die Personenzahl in den Grenzen und entfernt Einträge', () => {
+    let z = reduziere(STARTZUSTAND, { typ: 'planHinzu', eintrag: eintrag('a') });
+    z = reduziere(z, { typ: 'planPortionen', id: 'a', portionen: 40 });
+    expect(z.plan[0].portionen).toBe(12);
+    z = reduziere(z, { typ: 'planEntfernen', id: 'a' });
+    expect(z.plan).toEqual([]);
+  });
+
+  it('lädt gespeicherte Pläne und wirft kaputte Einträge weg', () => {
+    const z = ausGespeichertem({ plan: [eintrag('a'), { id: 'b' }, null, eintrag('c', { datum: 'gestern' })] });
+    expect(z.plan.map((e) => e.id)).toEqual(['a']);
   });
 });
