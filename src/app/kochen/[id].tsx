@@ -1,4 +1,3 @@
-import { Image } from 'expo-image';
 import { useKeepAwake } from 'expo-keep-awake';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
@@ -6,6 +5,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { Karte, Knopf } from '@/components/bausteine';
 import { Gekochtblatt } from '@/components/gekochtblatt';
+import { Kochfigur } from '@/components/kochfigur';
 import { Abstand, Basis, Schrift } from '@/constants/theme';
 import { useFarben } from '@/hooks/use-farben';
 import { useHeute } from '@/hooks/use-heute';
@@ -179,12 +179,7 @@ export default function Kochen() {
 
         {schritt.tipp ? (
           <View style={[styles.tipp, { backgroundColor: farben.ton }]}>
-            <Image
-              source={require('@/assets/images/koch-kuerbis.png')}
-              style={styles.koch}
-              contentFit="contain"
-              accessibilityElementsHidden
-            />
+            <Kochfigur style={styles.koch} />
             <View style={styles.tippText}>
               <Text style={[styles.klein, { color: farben.primaer }]}>{de.kochen.tipp}</Text>
               <Text style={styles.text}>{schritt.tipp}</Text>

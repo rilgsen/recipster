@@ -1,10 +1,10 @@
-import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { Karte, Knopf } from '@/components/bausteine';
 import { Eintragsblatt } from '@/components/eintragsblatt';
+import { Kochfigur } from '@/components/kochfigur';
 import { Gekochtblatt } from '@/components/gekochtblatt';
 import { Planblatt } from '@/components/planblatt';
 import { Planzeile } from '@/components/planzeile';
@@ -71,12 +71,7 @@ export default function Heute() {
 
       {eintraege.length === 0 ? (
         <View style={[styles.tipp, { backgroundColor: farben.ton }]}>
-          <Image
-            source={require('@/assets/images/koch-kuerbis.png')}
-            style={styles.figur}
-            contentFit="contain"
-            accessible={false}
-          />
+          <Kochfigur style={styles.figur} />
           <View style={styles.tippText}>
             <Text style={[styles.tippTitel, { color: farben.primaer }]}>{de.heute.tippTitel}</Text>
             <Text style={styles.tippInhalt}>{de.heute.tipp}</Text>

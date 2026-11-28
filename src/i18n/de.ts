@@ -143,6 +143,16 @@ export const de = {
     baldUeber: (tage: number) => (tage === 1 ? 'seit 1 Tag über der Haltbarkeit' : `seit ${tage} Tagen über der Haltbarkeit`),
     baldHinweis: 'Richtwerte ab Kaufdatum. Bitte selbst prüfen, ob etwas noch gut ist.',
   },
+  koch: {
+    startTitel: 'Wer kocht mit dir?',
+    startText: 'Such dir deinen Koch und seine Farben aus. Du kannst beides jederzeit in den Einstellungen ändern.',
+    figur: 'Kochfigur',
+    farben: 'Farben',
+    los: 'Los geht’s',
+    einstellung: 'Dein Koch',
+    allergene:
+      'Wichtig: Die App prüft keine Allergene und keine Unverträglichkeiten. Bitte lies die Zutaten jedes Rezepts selbst.',
+  },
   kochen: {
     start: 'Jetzt kochen',
     schritt: (nummer: number, anzahl: number) => `Schritt ${nummer} von ${anzahl}`,

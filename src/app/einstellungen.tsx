@@ -2,6 +2,7 @@ import { Stack, useRouter } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { Abschnitt, Chip, Karte, Knopf, Zaehler } from '@/components/bausteine';
+import { Kochwahl } from '@/components/kochwahl';
 import { Abstand, Basis, Schrift } from '@/constants/theme';
 import { useFarben } from '@/hooks/use-farben';
 import { de } from '@/i18n/de';
@@ -35,6 +36,11 @@ export default function Einstellungen() {
           ),
         }}
       />
+
+      <Abschnitt titel={de.koch.einstellung}>
+        <Kochwahl />
+        <Text style={styles.hinweis}>{de.koch.allergene}</Text>
+      </Abschnitt>
 
       <Abschnitt titel={de.einstellungen.haushalt}>
         <Karte style={styles.block}>
