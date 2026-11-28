@@ -132,8 +132,8 @@ const styles = StyleSheet.create({
     padding: Abstand.m,
   },
   figur: {
-    width: 72,
-    height: 72,
+    width: 88,
+    height: 88,
   },
   tippText: {
     flex: 1,
