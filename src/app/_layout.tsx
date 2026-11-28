@@ -46,6 +46,7 @@ export default function RootLayout() {
           headerTitleStyle: { fontFamily: Schrift.textFett },
         }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false, title: '' }} />
+        <Stack.Screen name="vorrat" options={{ title: de.vorrat.titel, presentation: 'modal' }} />
         <Stack.Screen name="auswahl" options={{ title: de.woche.wahlTitel, presentation: 'modal' }} />
         <Stack.Screen name="rezept/[id]" options={{ title: '', headerBackButtonDisplayMode: 'minimal' }} />
         <Stack.Screen

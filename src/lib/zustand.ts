@@ -12,6 +12,18 @@ export type Zustand = {
   rezeptstatus: Record<string, Rezeptstatus>;
   plan: Planeintrag[];
   vorrat: Record<string, Vorratseintrag>;
+  /** Haken an berechneten Posten, nach Zutatenkennung. */
+  einkaufAbgehakt: Record<string, true>;
+  /** Einträge von Hand. Sie überstehen jede Neuberechnung. */
+  einkaufHand: Handeintrag[];
+  /** Wie oft etwas gekauft wurde, für „Häufig gekauft“. Schlüssel ist der Name in Kleinbuchstaben. */
+  kaufzaehler: Record<string, { name: string; zahl: number }>;
+};
+
+export type Handeintrag = {
+  id: string;
+  text: string;
+  abgehakt: boolean;
 };
 
 /** Ein Gericht oder eine Notiz an einem Tag. Genau eines von rezeptId und notiz ist gesetzt. */
@@ -47,6 +59,9 @@ export const STARTZUSTAND: Zustand = {
   rezeptstatus: {},
   plan: [],
   vorrat: {},
+  einkaufAbgehakt: {},
+  einkaufHand: [],
+  kaufzaehler: {},
 };
 
 export type Aktion =
@@ -57,7 +72,14 @@ export type Aktion =
   | { typ: 'planHinzu'; eintrag: Planeintrag }
   | { typ: 'planEntfernen'; id: string }
   | { typ: 'planVerschieben'; id: string; datum: Tag; mahlzeit?: Mahlzeit }
-  | { typ: 'planPortionen'; id: string; portionen: number };
+  | { typ: 'planPortionen'; id: string; portionen: number }
+  | { typ: 'einkaufHaken'; zutatId: string; aktiv: boolean }
+  | { typ: 'einkaufHandHinzu'; id: string; text: string }
+  | { typ: 'einkaufHandHaken'; id: string; aktiv: boolean }
+  | { typ: 'einkaufHandEntfernen'; id: string }
+  | { typ: 'einkaufAbschliessen'; heute: Tag; gekauft: { zutatId: string; name: string }[] }
+  | { typ: 'vorratSetzen'; zutatId: string; vorhanden: boolean; heute?: Tag }
+  | { typ: 'gekocht'; planId: string; heute: Tag; aufgebraucht: string[] };
 
 export function reduziere(zustand: Zustand, aktion: Aktion): Zustand {
   switch (aktion.typ) {
@@ -111,6 +133,88 @@ export function reduziere(zustand: Zustand, aktion: Aktion): Zustand {
           e.id === aktion.id ? { ...e, portionen: begrenzePersonen(aktion.portionen) } : e
         ),
       };
+    case 'einkaufHaken': {
+      const abgehakt = { ...zustand.einkaufAbgehakt };
+      if (aktion.aktiv) {
+        abgehakt[aktion.zutatId] = true;
+      } else {
+        delete abgehakt[aktion.zutatId];
+      }
+      return { ...zustand, einkaufAbgehakt: abgehakt };
+    }
+    case 'einkaufHandHinzu': {
+      const text = aktion.text.trim();
+      if (!text || zustand.einkaufHand.some((e) => e.id === aktion.id)) {
+        return zustand;
+      }
+      if (zustand.einkaufHand.some((e) => !e.abgehakt && e.text.toLowerCase() === text.toLowerCase())) {
+        return zustand;
+      }
+      return { ...zustand, einkaufHand: [...zustand.einkaufHand, { id: aktion.id, text, abgehakt: false }] };
+    }
+    case 'einkaufHandHaken':
+      return {
+        ...zustand,
+        einkaufHand: zustand.einkaufHand.map((e) => (e.id === aktion.id ? { ...e, abgehakt: aktion.aktiv } : e)),
+      };
+    case 'einkaufHandEntfernen':
+      return { ...zustand, einkaufHand: zustand.einkaufHand.filter((e) => e.id !== aktion.id) };
+    case 'einkaufAbschliessen': {
+      const vorrat = { ...zustand.vorrat };
+      const kaufzaehler = { ...zustand.kaufzaehler };
+      const zaehle = (name: string) => {
+        const schluessel = name.toLowerCase();
+        kaufzaehler[schluessel] = { name, zahl: (kaufzaehler[schluessel]?.zahl ?? 0) + 1 };
+      };
+      for (const kauf of aktion.gekauft) {
+        vorrat[kauf.zutatId] = { vorhanden: true, gekauftAm: aktion.heute };
+        zaehle(kauf.name);
+      }
+      for (const eintrag of zustand.einkaufHand) {
+        if (eintrag.abgehakt) {
+          zaehle(eintrag.text);
+        }
+      }
+      return {
+        ...zustand,
+        vorrat,
+        kaufzaehler,
+        einkaufAbgehakt: {},
+        einkaufHand: zustand.einkaufHand.filter((e) => !e.abgehakt),
+      };
+    }
+    case 'vorratSetzen':
+      return {
+        ...zustand,
+        vorrat: {
+          ...zustand.vorrat,
+          [aktion.zutatId]: aktion.vorhanden
+            ? { vorhanden: true, ...(aktion.heute ? { gekauftAm: aktion.heute } : {}) }
+            : { vorhanden: false },
+        },
+      };
+    case 'gekocht': {
+      const eintrag = zustand.plan.find((e) => e.id === aktion.planId);
+      if (!eintrag) {
+        return zustand;
+      }
+      const vorrat = { ...zustand.vorrat };
+      for (const zutatId of aktion.aufgebraucht) {
+        vorrat[zutatId] = { vorhanden: false };
+      }
+      const rezeptstatus = eintrag.rezeptId
+        ? {
+            ...zustand.rezeptstatus,
+            [eintrag.rezeptId]: { ...zustand.rezeptstatus[eintrag.rezeptId], zuletztGekocht: aktion.heute },
+          }
+        : zustand.rezeptstatus;
+      return {
+        ...zustand,
+        vorrat,
+        rezeptstatus,
+        plan: zustand.plan.map((e) => (e.id === aktion.planId ? { ...e, gekocht: true } : e)),
+      };
+    }
     default:
       return zustand;
   }
@@ -143,6 +247,14 @@ export function ausGespeichertem(roh: unknown): Zustand {
       ? daten.plan.map(pruefePlaneintrag).filter((e): e is Planeintrag => e !== null)
       : [],
     vorrat: daten.vorrat && typeof daten.vorrat === 'object' ? { ...daten.vorrat } : {},
+    einkaufAbgehakt:
+      daten.einkaufAbgehakt && typeof daten.einkaufAbgehakt === 'object' ? { ...daten.einkaufAbgehakt } : {},
+    einkaufHand: Array.isArray(daten.einkaufHand)
+      ? daten.einkaufHand
+          .filter((e) => e && typeof e.id === 'string' && typeof e.text === 'string' && e.text.trim())
+          .map((e) => ({ id: e.id, text: e.text, abgehakt: Boolean(e.abgehakt) }))
+      : [],
+    kaufzaehler: daten.kaufzaehler && typeof daten.kaufzaehler === 'object' ? { ...daten.kaufzaehler } : {},
   };
 }
 

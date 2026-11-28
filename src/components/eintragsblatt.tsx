@@ -15,10 +15,12 @@ type Props = {
   eintrag: Planeintrag | null;
   heute: Tag;
   onSchliessen: () => void;
+  /** Wird gerufen, wenn „Fertig gekocht“ gewählt wurde. */
+  onGekocht?: (eintrag: Planeintrag) => void;
 };
 
 /** Aktionen für ein geplantes Gericht: ansehen, verschieben, Personen, entfernen. */
-export function Eintragsblatt({ eintrag, heute, onSchliessen }: Props) {
+export function Eintragsblatt({ eintrag, heute, onSchliessen, onGekocht }: Props) {
   const router = useRouter();
   const { rezeptNach } = useDaten();
   const { aktion } = useStore();
@@ -36,6 +38,17 @@ export function Eintragsblatt({ eintrag, heute, onSchliessen }: Props) {
               onPress={() => {
                 onSchliessen();
                 router.push({ pathname: '/rezept/[id]', params: { id: rezept.id } });
+              }}
+            />
+          ) : null}
+
+          {rezept && !eintrag.gekocht && onGekocht ? (
+            <Knopf
+              titel={de.gekocht.knopf}
+              art="neben"
+              onPress={() => {
+                onSchliessen();
+                onGekocht(eintrag);
               }}
             />
           ) : null}

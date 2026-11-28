@@ -3,6 +3,7 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { Karte, Knopf } from '@/components/bausteine';
 import { Eintragsblatt } from '@/components/eintragsblatt';
+import { Gekochtblatt } from '@/components/gekochtblatt';
 import { Planblatt } from '@/components/planblatt';
 import { Planzeile } from '@/components/planzeile';
 import { Abstand, Basis, Schrift } from '@/constants/theme';
@@ -21,6 +22,7 @@ export default function Woche() {
   const [versatz, setVersatz] = useState(0);
   const [planTag, setPlanTag] = useState<Tag | null>(null);
   const [eintragId, setEintragId] = useState<string | null>(null);
+  const [gekochtId, setGekochtId] = useState<string | null>(null);
 
   const start = plusTage(heute, versatz * 7);
   const tage = tageAb(start, 7);
@@ -82,7 +84,16 @@ export default function Woche() {
         tagName={planTag ? tagName(planTag, heute) : ''}
         onSchliessen={() => setPlanTag(null)}
       />
-      <Eintragsblatt eintrag={eintrag} heute={heute} onSchliessen={() => setEintragId(null)} />
+      <Eintragsblatt
+        eintrag={eintrag}
+        heute={heute}
+        onSchliessen={() => setEintragId(null)}
+        onGekocht={(e) => setGekochtId(e.id)}
+      />
+      <Gekochtblatt
+        eintrag={zustand.plan.find((e) => e.id === gekochtId) ?? null}
+        onSchliessen={() => setGekochtId(null)}
+      />
     </ScrollView>
   );
 }
