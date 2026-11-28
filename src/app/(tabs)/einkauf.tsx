@@ -8,7 +8,7 @@ import { Abstand, Basis, Radius, Schrift } from '@/constants/theme';
 import { useHeute } from '@/hooks/use-heute';
 import { de } from '@/i18n/de';
 import { plusTage } from '@/lib/datum';
-import { berechneEinkaufsliste, haeufigGekauft, mitHaken, nachAbteilung } from '@/lib/einkauf';
+import { berechneEinkaufsliste, freiePosten, haeufigGekauft, mitHaken, nachAbteilung } from '@/lib/einkauf';
 import { formatiereMenge, zutatName } from '@/lib/mengen';
 import { neueId } from '@/lib/zustand';
 import { useDaten, useStore } from '@/store/store';
@@ -35,11 +35,14 @@ export default function Einkauf() {
       }),
     [zustand.plan, zustand.vorrat, rezeptNach, katalog, heute, tage]
   );
+  const frei = freiePosten({ plan: zustand.plan, rezeptNach, von: heute, bis: plusTage(heute, tage - 1) });
+  const freiAbgehakt = frei.filter((f) => f.schluessel in zustand.einkaufAbgehakt);
   const posten = mitHaken(berechnet, zustand.einkaufAbgehakt);
   const gruppen = nachAbteilung(posten);
   // Auch ein Posten, der nach einer Planänderung wieder offen ist, wurde schon einmal gekauft.
   const abgehaktePosten = posten.filter((p) => p.abgehakt || p.schonAbgehakt !== undefined);
-  const abgehakt = abgehaktePosten.length + zustand.einkaufHand.filter((e) => e.abgehakt).length;
+  const abgehakt =
+    abgehaktePosten.length + freiAbgehakt.length + zustand.einkaufHand.filter((e) => e.abgehakt).length;
   const hatGeplantes = zustand.plan.some((e) => e.rezeptId && !e.gekocht && e.datum >= heute);
 
   const aufListe = new Set([
@@ -71,7 +74,7 @@ export default function Einkauf() {
         onPress={() => router.push({ pathname: '/vorrat', params: { tage: String(tage) } })}
       />
 
-      {posten.length === 0 ? (
+      {posten.length === 0 && frei.length === 0 ? (
         <Karte style={styles.block}>
           <Text style={styles.textFett}>{hatGeplantes ? de.einkauf.allesDa : de.einkauf.leer}</Text>
           {hatGeplantes ? null : <Text style={styles.hinweis}>{de.einkauf.leerTipp}</Text>}
@@ -109,6 +112,29 @@ export default function Einkauf() {
           </Karte>
         </Abschnitt>
       ))}
+
+      {frei.length > 0 ? (
+        <Abschnitt titel={de.eigenes.sonstiges}>
+          <Karte style={styles.liste}>
+            {frei.map((f) => (
+              <Hakenzeile
+                key={f.schluessel}
+                titel={f.text}
+                zusatz={de.einkauf.fuer(f.rezept)}
+                aktiv={f.schluessel in zustand.einkaufAbgehakt}
+                onPress={() =>
+                  aktion({
+                    typ: 'einkaufHaken',
+                    zutatId: f.schluessel,
+                    aktiv: !(f.schluessel in zustand.einkaufAbgehakt),
+                    menge: null,
+                  })
+                }
+              />
+            ))}
+          </Karte>
+        </Abschnitt>
+      ) : null}
 
       <Abschnitt titel={de.einkauf.eigene}>
         <Karte style={styles.liste}>
@@ -167,6 +193,7 @@ export default function Einkauf() {
                 typ: 'einkaufAbschliessen',
                 heute,
                 gekauft: abgehaktePosten.map((p) => ({ zutatId: p.zutat.id, name: p.zutat.name })),
+                freiGekauft: freiAbgehakt.map((f) => ({ planId: f.planId, text: f.text })),
               })
             }
           />

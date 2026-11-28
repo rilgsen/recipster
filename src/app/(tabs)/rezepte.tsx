@@ -94,6 +94,7 @@ export default function Rezepte() {
           />
         ))}
       </Filterzeile>
+      <Knopf titel={de.eigenes.neu} art="neben" onPress={() => router.push('/eigenes')} />
       <Text style={styles.anzahl} accessibilityLiveRegion="polite">
         {de.rezepte.anzahl(treffer.length)}
       </Text>

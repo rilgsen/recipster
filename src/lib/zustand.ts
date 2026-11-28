@@ -1,6 +1,7 @@
 import type { Tag } from './datum';
 import { begrenzePersonen } from './mengen';
-import { MAHLZEITEN, type Mahlzeit } from './rezepte';
+import { REZEPTEINHEITEN, type Rezeptzutat } from './katalog';
+import { MAHLZEITEN, type Mahlzeit, type Rezept } from './rezepte';
 
 /**
  * Alles, was der Nutzer erzeugt. Mitgelieferte Rezepte und der Katalog gehören nicht dazu,
@@ -26,6 +27,8 @@ export type Zustand = {
    * Gespeichert wird die Endzeit, nicht die Restzeit.
    */
   timer: Kochtimer[];
+  /** Importierte und von Hand angelegte Rezepte (Regeln I1 bis I5). */
+  eigeneRezepte: Rezept[];
   /** Hinweise, die nur einmal erscheinen. */
   gesehen: { stummHinweis?: true; start?: true };
 };
@@ -55,6 +58,8 @@ export type Planeintrag = {
   /** Personen, für die gekocht wird. */
   portionen: number;
   gekocht: boolean;
+  /** Freie Zutatenzeilen eines eigenen Rezepts, die schon eingekauft sind (Regel E7). */
+  freiErledigt?: string[];
 };
 
 export type Vorratseintrag = {
@@ -84,6 +89,7 @@ export const STARTZUSTAND: Zustand = {
   einkaufHand: [],
   kaufzaehler: {},
   timer: [],
+  eigeneRezepte: [],
   gesehen: {},
 };
 
@@ -100,7 +106,14 @@ export type Aktion =
   | { typ: 'einkaufHandHinzu'; id: string; text: string }
   | { typ: 'einkaufHandHaken'; id: string; aktiv: boolean }
   | { typ: 'einkaufHandEntfernen'; id: string }
-  | { typ: 'einkaufAbschliessen'; heute: Tag; gekauft: { zutatId: string; name: string }[] }
+  | {
+      typ: 'einkaufAbschliessen';
+      heute: Tag;
+      gekauft: { zutatId: string; name: string }[];
+      freiGekauft?: { planId: string; text: string }[];
+    }
+  | { typ: 'eigenesRezeptSpeichern'; rezept: Rezept }
+  | { typ: 'eigenesRezeptLoeschen'; id: string }
   | { typ: 'vorratSetzen'; zutatId: string; vorhanden: boolean; heute?: Tag }
   | { typ: 'gekocht'; planId: string; heute: Tag; aufgebraucht: string[] }
   | { typ: 'timerStart'; timer: Kochtimer }
@@ -203,8 +216,18 @@ export function reduziere(zustand: Zustand, aktion: Aktion): Zustand {
           zaehle(eintrag.text);
         }
       }
+      const frei = aktion.freiGekauft ?? [];
       return {
         ...zustand,
+        plan:
+          frei.length === 0
+            ? zustand.plan
+            : zustand.plan.map((e) => {
+                const texte = frei.filter((f) => f.planId === e.id).map((f) => f.text);
+                return texte.length === 0
+                  ? e
+                  : { ...e, freiErledigt: [...new Set([...(e.freiErledigt ?? []), ...texte])] };
+              }),
         vorrat,
         kaufzaehler,
         einkaufAbgehakt: {},
@@ -254,6 +277,23 @@ export function reduziere(zustand: Zustand, aktion: Aktion): Zustand {
     }
     case 'stummHinweisGesehen':
       return zustand.gesehen.stummHinweis ? zustand : { ...zustand, gesehen: { ...zustand.gesehen, stummHinweis: true } };
+    case 'eigenesRezeptSpeichern': {
+      const rezept = pruefeEigenesRezept(aktion.rezept);
+      if (!rezept) {
+        return zustand;
+      }
+      const ohne = zustand.eigeneRezepte.filter((r) => r.id !== rezept.id);
+      return { ...zustand, eigeneRezepte: [...ohne, rezept] };
+    }
+    case 'eigenesRezeptLoeschen': {
+      const rezeptstatus = { ...zustand.rezeptstatus };
+      delete rezeptstatus[aktion.id];
+      return {
+        ...zustand,
+        rezeptstatus,
+        eigeneRezepte: zustand.eigeneRezepte.filter((r) => r.id !== aktion.id),
+      };
+    }
     case 'kochwelt':
       return { ...zustand, einstellungen: { ...zustand.einstellungen, kochwelt: aktion.id } };
     case 'startGesehen':
@@ -324,6 +364,9 @@ export function ausGespeichertem(roh: unknown): Zustand {
             ...(typeof t.mitteilungId === 'string' ? { mitteilungId: t.mitteilungId } : {}),
           }))
       : [],
+    eigeneRezepte: Array.isArray(daten.eigeneRezepte)
+      ? daten.eigeneRezepte.map(pruefeEigenesRezept).filter((r): r is Rezept => r !== null)
+      : [],
     gesehen:
       daten.gesehen && typeof daten.gesehen === 'object'
         ? {
@@ -364,6 +407,74 @@ export function pruefePlaneintrag(roh: unknown): Planeintrag | null {
     ...(rezeptId ? { rezeptId } : { notiz }),
     portionen: begrenzePersonen(typeof e.portionen === 'number' ? e.portionen : 2),
     gekocht: Boolean(e.gekocht),
+    ...(Array.isArray(e.freiErledigt) && e.freiErledigt.length > 0
+      ? { freiErledigt: e.freiErledigt.filter((t): t is string => typeof t === 'string') }
+      : {}),
+  };
+}
+
+/** Kennungen eigener Rezepte beginnen so. Damit können sie nie ein mitgeliefertes Rezept überdecken. */
+export const EIGEN_PRAEFIX = 'eigen-';
+
+/**
+ * Liefert ein gültiges eigenes Rezept oder null. Ein Rezept braucht einen Titel
+ * und mindestens eine Zutat oder einen Schritt.
+ */
+export function pruefeEigenesRezept(roh: unknown): Rezept | null {
+  if (!roh || typeof roh !== 'object') {
+    return null;
+  }
+  const r = roh as Partial<Rezept>;
+  const titel = typeof r.titel === 'string' ? r.titel.trim() : '';
+  if (typeof r.id !== 'string' || !r.id.startsWith(EIGEN_PRAEFIX) || !titel) {
+    return null;
+  }
+  const texte = (liste: unknown): string[] =>
+    Array.isArray(liste)
+      ? liste.filter((t): t is string => typeof t === 'string').map((t) => t.trim()).filter(Boolean)
+      : [];
+  const zutaten: Rezeptzutat[] = Array.isArray(r.zutaten)
+    ? r.zutaten
+        .filter(
+          (z) =>
+            z &&
+            typeof z.zutat_id === 'string' &&
+            typeof z.menge === 'number' &&
+            Number.isFinite(z.menge) &&
+            z.menge > 0 &&
+            REZEPTEINHEITEN.includes(z.einheit)
+        )
+        .map((z) => ({ zutat_id: z.zutat_id, menge: z.menge, einheit: z.einheit }))
+    : [];
+  const frei = texte(r.freie_zutaten);
+  const schritte = Array.isArray(r.schritte)
+    ? r.schritte
+        .filter((s) => s && typeof s.text === 'string' && s.text.trim())
+        .map((s) => ({
+          text: s.text.trim(),
+          ...(typeof s.timer_sekunden === 'number' && s.timer_sekunden > 0
+            ? { timer_sekunden: Math.round(s.timer_sekunden) }
+            : {}),
+        }))
+    : [];
+  if (zutaten.length + frei.length + schritte.length === 0) {
+    return null;
+  }
+  const link = typeof r.quellenlink === 'string' && /^https?:\/\//i.test(r.quellenlink) ? r.quellenlink : undefined;
+  return {
+    id: r.id,
+    titel: titel.slice(0, 120),
+    schwerpunkt: [],
+    ernaehrung: texte(r.ernaehrung),
+    tags: [],
+    mahlzeit: r.mahlzeit && MAHLZEITEN.includes(r.mahlzeit) ? r.mahlzeit : 'Abendessen',
+    minuten: typeof r.minuten === 'number' && r.minuten > 0 ? Math.round(r.minuten) : 0,
+    portionen: begrenzePersonen(typeof r.portionen === 'number' ? r.portionen : 2),
+    zutaten,
+    schritte,
+    quelle: link ? 'import' : 'eigen',
+    ...(link ? { quellenlink: link } : {}),
+    ...(frei.length > 0 ? { freie_zutaten: frei } : {}),
   };
 }
 

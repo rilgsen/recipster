@@ -208,6 +208,11 @@ export default function Kochen() {
                 </Text>
               );
             })}
+            {(rezept.freie_zutaten ?? []).map((text) => (
+              <Text key={text} style={styles.text}>
+                {text}
+              </Text>
+            ))}
           </Karte>
         ) : null}
       </ScrollView>

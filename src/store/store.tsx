@@ -63,12 +63,22 @@ export function useDaten(): {
   rezepte: readonly Rezept[];
   rezeptNach: ReadonlyMap<string, Rezept>;
   katalog: ReadonlyMap<string, Zutat>;
+  zutaten: readonly Zutat[];
 } {
-  return DATEN;
+  const { zustand } = useStore();
+  const eigene = zustand.eigeneRezepte;
+  return useMemo(() => {
+    if (eigene.length === 0) {
+      return DATEN;
+    }
+    const rezepte = [...eigene, ...MITGELIEFERTE_REZEPTE];
+    return { ...DATEN, rezepte, rezeptNach: alsKarte(rezepte) };
+  }, [eigene]);
 }
 
 const DATEN = {
   rezepte: MITGELIEFERTE_REZEPTE,
   rezeptNach: alsKarte(MITGELIEFERTE_REZEPTE),
   katalog: alsKarte(MITGELIEFERTE_ZUTATEN),
+  zutaten: MITGELIEFERTE_ZUTATEN,
 };

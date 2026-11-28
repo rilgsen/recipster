@@ -99,6 +99,33 @@ export function berechneEinkaufsliste(anfrage: Einkaufsanfrage): Posten[] {
     );
 }
 
+export type FreierPosten = { schluessel: string; planId: string; text: string; rezept: string };
+
+/**
+ * Freie Zutatenzeilen eigener Rezepte im Zeitraum (Regel E7). Sie stehen als Text auf der Liste,
+ * werden nicht zusammengezählt und nicht mit dem Vorrat abgeglichen.
+ */
+export function freiePosten(
+  anfrage: Pick<Einkaufsanfrage, 'plan' | 'rezeptNach' | 'von' | 'bis'>
+): FreierPosten[] {
+  const liste: FreierPosten[] = [];
+  for (const eintrag of anfrage.plan) {
+    if (eintrag.gekocht || !eintrag.rezeptId) {
+      continue;
+    }
+    if (tageZwischen(anfrage.von, eintrag.datum) < 0 || tageZwischen(eintrag.datum, anfrage.bis) < 0) {
+      continue;
+    }
+    const rezept = anfrage.rezeptNach.get(eintrag.rezeptId);
+    for (const text of rezept?.freie_zutaten ?? []) {
+      if (!eintrag.freiErledigt?.includes(text)) {
+        liste.push({ schluessel: `frei:${eintrag.id}:${text}`, planId: eintrag.id, text, rezept: rezept!.titel });
+      }
+    }
+  }
+  return liste;
+}
+
 /** Abgehakte Menge je Zutat in der Basiseinheit. null steht für einen Posten ohne Menge. */
 export type Haken = Readonly<Record<string, number | null>>;
 
