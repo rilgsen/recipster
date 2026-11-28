@@ -1,4 +1,4 @@
-import { Stack, useLocalSearchParams } from 'expo-router';
+import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
@@ -17,6 +17,7 @@ import {
   mengeImRezept,
   zutatName,
 } from '@/lib/mengen';
+import { istErnaehrungsform } from '@/lib/rezepte';
 import { tagName } from '@/lib/tagname';
 import { istVorhanden } from '@/lib/vorrat';
 import { neueId } from '@/lib/zustand';
@@ -26,6 +27,7 @@ export default function RezeptSeite() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { rezeptNach, katalog } = useDaten();
   const { zustand, aktion } = useStore();
+  const router = useRouter();
   const farben = useFarben();
   const heute = useHeute();
   const [personen, setPersonen] = useState(zustand.einstellungen.personen);
@@ -58,12 +60,18 @@ export default function RezeptSeite() {
         {[de.rezept.minuten(rezept.minuten), rezept.mahlzeit, ...rezept.schwerpunkt].join(' · ')}
       </Text>
       <View style={styles.chips}>
-        {[...rezept.ernaehrung, ...rezept.tags].map((tag) => (
+        {[...rezept.ernaehrung.filter(istErnaehrungsform), ...rezept.tags].map((tag) => (
           <Chip key={tag} titel={tag} />
         ))}
       </View>
 
-      <Knopf titel={de.woche.einplanen} onPress={() => setEinplanen(true)} />
+      <Knopf
+        titel={de.kochen.start}
+        onPress={() =>
+          router.push({ pathname: '/kochen/[id]', params: { id: rezept.id, personen: String(personen) } })
+        }
+      />
+      <Knopf titel={de.woche.einplanen} art="neben" onPress={() => setEinplanen(true)} />
       <Knopf
         titel={de.einkauf.aufListe}
         art="neben"

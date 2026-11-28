@@ -45,3 +45,8 @@ export const ERNAEHRUNGSFORMEN = ['vegetarisch', 'vegan', 'pescetarisch'] as con
 export function alsKarte<T extends { id: string }>(liste: readonly T[]): Map<string, T> {
   return new Map(liste.map((eintrag) => [eintrag.id, eintrag]));
 }
+
+/** Nur wählbare Ernährungsformen werden gezeigt. Angaben wie „glutenfrei“ wären eine Zusage, die die App nicht prüft. */
+export function istErnaehrungsform(form: string): boolean {
+  return (ERNAEHRUNGSFORMEN as readonly string[]).includes(form);
+}

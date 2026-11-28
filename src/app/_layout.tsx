@@ -11,9 +11,11 @@ import { useEffect } from 'react';
 
 import { Basis, Schrift } from '@/constants/theme';
 import { de } from '@/i18n/de';
+import { richteMitteilungenEin } from '@/lib/mitteilungen';
 import { ZustandsAnbieter } from '@/store/store';
 
 SplashScreen.preventAutoHideAsync();
+richteMitteilungenEin();
 
 export default function RootLayout() {
   const [geladen, fehler] = useFonts({
@@ -49,6 +51,7 @@ export default function RootLayout() {
         <Stack.Screen name="vorrat" options={{ title: de.vorrat.titel, presentation: 'modal' }} />
         <Stack.Screen name="auswahl" options={{ title: de.woche.wahlTitel, presentation: 'modal' }} />
         <Stack.Screen name="rezept/[id]" options={{ title: '', headerBackButtonDisplayMode: 'minimal' }} />
+        <Stack.Screen name="kochen/[id]" options={{ title: '', headerBackButtonDisplayMode: 'minimal' }} />
         <Stack.Screen
           name="einstellungen"
           options={{ title: de.einstellungen.titel, presentation: 'modal' }}
