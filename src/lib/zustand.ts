@@ -21,6 +21,22 @@ export type Zustand = {
   einkaufHand: Handeintrag[];
   /** Wie oft etwas gekauft wurde, für „Häufig gekauft“. Schlüssel ist der Name in Kleinbuchstaben. */
   kaufzaehler: Record<string, { name: string; zahl: number }>;
+  /**
+   * Laufende Kochtimer (Regel K2): mehrere gleichzeitig, höchstens einer je Rezept und Schritt.
+   * Gespeichert wird die Endzeit, nicht die Restzeit.
+   */
+  timer: Kochtimer[];
+  /** Hinweise, die nur einmal erscheinen. */
+  gesehen: { stummHinweis?: true };
+};
+
+export type Kochtimer = {
+  rezeptId: string;
+  schritt: number;
+  /** Zeitpunkt des Endes in Millisekunden seit 1970. */
+  endeMs: number;
+  /** Kennung der geplanten Mitteilung, falls eine geplant wurde. */
+  mitteilungId?: string;
 };
 
 export type Handeintrag = {
@@ -65,6 +81,8 @@ export const STARTZUSTAND: Zustand = {
   einkaufAbgehakt: {},
   einkaufHand: [],
   kaufzaehler: {},
+  timer: [],
+  gesehen: {},
 };
 
 export type Aktion =
@@ -82,7 +100,10 @@ export type Aktion =
   | { typ: 'einkaufHandEntfernen'; id: string }
   | { typ: 'einkaufAbschliessen'; heute: Tag; gekauft: { zutatId: string; name: string }[] }
   | { typ: 'vorratSetzen'; zutatId: string; vorhanden: boolean; heute?: Tag }
-  | { typ: 'gekocht'; planId: string; heute: Tag; aufgebraucht: string[] };
+  | { typ: 'gekocht'; planId: string; heute: Tag; aufgebraucht: string[] }
+  | { typ: 'timerStart'; timer: Kochtimer }
+  | { typ: 'timerStopp'; rezeptId: string; schritt: number }
+  | { typ: 'stummHinweisGesehen' };
 
 export function reduziere(zustand: Zustand, aktion: Aktion): Zustand {
   switch (aktion.typ) {
@@ -218,6 +239,17 @@ export function reduziere(zustand: Zustand, aktion: Aktion): Zustand {
         plan: zustand.plan.map((e) => (e.id === aktion.planId ? { ...e, gekocht: true } : e)),
       };
     }
+    case 'timerStart':
+      return {
+        ...zustand,
+        timer: [...zustand.timer.filter((t) => !gleicherTimer(t, aktion.timer)), aktion.timer],
+      };
+    case 'timerStopp': {
+      const timer = zustand.timer.filter((t) => !gleicherTimer(t, aktion));
+      return timer.length === zustand.timer.length ? zustand : { ...zustand, timer };
+    }
+    case 'stummHinweisGesehen':
+      return zustand.gesehen.stummHinweis ? zustand : { ...zustand, gesehen: { ...zustand.gesehen, stummHinweis: true } };
     default:
       return zustand;
   }
@@ -265,7 +297,29 @@ export function ausGespeichertem(roh: unknown): Zustand {
           .map((e) => ({ id: e.id, text: e.text, abgehakt: Boolean(e.abgehakt) }))
       : [],
     kaufzaehler: daten.kaufzaehler && typeof daten.kaufzaehler === 'object' ? { ...daten.kaufzaehler } : {},
+    timer: Array.isArray(daten.timer)
+      ? daten.timer
+          .filter(
+            (t) =>
+              t &&
+              typeof t === 'object' &&
+              typeof t.rezeptId === 'string' &&
+              typeof t.schritt === 'number' &&
+              typeof t.endeMs === 'number'
+          )
+          .map((t) => ({
+            rezeptId: t.rezeptId,
+            schritt: t.schritt,
+            endeMs: t.endeMs,
+            ...(typeof t.mitteilungId === 'string' ? { mitteilungId: t.mitteilungId } : {}),
+          }))
+      : [],
+    gesehen: daten.gesehen && typeof daten.gesehen === 'object' && daten.gesehen.stummHinweis ? { stummHinweis: true } : {},
   };
+}
+
+function gleicherTimer(a: { rezeptId: string; schritt: number }, b: { rezeptId: string; schritt: number }) {
+  return a.rezeptId === b.rezeptId && a.schritt === b.schritt;
 }
 
 const TAG_MUSTER = /^\d{4}-\d{2}-\d{2}$/;

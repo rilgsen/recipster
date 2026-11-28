@@ -42,6 +42,17 @@ export function Eintragsblatt({ eintrag, heute, onSchliessen, onGekocht }: Props
             />
           ) : null}
 
+          {rezept && !eintrag.gekocht ? (
+            <Knopf
+              titel={de.kochen.start}
+              art="neben"
+              onPress={() => {
+                onSchliessen();
+                router.push({ pathname: '/kochen/[id]', params: { id: rezept.id, plan: eintrag.id } });
+              }}
+            />
+          ) : null}
+
           {rezept && !eintrag.gekocht && onGekocht ? (
             <Knopf
               titel={de.gekocht.knopf}

@@ -14,10 +14,12 @@ type Props = {
   eintrag: Planeintrag | null;
   onSchliessen: () => void;
   onFertig?: () => void;
+  /** true, wenn der Eintrag noch nicht im Plan steht und erst beim Bestätigen angelegt wird. */
+  neu?: boolean;
 };
 
 /** Fragt nach dem Kochen, welche Zutaten aufgebraucht sind (Spec Abschnitt 3, Vorrat). */
-export function Gekochtblatt({ eintrag, onSchliessen, onFertig }: Props) {
+export function Gekochtblatt({ eintrag, onSchliessen, onFertig, neu }: Props) {
   const heute = useHeute();
   const { rezeptNach, katalog } = useDaten();
   const { aktion } = useStore();
@@ -50,6 +52,9 @@ export function Gekochtblatt({ eintrag, onSchliessen, onFertig }: Props) {
         titel={de.gekocht.bestaetigen}
         onPress={() => {
           if (eintrag) {
+            if (neu) {
+              aktion({ typ: 'planHinzu', eintrag });
+            }
             aktion({
               typ: 'gekocht',
               planId: eintrag.id,

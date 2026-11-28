@@ -143,6 +143,32 @@ export const de = {
     baldUeber: (tage: number) => (tage === 1 ? 'seit 1 Tag über der Haltbarkeit' : `seit ${tage} Tagen über der Haltbarkeit`),
     baldHinweis: 'Richtwerte ab Kaufdatum. Bitte selbst prüfen, ob etwas noch gut ist.',
   },
+  kochen: {
+    start: 'Jetzt kochen',
+    schritt: (nummer: number, anzahl: number) => `Schritt ${nummer} von ${anzahl}`,
+    zurueck: 'Zurück',
+    weiter: 'Weiter',
+    tipp: 'Tipp vom Koch',
+    timerStart: (dauer: string) => `Timer starten (${dauer})`,
+    timerStopp: 'Timer beenden',
+    timerLaeuft: (rest: string) => `Timer läuft: ${rest}`,
+    timerFertig: 'Timer abgelaufen',
+    timerSchritt: (nummer: number, rest: string) => `Schritt ${nummer}: ${rest}`,
+    timerSchrittFertig: (nummer: number) => `Schritt ${nummer}: fertig`,
+    laufend: 'Laufende Timer',
+    mitteilungTitel: (rezept: string) => `Timer fertig: ${rezept}`,
+    mitteilungText: (nummer: number) => `Schritt ${nummer} ist so weit.`,
+    ohneMitteilung:
+      'Mitteilungen sind aus. Der Timer läuft nur, solange die App offen ist. Einschalten kannst du sie in den iPhone-Einstellungen.',
+    ohneMitteilungHier: 'In dieser Vorschau gibt es keine Mitteilungen. Der Timer läuft nur, solange die Seite offen ist.',
+    stummHinweis:
+      'Bei Stummschaltung oder einem Fokus kann sich der Timer lautlos melden. Lass das iPhone beim Kochen am besten laut.',
+    portionenHinweis: (personen: number) =>
+      `Mengen für ${personen} ${personen === 1 ? 'Person' : 'Personen'}. Zeiten bleiben wie im Rezept.`,
+    zutaten: 'Zutaten anzeigen',
+    zutatenAus: 'Zutaten ausblenden',
+    ohneSchritte: 'Für dieses Rezept gibt es keine Schritte.',
+  },
   gekocht: {
     knopf: 'Fertig gekocht',
     titel: 'Was ist aufgebraucht?',
