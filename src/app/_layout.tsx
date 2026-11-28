@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 
 import { Basis, Schrift } from '@/constants/theme';
 import { de } from '@/i18n/de';
+import { ZustandsAnbieter } from '@/store/store';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -34,7 +35,7 @@ export default function RootLayout() {
   }
 
   return (
-    <>
+    <ZustandsAnbieter>
       <StatusBar style="dark" />
       <Stack
         screenOptions={{
@@ -44,12 +45,13 @@ export default function RootLayout() {
           headerTintColor: Basis.text,
           headerTitleStyle: { fontFamily: Schrift.textFett },
         }}>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false, title: '' }} />
+        <Stack.Screen name="rezept/[id]" options={{ title: '', headerBackButtonDisplayMode: 'minimal' }} />
         <Stack.Screen
           name="einstellungen"
           options={{ title: de.einstellungen.titel, presentation: 'modal' }}
         />
       </Stack>
-    </>
+    </ZustandsAnbieter>
   );
 }
