@@ -74,7 +74,7 @@ Jede Regel hat eine Kennung, auf die sich die Tests beziehen.
 - **M1** Jede Zutat hat eine Basiseinheit. Esslöffel, Teelöffel und Stück werden über den Katalog in die Basiseinheit umgerechnet, etwa ein Esslöffel Butter in Gramm.
 - **M2** Der Faktor ist Portionen geteilt durch die Portionen des Rezepts. Erlaubt sind 1 bis 12. Die Personenzahl aus den Einstellungen ist nur die Vorbelegung beim Öffnen eines Rezepts und beim Anlegen eines Planeintrags. Für alles, was aus dem Plan entsteht (Einkaufsliste, Kochen aus dem Plan), gelten die Portionen des Planeintrags.
 - **M3** Stück wird je Kochvorgang aufgerundet, und zwar auf den Schritt aus dem Katalog: ganze Stück bei Ei, Knoblauchzehe oder Fischfilet, halbe Stück bei Zwiebel, Gurke, Avocado oder Zitrone. Die kleinste Menge ist ein Schritt.
-- **M4** „Prise“ wird nicht umgerechnet. Sie bleibt bei jeder Portionszahl gleich und hat auf der Einkaufsliste keine Menge.
+- **M4** „Prise“ wird nicht umgerechnet. Sie bleibt bei jeder Portionszahl gleich und hat auf der Einkaufsliste keine Menge. Salz und Pfeffer zum Abschmecken stehen als „nach Geschmack“ ohne Zahl in den Zutaten. Jedes Gewürz, das ein Schritt nennt, hat eine Zutatenzeile.
 - **M5** Timer und Garzeiten ändern sich mit der Portionszahl nicht. Weicht die Portionszahl vom Rezept ab, steht das als Hinweis am Rezept.
 
 **Vorschläge im Wochenplan**
@@ -134,7 +134,7 @@ Jede Zeile ist ein Kriterium mit eigener Kennung für den zugehörigen Test. Die
 | S0-2 | 0 Probe | Eine geplante lokale Mitteilung kommt in Expo Go auf deinem iPhone bei gesperrtem Bildschirm an. Das Ergebnis steht in `docs/entscheidungen/`. |
 | S1-1 | 1 Grundgerüst | Vier Bereiche Heute, Woche, Rezepte, Einkauf sind über die Leiste erreichbar, das Menü oben rechts öffnet die Einstellungen. |
 | S1-2 | 1 Grundgerüst | Farben und Schriften stimmen mit den Werten in `src/constants/theme.ts` überein, die aus den Tafeln App-Heute bis App-Kochmodus der Designfläche stammen. Der sichtbare App-Name steht nur in `app.json`. Ein Test prüft, dass Name und Schriftzug daraus abgeleitet werden. |
-| S1-3 | 1 Grundgerüst | Bei jedem Pull Request laufen Build, Lint, Typprüfung, Tests, `npm audit` (schlägt ab Stufe high fehl) und Gitleaks (schlägt bei jedem Fund fehl). |
+| S1-3 | 1 Grundgerüst | Bei jedem Pull Request laufen Build, Lint, Typprüfung, Tests, `npm audit` (schlägt ab Stufe high fehl), Gitleaks (schlägt bei jedem Fund fehl) und CodeQL. Die Typprüfung erzeugt vorher die Routentypen, damit ein falsches Navigationsziel scheitert. |
 | S2-1 | 2 Rezepte | Alle mitgelieferten Rezepte erscheinen in der Liste und lassen sich öffnen. |
 | S2-2 | 2 Rezepte | Filter: Schwerpunkt (einer), Ernährungsform (mehrere, alle müssen passen), Mahlzeit (eine), Kochzeit (bis 20, bis 30 oder bis 45 Minuten), Suche in Titel, Zutaten und Tags. Verschiedene Filter gelten zusammen. Ohne Treffer steht ein Hinweis mit einem Knopf zum Zurücksetzen da. |
 | S2-3 | 2 Rezepte | Bei geänderter Portionszahl stimmen alle Mengen nach M1 bis M4: Eier bleiben ganze Stück, eine Zwiebel wird höchstens halbiert. |
@@ -166,7 +166,7 @@ Jede Zeile ist ein Kriterium mit eigener Kennung für den zugehörigen Test. Die
 - Nur Deutsch. Die App wird kommerziell angeboten (Rasmus, 27.11.2026), das Preismodell ist noch offen.
 - Vorrat ohne Mengen.
 - Die vier Schwerpunkte bleiben, auch wenn das mehr Rezepte verlangt.
-- „glutenfrei“ und „laktosefrei“ sind keine Filter mehr. Ein Filter wäre eine Zusage, die die App ohne geprüfte Allergendaten nicht halten kann.
+- „glutenfrei“ und „laktosefrei“ sind keine Filter mehr und stehen auch nicht mehr an den Rezepten. Das wäre eine Zusage, die die App ohne geprüfte Allergendaten nicht halten kann. Codex hat ein so gekennzeichnetes Rezept mit gewöhnlicher Sojasauce gefunden.
 - Eigene Rezepte von Hand (I5, S7-3) gehören zur ersten Version, weil der Prüfbildschirm des Imports dasselbe Formular ist.
 - Kein Icon-Wechsel und kein Timer auf dem Sperrbildschirm in der ersten Version.
 
@@ -179,6 +179,7 @@ Jede Zeile ist ein Kriterium mit eigener Kennung für den zugehörigen Test. Die
 - Name: „Recipster“ ist Arbeitstitel. Kandidaten „Leckr“ und „Crispee“ haben die Schnellprüfung bestanden (keine identische Marke, keine gleichnamige App, .app frei). Das ist keine Rechtsberatung, vor dem Store sollte eine Markenrecherche bestätigen.
 - Nährwerte: Bis zur Nachrechnung tragen sie den Zusatz „geschätzt“. Vor dem Store werden sie aus Werten je 100 g am Zutatenkatalog berechnet (Quelle Bundeslebensmittelschlüssel oder USDA), und die Einordnung „Keto“ folgt aus den berechneten Kohlenhydraten. Dazu kommt der Hinweis, dass die App keine medizinische Ernährungsberatung ist.
 - Rechtliche Prüfung des Link-Imports, vor allem der Übernahme fremder Zubereitungstexte in ein bezahltes Produkt.
+- Schrift des Schriftzugs. Gebaut ist Fredoka, das Konzept lässt die Wahl offen.
 - Rechte an den erzeugten Figuren und Rezeptfotos: Nutzungsbedingungen des Bildgenerators prüfen, die Hauptfigur als Marke anmelden.
 - Datenschutzerklärung, Anbieterangaben.
 - Rezeptbestand: mindestens 20 Rezepte je Mahlzeit für jede Ernährungsform und für Keto, damit die Wiederholungssperre W2 im Alltag nicht ständig aufgehoben wird. Heute sind es weniger, die Regel W4 fängt das ab.

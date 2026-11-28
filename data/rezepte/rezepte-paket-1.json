@@ -8,10 +8,7 @@
         "Keto",
         "Familie"
       ],
-      "ernaehrung": [
-        "glutenfrei",
-        "laktosefrei"
-      ],
+      "ernaehrung": [],
       "tags": [
         "Low Carb",
         "Protein",
@@ -62,6 +59,11 @@
           "zutat_id": "thymian-getrocknet",
           "menge": 1,
           "einheit": "TL"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -91,10 +93,7 @@
       "schwerpunkt": [
         "Keto"
       ],
-      "ernaehrung": [
-        "glutenfrei",
-        "laktosefrei"
-      ],
+      "ernaehrung": [],
       "tags": [
         "Low Carb",
         "Protein",
@@ -176,9 +175,7 @@
         "Keto",
         "Fitness"
       ],
-      "ernaehrung": [
-        "glutenfrei"
-      ],
+      "ernaehrung": [],
       "tags": [
         "Low Carb",
         "Protein",
@@ -223,6 +220,11 @@
           "zutat_id": "rucola",
           "menge": 100,
           "einheit": "g"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -253,8 +255,7 @@
         "Keto"
       ],
       "ernaehrung": [
-        "vegetarisch",
-        "glutenfrei"
+        "vegetarisch"
       ],
       "tags": [
         "Low Carb",
@@ -328,7 +329,7 @@
           "timer_sekunden": 480
         },
         {
-          "text": "Vier Mulden in die Soße drücken und je ein Ei hineinschlagen."
+          "text": "Für jedes Ei eine Mulde in die Soße drücken und je ein Ei hineinschlagen."
         },
         {
           "text": "Deckel auflegen und 5 Minuten stocken lassen.",
@@ -348,9 +349,7 @@
         "Fisch"
       ],
       "ernaehrung": [
-        "pescetarisch",
-        "glutenfrei",
-        "laktosefrei"
+        "pescetarisch"
       ],
       "tags": [
         "Low Carb",
@@ -431,9 +430,7 @@
         "Keto",
         "Familie"
       ],
-      "ernaehrung": [
-        "glutenfrei"
-      ],
+      "ernaehrung": [],
       "tags": [
         "Low Carb",
         "Protein",
@@ -488,6 +485,11 @@
           "zutat_id": "oregano-getrocknet",
           "menge": 1,
           "einheit": "TL"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -594,10 +596,7 @@
       "schwerpunkt": [
         "Fitness"
       ],
-      "ernaehrung": [
-        "glutenfrei",
-        "laktosefrei"
-      ],
+      "ernaehrung": [],
       "tags": [
         "Protein",
         "Wenig Aufwand",
@@ -681,8 +680,7 @@
       ],
       "ernaehrung": [
         "vegetarisch",
-        "vegan",
-        "laktosefrei"
+        "vegan"
       ],
       "tags": [
         "Protein",
@@ -743,6 +741,16 @@
           "zutat_id": "oregano-getrocknet",
           "menge": 1,
           "einheit": "TL"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
+        },
+        {
+          "zutat_id": "pfeffer",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -772,9 +780,7 @@
       "schwerpunkt": [
         "Fitness"
       ],
-      "ernaehrung": [
-        "laktosefrei"
-      ],
+      "ernaehrung": [],
       "tags": [
         "Protein",
         "Eisen"
@@ -939,10 +945,7 @@
         "Fitness",
         "Familie"
       ],
-      "ernaehrung": [
-        "glutenfrei",
-        "laktosefrei"
-      ],
+      "ernaehrung": [],
       "tags": [
         "Protein",
         "Viel Gemüse",
@@ -992,6 +995,16 @@
           "zutat_id": "paprikapulver-edelsuess",
           "menge": 1,
           "einheit": "TL"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
+        },
+        {
+          "zutat_id": "pfeffer",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -1023,8 +1036,7 @@
         "Familie"
       ],
       "ernaehrung": [
-        "pescetarisch",
-        "glutenfrei"
+        "pescetarisch"
       ],
       "tags": [
         "Protein",
@@ -1075,6 +1087,11 @@
           "zutat_id": "dill",
           "menge": 0.5,
           "einheit": "Stück"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -1104,8 +1121,7 @@
         "Fitness"
       ],
       "ernaehrung": [
-        "pescetarisch",
-        "laktosefrei"
+        "pescetarisch"
       ],
       "tags": [
         "Protein",
@@ -1196,8 +1212,7 @@
         "Keto"
       ],
       "ernaehrung": [
-        "pescetarisch",
-        "glutenfrei"
+        "pescetarisch"
       ],
       "tags": [
         "Low Carb",
@@ -1243,6 +1258,11 @@
           "zutat_id": "olivenoel",
           "menge": 1,
           "einheit": "EL"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -1330,6 +1350,16 @@
           "zutat_id": "fruehlingszwiebeln",
           "menge": 2,
           "einheit": "Stück"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
+        },
+        {
+          "zutat_id": "pfeffer",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -1358,9 +1388,7 @@
         "Keto"
       ],
       "ernaehrung": [
-        "pescetarisch",
-        "glutenfrei",
-        "laktosefrei"
+        "pescetarisch"
       ],
       "tags": [
         "Low Carb",
@@ -1418,6 +1446,11 @@
           "zutat_id": "limette",
           "menge": 0.5,
           "einheit": "Stück"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -1451,9 +1484,7 @@
         "Keto"
       ],
       "ernaehrung": [
-        "pescetarisch",
-        "glutenfrei",
-        "laktosefrei"
+        "pescetarisch"
       ],
       "tags": [
         "Low Carb",
@@ -1509,6 +1540,11 @@
           "zutat_id": "thymian-getrocknet",
           "menge": 1,
           "einheit": "TL"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -1535,8 +1571,7 @@
         "Fisch"
       ],
       "ernaehrung": [
-        "pescetarisch",
-        "glutenfrei"
+        "pescetarisch"
       ],
       "tags": [
         "Omega-3",
@@ -1587,6 +1622,16 @@
           "zutat_id": "milch",
           "menge": 3,
           "einheit": "EL"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
+        },
+        {
+          "zutat_id": "pfeffer",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -1613,8 +1658,7 @@
         "Familie"
       ],
       "ernaehrung": [
-        "vegetarisch",
-        "glutenfrei"
+        "vegetarisch"
       ],
       "tags": [
         "Kinderfreundlich",
@@ -1665,6 +1709,11 @@
           "zutat_id": "muskatnuss",
           "menge": 1,
           "einheit": "Prise"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -1694,9 +1743,7 @@
         "Familie",
         "Fitness"
       ],
-      "ernaehrung": [
-        "laktosefrei"
-      ],
+      "ernaehrung": [],
       "tags": [
         "Kinderfreundlich",
         "Protein"
@@ -1750,6 +1797,11 @@
           "zutat_id": "karotte",
           "menge": 2,
           "einheit": "Stück"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -1779,8 +1831,7 @@
         "Familie"
       ],
       "ernaehrung": [
-        "vegetarisch",
-        "laktosefrei"
+        "vegetarisch"
       ],
       "tags": [
         "Kinderfreundlich",
@@ -1868,9 +1919,7 @@
       ],
       "ernaehrung": [
         "vegetarisch",
-        "vegan",
-        "glutenfrei",
-        "laktosefrei"
+        "vegan"
       ],
       "tags": [
         "Kinderfreundlich",
@@ -1927,6 +1976,11 @@
           "zutat_id": "kuerbiskerne",
           "menge": 2,
           "einheit": "EL"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -2093,6 +2147,16 @@
           "zutat_id": "schnittlauch",
           "menge": 0.5,
           "einheit": "Stück"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
+        },
+        {
+          "zutat_id": "pfeffer",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [

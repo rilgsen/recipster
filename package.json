@@ -44,7 +44,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "expo lint",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "expo customize tsconfig.json && tsc --noEmit",
     "test": "jest",
     "check": "npm run lint && npm run typecheck && npm test",
     "build:check": "expo export --platform ios --output-dir dist"

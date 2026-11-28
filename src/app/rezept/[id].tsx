@@ -17,6 +17,7 @@ import {
   mengeImRezept,
   zutatName,
 } from '@/lib/mengen';
+import { ohneMenge } from '@/lib/katalog';
 import { istErnaehrungsform } from '@/lib/rezepte';
 import { tagName } from '@/lib/tagname';
 import { istVorhanden } from '@/lib/vorrat';
@@ -84,7 +85,7 @@ export default function RezeptSeite() {
           let zahl = 0;
           for (const zeile of rezept.zutaten) {
             const zutat = katalog.get(zeile.zutat_id);
-            if (!zutat || istVorhanden(zutat, zustand.vorrat) || zeile.einheit === 'Prise') {
+            if (!zutat || istVorhanden(zutat, zustand.vorrat) || ohneMenge(zeile.einheit)) {
               continue;
             }
             const menge = mengeImRezept(zutat, zeile, faktor);

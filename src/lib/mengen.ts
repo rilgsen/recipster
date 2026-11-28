@@ -1,5 +1,6 @@
 import {
   inBasiseinheit,
+  ohneMenge,
   type Rezepteinheit,
   type Rezeptzutat,
   type Stueckrundung,
@@ -33,7 +34,7 @@ export function skaliereMenge(
   faktor: number,
   rundung: Stueckrundung = 'ganz'
 ): number {
-  if (einheit === 'Prise') {
+  if (ohneMenge(einheit)) {
     return menge;
   }
   const wert = menge * faktor;
@@ -86,6 +87,9 @@ export function formatiereMenge(zutat: Zutat, menge: number, einheit: Rezepteinh
       return `${zahl} ${mehrzahlStueckname(zutat.stueck_name, wert)}`;
     }
     return zutat.basis_einheit === 'Stück' ? zahl : `${zahl} Stück`;
+  }
+  if (einheit === 'nach Geschmack') {
+    return 'nach Geschmack';
   }
   if (einheit === 'Prise') {
     return wert === 1 ? '1 Prise' : `${zahl} Prisen`;

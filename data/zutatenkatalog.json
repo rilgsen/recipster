@@ -1,5 +1,5 @@
 {
- "hinweis": "Zutatenkatalog von Recipster. basis_einheit ist g, ml oder Stück. umrechnung gibt an, wie viele Basiseinheiten eine andere Einheit ergibt (EL, TL, bei g-Zutaten auch Stück). stueck_name ist die Bezeichnung eines Stücks in der Anzeige (Zehe, Dose, Bund). rundung gibt bei Stück-Zutaten an, ob im Rezept auf ganze (ganz) oder halbe Stück (halb) aufgerundet wird. Die Basiseinheit ist immer die Einheit, in der man einkauft. Umrechnungen und Haltbarkeiten sind Richtwerte von Claude und noch nicht unabhängig geprüft. haltbarkeit_tage null heißt unbegrenzt.",
+ "hinweis": "Zutatenkatalog von Recipster. basis_einheit ist g, ml oder Stück. umrechnung gibt an, wie viele Basiseinheiten eine andere Einheit ergibt (EL, TL, bei g-Zutaten auch Stück). stueck_name ist die Bezeichnung eines Stücks in der Anzeige (Zehe, Dose, Bund). rundung gibt bei Stück-Zutaten an, ob im Rezept auf ganze (ganz) oder halbe Stück (halb) aufgerundet wird. Die Basiseinheit ist immer die Einheit, in der man einkauft. Umrechnungen und Haltbarkeiten sind Richtwerte von Claude und noch nicht unabhängig geprüft. haltbarkeit_tage null heißt unbegrenzt. Löffelmaße: ein Esslöffel sind 15 ml, ein Teelöffel 5 ml, gestrichen gemessen. Wo beide Maße stehen, weicht ein Esslöffel höchstens ein Gramm von drei Teelöffeln ab. Die Gramm je Löffel sind Richtwerte aus der Dichte. stueck_inhalt nennt die Größe, die mit einer Dose gemeint ist. Haltbarkeit gilt ab Kauf für die ungeöffnete, richtig gelagerte Ware und ist ein Richtwert.",
  "zutaten": [
   {
    "id": "apfel",
@@ -112,8 +112,8 @@
    "abteilung": "Kühlregal",
    "basis_einheit": "g",
    "umrechnung": {
-    "EL": 12,
-    "TL": 4
+    "EL": 14,
+    "TL": 5
    },
    "immer_im_haus": true,
    "haltbarkeit_tage": 30
@@ -309,7 +309,7 @@
    "abteilung": "Vorrat",
    "basis_einheit": "g",
    "umrechnung": {
-    "EL": 20,
+    "EL": 21,
     "TL": 7
    },
    "immer_im_haus": true,
@@ -369,6 +369,7 @@
    "abteilung": "Konserven",
    "basis_einheit": "Stück",
    "stueck_name": "Dose",
+   "stueck_inhalt": "400 g Füllmenge",
    "umrechnung": {},
    "rundung": "halb",
    "immer_im_haus": false,
@@ -468,6 +469,7 @@
    "abteilung": "Konserven",
    "basis_einheit": "Stück",
    "stueck_name": "Dose",
+   "stueck_inhalt": "285 g Füllmenge",
    "umrechnung": {},
    "rundung": "halb",
    "immer_im_haus": false,
@@ -508,7 +510,7 @@
    "abteilung": "Vorrat",
    "basis_einheit": "g",
    "umrechnung": {
-    "EL": 10,
+    "EL": 8,
     "TL": 3
    },
    "immer_im_haus": true,
@@ -667,6 +669,17 @@
    },
    "immer_im_haus": false,
    "haltbarkeit_tage": 365
+  },
+  {
+   "id": "pfeffer",
+   "name": "Pfeffer",
+   "abteilung": "Vorrat",
+   "basis_einheit": "g",
+   "umrechnung": {
+    "TL": 3
+   },
+   "immer_im_haus": true,
+   "haltbarkeit_tage": null
   },
   {
    "id": "putenbrust",
@@ -910,6 +923,7 @@
    "abteilung": "Konserven",
    "basis_einheit": "Stück",
    "stueck_name": "Dose",
+   "stueck_inhalt": "150 g Füllmenge",
    "umrechnung": {},
    "rundung": "halb",
    "immer_im_haus": false,

@@ -42,8 +42,8 @@ export const MITGELIEFERTE_ZUTATEN: readonly Zutat[] = katalogDatei.zutaten as Z
 
 export const SCHWERPUNKTE = ['Fitness', 'Keto', 'Fisch', 'Familie'] as const;
 /**
- * Wählbare Ernährungsformen. „glutenfrei“ und „laktosefrei“ stehen noch an den Rezepten,
- * sind aber kein Filter: Die App prüft keine Unverträglichkeiten (Spec Abschnitt 1 und 5).
+ * Wählbare Ernährungsformen. „glutenfrei“ und „laktosefrei“ stehen nicht mehr an den Rezepten
+ * und sind kein Filter: Die App prüft keine Unverträglichkeiten (Spec Abschnitt 1 und 5).
  */
 export const ERNAEHRUNGSFORMEN = ['vegetarisch', 'vegan', 'pescetarisch'] as const;
 

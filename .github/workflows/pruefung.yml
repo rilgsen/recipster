@@ -18,14 +18,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
           cache: npm
       - run: npm ci
       - name: Lint
         run: npm run lint
+      # Erzeugt zuerst die Routentypen von Expo Router, damit ein falsches Navigationsziel auffällt.
       - name: Typprüfung
         run: npm run typecheck
       - name: Unit-Tests
@@ -38,12 +41,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
-      # Schlägt ab Stufe "high" fehl. Stand 27.11.2026 gibt es drei Meldungen der
-      # Stufe "moderate" (minimatch über expo), für die es noch keine Korrektur gibt.
+      # Schlägt ab Stufe "high" fehl. Stand 28.11.2026 meldet npm 22 Pakete der Stufe
+      # "moderate" zu zwei Advisories (glob und minimatch, über expo, jest und jest-expo).
+      # Die befristete Ausnahme steht in docs/entscheidungen/0003-sicherheitspruefung.md.
       - run: npm audit --audit-level=high
 
   geheimnisse:
@@ -51,9 +57,26 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           fetch-depth: 0
-      - uses: gitleaks/gitleaks-action@v2
+          persist-credentials: false
+      - uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2.3.9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  codescan:
+    name: Code-Sicherheitsscan
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: github/codeql-action/init@915412ff23e8b7659517e607487dbeae018f2934 # v4.39.5
+        with:
+          languages: javascript-typescript
+      - uses: github/codeql-action/analyze@915412ff23e8b7659517e607487dbeae018f2934 # v4.39.5

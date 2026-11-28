@@ -9,8 +9,7 @@
         "Fisch"
       ],
       "ernaehrung": [
-        "pescetarisch",
-        "glutenfrei"
+        "pescetarisch"
       ],
       "tags": [
         "Low Carb",
@@ -93,9 +92,7 @@
         "Fisch"
       ],
       "ernaehrung": [
-        "pescetarisch",
-        "glutenfrei",
-        "laktosefrei"
+        "pescetarisch"
       ],
       "tags": [
         "Low Carb",
@@ -146,6 +143,11 @@
           "zutat_id": "zitrone",
           "menge": 0.5,
           "einheit": "Stück"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -178,8 +180,7 @@
         "Fisch"
       ],
       "ernaehrung": [
-        "pescetarisch",
-        "laktosefrei"
+        "pescetarisch"
       ],
       "tags": [
         "Protein",
@@ -318,6 +319,16 @@
           "zutat_id": "zitrone",
           "menge": 0.5,
           "einheit": "Stück"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
+        },
+        {
+          "zutat_id": "pfeffer",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -347,8 +358,7 @@
         "Familie"
       ],
       "ernaehrung": [
-        "vegetarisch",
-        "glutenfrei"
+        "vegetarisch"
       ],
       "tags": [
         "Wenig Aufwand",
@@ -420,8 +430,7 @@
       ],
       "ernaehrung": [
         "vegetarisch",
-        "vegan",
-        "laktosefrei"
+        "vegan"
       ],
       "tags": [
         "Kinderfreundlich",
@@ -472,6 +481,11 @@
           "zutat_id": "oregano-getrocknet",
           "menge": 1,
           "einheit": "TL"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -504,8 +518,7 @@
         "Fitness"
       ],
       "ernaehrung": [
-        "vegetarisch",
-        "glutenfrei"
+        "vegetarisch"
       ],
       "tags": [
         "Low Carb",
@@ -541,6 +554,16 @@
           "zutat_id": "butter",
           "menge": 15,
           "einheit": "g"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
+        },
+        {
+          "zutat_id": "pfeffer",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [
@@ -614,6 +637,11 @@
           "zutat_id": "zitrone",
           "menge": 0.5,
           "einheit": "Stück"
+        },
+        {
+          "zutat_id": "salz",
+          "menge": 0,
+          "einheit": "nach Geschmack"
         }
       ],
       "schritte": [

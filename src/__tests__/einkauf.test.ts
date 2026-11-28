@@ -57,7 +57,7 @@ const menge = (posten: ReturnType<typeof liste>, id: string) => posten.find((p) 
 describe('Einkaufsliste berechnen (S4-1)', () => {
   it('zählt gleiche Zutaten in der Basiseinheit zusammen', () => {
     const posten = liste([geplant('1', 'a'), geplant('2', 'b')], { butter: { vorhanden: false } });
-    expect(menge(posten, 'butter')).toBe(katalog.get('butter')!.umrechnung.EL! + 30);
+    expect(menge(posten, 'butter')).toBe(14 + 30);
     expect(menge(posten, 'ei')).toBe(4);
     expect(posten.find((p) => p.zutat.id === 'butter')?.rezepte).toEqual(['Rezept a', 'Rezept b']);
   });
