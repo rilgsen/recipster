@@ -1,4 +1,6 @@
+import type { Tag } from './datum';
 import { begrenzePersonen } from './mengen';
+import { MAHLZEITEN, type Mahlzeit } from './rezepte';
 
 /**
  * Alles, was der Nutzer erzeugt. Mitgelieferte Rezepte und der Katalog gehören nicht dazu,
@@ -8,6 +10,25 @@ export type Zustand = {
   version: 1;
   einstellungen: Einstellungen;
   rezeptstatus: Record<string, Rezeptstatus>;
+  plan: Planeintrag[];
+  vorrat: Record<string, Vorratseintrag>;
+};
+
+/** Ein Gericht oder eine Notiz an einem Tag. Genau eines von rezeptId und notiz ist gesetzt. */
+export type Planeintrag = {
+  id: string;
+  datum: Tag;
+  mahlzeit: Mahlzeit;
+  rezeptId?: string;
+  notiz?: string;
+  /** Personen, für die gekocht wird. */
+  portionen: number;
+  gekocht: boolean;
+};
+
+export type Vorratseintrag = {
+  vorhanden: boolean;
+  gekauftAm?: Tag;
 };
 
 export type Einstellungen = {
@@ -24,13 +45,19 @@ export const STARTZUSTAND: Zustand = {
   version: 1,
   einstellungen: { personen: 2, ernaehrung: [] },
   rezeptstatus: {},
+  plan: [],
+  vorrat: {},
 };
 
 export type Aktion =
   | { typ: 'geladen'; zustand: Zustand }
   | { typ: 'personen'; personen: number }
   | { typ: 'ernaehrung'; form: string; aktiv: boolean }
-  | { typ: 'magIchNicht'; rezeptId: string; aktiv: boolean };
+  | { typ: 'magIchNicht'; rezeptId: string; aktiv: boolean }
+  | { typ: 'planHinzu'; eintrag: Planeintrag }
+  | { typ: 'planEntfernen'; id: string }
+  | { typ: 'planVerschieben'; id: string; datum: Tag; mahlzeit?: Mahlzeit }
+  | { typ: 'planPortionen'; id: string; portionen: number };
 
 export function reduziere(zustand: Zustand, aktion: Aktion): Zustand {
   switch (aktion.typ) {
@@ -61,6 +88,29 @@ export function reduziere(zustand: Zustand, aktion: Aktion): Zustand {
         },
       };
     }
+    case 'planHinzu': {
+      const eintrag = pruefePlaneintrag(aktion.eintrag);
+      if (!eintrag || zustand.plan.some((e) => e.id === eintrag.id)) {
+        return zustand;
+      }
+      return { ...zustand, plan: [...zustand.plan, eintrag] };
+    }
+    case 'planEntfernen':
+      return { ...zustand, plan: zustand.plan.filter((e) => e.id !== aktion.id) };
+    case 'planVerschieben':
+      return {
+        ...zustand,
+        plan: zustand.plan.map((e) =>
+          e.id === aktion.id ? { ...e, datum: aktion.datum, mahlzeit: aktion.mahlzeit ?? e.mahlzeit } : e
+        ),
+      };
+    case 'planPortionen':
+      return {
+        ...zustand,
+        plan: zustand.plan.map((e) =>
+          e.id === aktion.id ? { ...e, portionen: begrenzePersonen(aktion.portionen) } : e
+        ),
+      };
     default:
       return zustand;
   }
@@ -89,7 +139,55 @@ export function ausGespeichertem(roh: unknown): Zustand {
     },
     rezeptstatus:
       daten.rezeptstatus && typeof daten.rezeptstatus === 'object' ? { ...daten.rezeptstatus } : {},
+    plan: Array.isArray(daten.plan)
+      ? daten.plan.map(pruefePlaneintrag).filter((e): e is Planeintrag => e !== null)
+      : [],
+    vorrat: daten.vorrat && typeof daten.vorrat === 'object' ? { ...daten.vorrat } : {},
   };
+}
+
+const TAG_MUSTER = /^\d{4}-\d{2}-\d{2}$/;
+
+/** Liefert einen gültigen Planeintrag oder null. */
+export function pruefePlaneintrag(roh: unknown): Planeintrag | null {
+  if (!roh || typeof roh !== 'object') {
+    return null;
+  }
+  const e = roh as Partial<Planeintrag>;
+  if (typeof e.id !== 'string' || typeof e.datum !== 'string' || !TAG_MUSTER.test(e.datum)) {
+    return null;
+  }
+  if (!e.mahlzeit || !MAHLZEITEN.includes(e.mahlzeit)) {
+    return null;
+  }
+  const rezeptId = typeof e.rezeptId === 'string' && e.rezeptId ? e.rezeptId : undefined;
+  const notiz = typeof e.notiz === 'string' && e.notiz.trim() ? e.notiz.trim() : undefined;
+  if (!rezeptId && !notiz) {
+    return null;
+  }
+  return {
+    id: e.id,
+    datum: e.datum,
+    mahlzeit: e.mahlzeit,
+    ...(rezeptId ? { rezeptId } : { notiz }),
+    portionen: begrenzePersonen(typeof e.portionen === 'number' ? e.portionen : 2),
+    gekocht: Boolean(e.gekocht),
+  };
+}
+
+const REIHENFOLGE: Record<Mahlzeit, number> = { Frühstück: 0, Mittagessen: 1, Abendessen: 2, Snack: 3 };
+
+export function planFuerTag(zustand: Zustand, datum: Tag): Planeintrag[] {
+  return zustand.plan
+    .filter((e) => e.datum === datum)
+    .sort((a, b) => REIHENFOLGE[a.mahlzeit] - REIHENFOLGE[b.mahlzeit]);
+}
+
+let zaehler = 0;
+/** Kennung für neue Einträge. Wird außerhalb der reinen Funktionen erzeugt. */
+export function neueId(): string {
+  zaehler += 1;
+  return `${Date.now().toString(36)}-${zaehler.toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
 }
 
 export function magIchNichtIds(zustand: Zustand): string[] {

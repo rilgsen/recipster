@@ -3,9 +3,12 @@ import { useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { Abschnitt, Chip, Karte, Knopf, Zaehler } from '@/components/bausteine';
+import { Blatt } from '@/components/blatt';
 import { Abstand, Basis, Schrift } from '@/constants/theme';
 import { useFarben } from '@/hooks/use-farben';
+import { useHeute } from '@/hooks/use-heute';
 import { de } from '@/i18n/de';
+import { kurzesDatum, tageAb } from '@/lib/datum';
 import {
   formatiereMenge,
   MAX_PERSONEN,
@@ -14,6 +17,8 @@ import {
   skaliereMenge,
   zutatName,
 } from '@/lib/mengen';
+import { tagName } from '@/lib/tagname';
+import { neueId } from '@/lib/zustand';
 import { useDaten, useStore } from '@/store/store';
 
 export default function RezeptSeite() {
@@ -21,7 +26,10 @@ export default function RezeptSeite() {
   const { rezeptNach, katalog } = useDaten();
   const { zustand, aktion } = useStore();
   const farben = useFarben();
+  const heute = useHeute();
   const [personen, setPersonen] = useState(zustand.einstellungen.personen);
+  const [einplanen, setEinplanen] = useState(false);
+  const [meldung, setMeldung] = useState('');
 
   const rezept = rezeptNach.get(id);
   if (!rezept) {
@@ -53,6 +61,13 @@ export default function RezeptSeite() {
           <Chip key={tag} titel={tag} />
         ))}
       </View>
+
+      <Knopf titel={de.woche.einplanen} onPress={() => setEinplanen(true)} />
+      {meldung ? (
+        <Text style={[styles.hinweis, { color: farben.primaer }]} accessibilityLiveRegion="polite">
+          {meldung}
+        </Text>
+      ) : null}
 
       {magIchNicht ? (
         <Karte style={{ backgroundColor: farben.ton, borderColor: farben.ton }}>
@@ -125,6 +140,32 @@ export default function RezeptSeite() {
         art="neben"
         onPress={() => aktion({ typ: 'magIchNicht', rezeptId: rezept.id, aktiv: !magIchNicht })}
       />
+
+      <Blatt sichtbar={einplanen} titel={de.woche.einplanenTitel} onSchliessen={() => setEinplanen(false)}>
+        <View style={styles.chips}>
+          {tageAb(heute, 14).map((tag) => (
+            <Chip
+              key={tag}
+              titel={`${tagName(tag, heute).slice(0, 2)} ${kurzesDatum(tag)}`}
+              onPress={() => {
+                aktion({
+                  typ: 'planHinzu',
+                  eintrag: {
+                    id: neueId(),
+                    datum: tag,
+                    mahlzeit: rezept.mahlzeit,
+                    rezeptId: rezept.id,
+                    portionen: personen,
+                    gekocht: false,
+                  },
+                });
+                setMeldung(de.woche.eingeplant(`${tagName(tag, heute)}, ${kurzesDatum(tag)}`));
+                setEinplanen(false);
+              }}
+            />
+          ))}
+        </View>
+      </Blatt>
     </ScrollView>
   );
 }
