@@ -36,13 +36,11 @@ export const MITGELIEFERTE_REZEPTE: readonly Rezept[] = [
 export const MITGELIEFERTE_ZUTATEN: readonly Zutat[] = katalogDatei.zutaten as Zutat[];
 
 export const SCHWERPUNKTE = ['Fitness', 'Keto', 'Fisch', 'Familie'] as const;
-export const ERNAEHRUNGSFORMEN = [
-  'vegetarisch',
-  'vegan',
-  'pescetarisch',
-  'glutenfrei',
-  'laktosefrei',
-] as const;
+/**
+ * Wählbare Ernährungsformen. „glutenfrei“ und „laktosefrei“ stehen noch an den Rezepten,
+ * sind aber kein Filter: Die App prüft keine Unverträglichkeiten (Spec Abschnitt 1 und 5).
+ */
+export const ERNAEHRUNGSFORMEN = ['vegetarisch', 'vegan', 'pescetarisch'] as const;
 
 export function alsKarte<T extends { id: string }>(liste: readonly T[]): Map<string, T> {
   return new Map(liste.map((eintrag) => [eintrag.id, eintrag]));

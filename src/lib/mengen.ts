@@ -1,4 +1,10 @@
-import { inBasiseinheit, type Rezepteinheit, type Rezeptzutat, type Zutat } from './katalog';
+import {
+  inBasiseinheit,
+  type Rezepteinheit,
+  type Rezeptzutat,
+  type Stueckrundung,
+  type Zutat,
+} from './katalog';
 
 export const MIN_PERSONEN = 1;
 export const MAX_PERSONEN = 12;
@@ -17,29 +23,37 @@ export function portionsfaktor(personen: number, rezeptPortionen: number): numbe
 }
 
 /**
- * Rechnet eine Zutatenzeile auf den Faktor um.
- * Stück wird auf ganze Stück aufgerundet, eine Prise bleibt, wie sie ist.
+ * Rechnet eine Zutatenzeile auf den Faktor um (Spec Abschnitt 3, Regel M3).
+ * Stück wird je Kochvorgang aufgerundet: auf ganze Stück (Ei) oder auf halbe (Zwiebel),
+ * je nach Angabe im Katalog. Eine Prise bleibt, wie sie ist.
  */
-export function skaliereMenge(menge: number, einheit: Rezepteinheit, faktor: number): number {
+export function skaliereMenge(
+  menge: number,
+  einheit: Rezepteinheit,
+  faktor: number,
+  rundung: Stueckrundung = 'ganz'
+): number {
   if (einheit === 'Prise') {
     return menge;
   }
   const wert = menge * faktor;
   if (einheit === 'Stück') {
+    const schritt = rundung === 'halb' ? 0.5 : 1;
     // Kleiner Abzug gegen Rundungsfehler wie 3.0000000000000004.
-    return Math.max(1, Math.ceil(wert - 1e-9));
+    return Math.max(schritt, Math.ceil(wert / schritt - 1e-9) * schritt);
   }
   return wert;
 }
 
-export function skaliereZeile(zeile: Rezeptzutat, faktor: number): Rezeptzutat {
-  return { ...zeile, menge: skaliereMenge(zeile.menge, zeile.einheit, faktor) };
+/** Die Menge einer Rezeptzeile für den Faktor, mit der Rundung der Zutat. */
+export function mengeImRezept(zutat: Zutat, zeile: Rezeptzutat, faktor: number): number {
+  return skaliereMenge(zeile.menge, zeile.einheit, faktor, zutat.rundung);
 }
 
 /** Rundet für die Anzeige: g und ml ohne Nachkommastellen ab 10, sonst höchstens eine. */
 export function rundeFuerAnzeige(menge: number, einheit: Rezepteinheit): number {
   if (einheit === 'Stück') {
-    return Math.ceil(menge - 1e-9);
+    return Math.ceil(menge * 2 - 1e-9) / 2;
   }
   if ((einheit === 'g' || einheit === 'ml') && menge >= 10) {
     return Math.round(menge);
@@ -92,8 +106,10 @@ export function zutatName(zutat: Zutat, menge: number, einheit: Rezepteinheit): 
   return viele && zutat.name_mehrzahl ? zutat.name_mehrzahl : zutat.name;
 }
 
-/** Menge in der Basiseinheit nach Umrechnung auf die Personenzahl, null bei einer Prise. */
+/**
+ * Menge in der Basiseinheit nach Umrechnung auf die Personenzahl, null bei einer Prise.
+ * Gerechnet wird mit der Menge, die das Rezept anzeigt, also nach der Stück-Rundung.
+ */
 export function basismengeFuer(zutat: Zutat, zeile: Rezeptzutat, faktor: number) {
-  const skaliert = skaliereMenge(zeile.menge, zeile.einheit, faktor);
-  return inBasiseinheit(zutat, skaliert, zeile.einheit);
+  return inBasiseinheit(zutat, mengeImRezept(zutat, zeile, faktor), zeile.einheit);
 }

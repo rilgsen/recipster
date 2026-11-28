@@ -14,7 +14,7 @@ import {
   MAX_PERSONEN,
   MIN_PERSONEN,
   portionsfaktor,
-  skaliereMenge,
+  mengeImRezept,
   zutatName,
 } from '@/lib/mengen';
 import { tagName } from '@/lib/tagname';
@@ -74,7 +74,7 @@ export default function RezeptSeite() {
             if (!zutat || istVorhanden(zutat, zustand.vorrat) || zeile.einheit === 'Prise') {
               continue;
             }
-            const menge = skaliereMenge(zeile.menge, zeile.einheit, faktor);
+            const menge = mengeImRezept(zutat, zeile, faktor);
             aktion({
               typ: 'einkaufHandHinzu',
               id: neueId(),
@@ -114,7 +114,7 @@ export default function RezeptSeite() {
             if (!zutat) {
               return null;
             }
-            const menge = skaliereMenge(zeile.menge, zeile.einheit, faktor);
+            const menge = mengeImRezept(zutat, zeile, faktor);
             return (
               <View key={`${zeile.zutat_id}-${index}`} style={styles.zutat}>
                 <Text style={styles.menge}>{formatiereMenge(zutat, menge, zeile.einheit)}</Text>

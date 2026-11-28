@@ -14,11 +14,19 @@ export function istVorhanden(zutat: Zutat, vorrat: Vorrat): boolean {
   return eintrag ? eintrag.vorhanden : zutat.immer_im_haus;
 }
 
-export type BaldAufbrauchen = { zutat: Zutat; resttage: number };
+export type BaldAufbrauchen = { zutat: Zutat; resttage: number; status: 'bald' | 'abgelaufen' };
 
 /**
- * Zutaten, deren Haltbarkeit abläuft: Kaufdatum plus Haltbarkeit liegt höchstens einen Tag entfernt
- * oder ist überschritten. Ohne Kaufdatum oder mit unbegrenzter Haltbarkeit gibt es keinen Hinweis.
+ * Vorwarnung in Tagen (Regel V3): zwei Tage, bei Zutaten mit höchstens drei Tagen Haltbarkeit ein Tag,
+ * damit frischer Fisch nicht schon am Kauftag gemeldet wird.
+ */
+export function vorwarnTage(haltbarkeitTage: number): number {
+  return haltbarkeitTage > 3 ? 2 : 1;
+}
+
+/**
+ * Zutaten, deren Haltbarkeit abläuft: „bald“ ab der Vorwarnung bis zum letzten Tag,
+ * „abgelaufen“, wenn Kaufdatum plus Haltbarkeit überschritten ist. Ohne Kaufdatum oder mit unbegrenzter Haltbarkeit gibt es keinen Hinweis.
  */
 export function baldAufbrauchen(
   vorrat: Vorrat,
@@ -32,8 +40,8 @@ export function baldAufbrauchen(
       continue;
     }
     const resttage = zutat.haltbarkeit_tage - tageZwischen(eintrag.gekauftAm, heute);
-    if (resttage <= 1) {
-      liste.push({ zutat, resttage });
+    if (resttage <= vorwarnTage(zutat.haltbarkeit_tage)) {
+      liste.push({ zutat, resttage, status: resttage < 0 ? 'abgelaufen' : 'bald' });
     }
   }
   return liste.sort((a, b) => a.resttage - b.resttage || a.zutat.name.localeCompare(b.zutat.name, 'de'));
