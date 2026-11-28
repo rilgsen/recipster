@@ -10,7 +10,7 @@ Maßgeblich ist `docs/spec.md`. Jede Story verweist auf eine Kennung aus Abschni
 
 ## Namen
 
-- App-Name: Recipster. Der Schriftzug wird klein geschrieben: recipster.
+- App-Name: Recipster. Das ist ein Arbeitstitel, der endgültige Name wird vor dem Store entschieden. Der Schriftzug wird klein geschrieben: recipster.
 - „Choosy“ ist eine fremde App und nur Inspiration. Name, Texte, Bilder und Rezepte daraus werden nie übernommen.
 - „Yummi“ und „Yummy“ waren Arbeitstitel und werden nicht mehr verwendet.
 - Der App-Name steht im Code an genau einer Stelle (`app.json`, gelesen über `src/constants/brand.ts`).
@@ -24,7 +24,7 @@ npm run lint           # Lint
 npm run typecheck      # Typprüfung
 npm test               # Unit-Tests
 npm run check          # Lint, Typen und Tests zusammen
-npx expo install <paket>   # neue Pakete immer so hinzufügen, nie mit npm install
+npx expo install <paket>   # neue Pakete so hinzufügen; ohne Zugriff auf die Expo-Server die Version aus node_modules/expo/bundledNativeModules.json nehmen
 ```
 
 ## Qualitätstor

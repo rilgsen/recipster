@@ -66,7 +66,7 @@ Entschieden am 24.11. und 27.11.2026.
 
 ## 8 Offen
 
-- Name: Die App heißt „Recipster“ (Rasmus, 27.11.2026). „Yummi“ war der Arbeitstitel und entfällt wegen einer eingetragenen Marke. Schnellprüfung des Namens-Threads zu Recipster: keine Marke, keine App gefunden; keine Rechtsberatung.
+- Name: „Recipster“ ist Arbeitstitel (Rasmus, 28.11.2026). Kandidaten für den endgültigen Namen sind „Leckr“ und „Crispee“, die Entscheidung fällt vor dem Store. „Yummi“ entfällt wegen einer eingetragenen Marke.
 - Geschäftsmodell: Die App soll kommerziell angeboten werden (Rasmus, 27.11.2026). Abo oder Einmalzahlung ist offen.
 - Sprache: nur Deutsch oder auch Englisch.
 - Abnahmeweg: nicht festgelegt.

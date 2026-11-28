@@ -1,8 +1,8 @@
 # Spec: Recipster, erste Version
 
-Stand 27.11.2026. Quelle ist das Claude-Dokument „Spec Rezept-App, erste Version“. Noch nicht von Rasmus freigegeben.
+Stand 28.11.2026. Von Rasmus am 28.11.2026 zum Bau freigegeben („bau die volle Version“). Eine unabhängige Prüfung der Spec durch einen anderen Anbieter steht aus.
 
-Entwurf zur Freigabe. Die erste Version liefert Rezepte, Wochenplan, Einkaufsliste, Vorrat und Kochmodus für das iPhone, ohne Konto und ohne Server. Die App heißt „Recipster“ (Rasmus, 27.11.2026), der frühere Arbeitstitel war „Yummi“.
+Die erste Version liefert Rezepte, Wochenplan, Einkaufsliste, Vorrat und Kochmodus für das iPhone, ohne Konto und ohne Server. „Recipster“ ist ein Arbeitstitel (Rasmus, 28.11.2026). Der endgültige Name wird vor dem Store entschieden, gemerkte Kandidaten sind „Leckr“ und „Crispee“.
 
 ## 1 Ziel, Nichtziele, Abnahmeweg
 
@@ -127,7 +127,7 @@ Jede Zeile ist ein Kriterium mit eigener Kennung für den zugehörigen Test. Die
 
 **Offen vor dem Store, nicht vor dem Bau**
 
-- Name „Recipster“: Die Schnellprüfung des Namens-Threads fand keine Marke und keine App. Das ist keine Rechtsberatung, vor dem Store sollte eine Markenrecherche bestätigen.
+- Name: „Recipster“ ist Arbeitstitel. Kandidaten „Leckr“ und „Crispee“ haben die Schnellprüfung bestanden (keine identische Marke, keine gleichnamige App, .app frei). Das ist keine Rechtsberatung, vor dem Store sollte eine Markenrecherche bestätigen.
 - Rechte an den erzeugten Figuren und Rezeptfotos.
 - Nährwerte aus einer Lebensmitteldatenbank statt Schätzung. Bis dahin tragen sie in der App den Zusatz „geschätzt“.
 - Datenschutzerklärung, Anbieterangaben, Apple-Entwicklerkonto.
